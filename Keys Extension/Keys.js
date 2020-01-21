@@ -393,7 +393,6 @@ function recordKeystrokes(keypress) {
                     keyTriplet[0].focus()
                     deactivate();
                     $("html").one('keyup', function(){
-                        console.log("hi", upSinceDeactivation)
                         upSinceDeactivation=true;
                     })
                 }
@@ -411,7 +410,6 @@ function recordKeystrokes(keypress) {
                     deactivate();
                     keyTriplet[0].focus()
                     $("html").one('keyup', function(){
-                        console.log("hi", upSinceDeactivation)
                         upSinceDeactivation=true;
                     })
                 }
@@ -489,11 +487,17 @@ $("html").mouseup(clickAwayEvent => {
     if (keysCurrentlyActive) {
         deactivate();
     }
+    $("html").one('keyup', function(){
+        upSinceDeactivation=true;
+    })
 })
 
 $(document).keydown(escapeEvent => {
     if (keysCurrentlyActive && escapeEvent.key == "Escape") {
         deactivate();
+        $("html").one('keyup', function(){
+            upSinceDeactivation=true;
+        })
     }
 })
 
@@ -580,7 +584,6 @@ function simulateMouseClick(element){
     closest.click(); // want to send an odd number of click events so that open-close dialogs are ultimately opened.
     closest.focus();
     $("html").one('keyup', function(){
-        console.log("hi", upSinceDeactivation)
         upSinceDeactivation=true;
     })
 }
