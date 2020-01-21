@@ -1,0 +1,42 @@
+
+/* Class = "NSMenuItem"; title = "Keys"; ObjectID = "1Xt-HY-uBw"; */
+"1Xt-HY-uBw.title" = "Schlüssel";
+
+/* Class = "NSMenuItem"; title = "Quit Keys"; ObjectID = "4sb-4s-VLi"; */
+"4sb-4s-VLi.title" = "Beenden Sie Schlüssel";
+
+/* Class = "NSMenuItem"; title = "About Keys"; ObjectID = "5kV-Vb-QxS"; */
+"5kV-Vb-QxS.title" = "Über Schlüssel";
+
+/* Class = "NSMenu"; title = "Main Menu"; ObjectID = "AYu-sK-qS6"; */
+"AYu-sK-qS6.title" = "Hauptmenü";
+
+/* Class = "NSWindow"; title = "Keys"; ObjectID = "IQv-IB-iLA"; */
+"IQv-IB-iLA.title" = "Schlüssel";
+
+/* Class = "NSMenuItem"; title = "Show All"; ObjectID = "Kd2-mp-pUS"; */
+"Kd2-mp-pUS.title" = "Zeige alles";
+
+/* Class = "NSButtonCell"; title = "Report an Issue or Suggest an Improvement…"; ObjectID = "Mhd-k0-cfd"; */
+"Mhd-k0-cfd.title" = "Ein Problem Melden der eine Verbesserung Vorschlagen…";
+
+/* Class = "NSMenuItem"; title = "Hide Keys"; ObjectID = "Olw-nP-bQN"; */
+"Olw-nP-bQN.title" = "Schlüssel Ausblenden";
+
+/* Class = "NSButtonCell"; alternateTitle = "Install"; ObjectID = "Srx-0j-A4D"; */
+"Srx-0j-A4D.alternateTitle" = "Installieren";
+
+/* Class = "NSButtonCell"; title = "Open in Safari Extensions Preferences…"; ObjectID = "Srx-0j-A4D"; */
+"Srx-0j-A4D.title" = "Öffnen Sie in den Einstellungen für Safari-Erweiterungen…";
+
+/* Class = "NSMenuItem"; title = "Hide Others"; ObjectID = "Vdr-fp-XzO"; */
+"Vdr-fp-XzO.title" = "Andere Verstecken";
+
+/* Class = "NSMenu"; title = "Keys"; ObjectID = "uQy-DD-JDr"; */
+"uQy-DD-JDr.title" = "Schlüssel";
+
+/* Class = "NSTextFieldCell"; placeholderString = "Activation Character "; ObjectID = "zyX-ua-QOM"; */
+"zyX-ua-QOM.placeholderString" = "Aktivierungsschlüssel";
+
+/* Class = "NSTextFieldCell"; title = "G"; ObjectID = "zyX-ua-QOM"; */
+"zyX-ua-QOM.title" = "G";
