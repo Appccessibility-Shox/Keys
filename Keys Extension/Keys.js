@@ -1,7 +1,8 @@
 /* Remaining Tasks:
 1) Treat div[background-image] the same as an IMG tag. Hopefully that improves the experience on HBO Go, for example.
-2) Get addToTextDictionaryOrJustProcess to start treating checkboxes by editing adjacent text.
-3) treat checkboxes with labels in the obvious way (label as clicakble text. If there's no associated label, add hover text to the box.)
+2) Get addToTextDictionaryOrJustProcess to start treating checkboxes by editing adjacent text. Treat checkboxes with labels in the obvious way (label as clicakble text. If there's no associated label, add hover text to the box.)
+3) Refactor the available permutation index finder as its own function.
+ Make a good sorting funciton of visibleTargets.
 */
 
 deactivate();
@@ -9,6 +10,7 @@ deactivate();
 var visibleTargets =[];
 var keysCurrentlyActive = false;
 var keysWasActive = false;
+var upSinceDeactivation = true;
 var searchText = "";
 var DataFrame = [];
 var TextDictionary = {};
@@ -31,11 +33,12 @@ window.addEventListener('load', (event) => {
 });
 
 $("html").on('keypress', function (activationEvent) {
-    if (keysCurrentlyActive == false && activationEvent.key.toUpperCase() == preferredActivationKey  && activationEvent.target.nodeName != "INPUT" && activationEvent.target.nodeName != "TEXTAREA" && !activationEvent.target.isContentEditable) {
+    if (!keysCurrentlyActive && upSinceDeactivation && activationEvent.key.toUpperCase() == preferredActivationKey  && activationEvent.target.nodeName != "INPUT" && activationEvent.target.nodeName != "TEXTAREA" && !activationEvent.target.isContentEditable) {
         deactivate();
         keysCurrentlyActive = true;
+        upSinceDeactivation = false;
         $("html").attr("key_commands_were_activated", "true");
-        var targets = document.querySelectorAll("a, input, button, a img, a svg, a i, button img, button svg, button i, [role='button'], [role='button'] svg, [role='button'] img, [role='button'] i, [role='tab'], paper-tab, paper-button");
+        var targets = document.querySelectorAll("a, a i, a img, a svg, input, button, button i, button img, button svg, [role='button'], [role='button'] i, [role='button'] img, [role='button'] svg, [role='link'], [role='link'] i, [role='link'] img, [role='link'] svg, [role='tab'], [role='menuitem'] [role='option']");
         priorSiteSpecificModifications();
         var theNumberOfTargets = targets.length;
         var targetsObserved = 0;
@@ -162,7 +165,8 @@ async function colorTextKeys(TextDictionary){
 function pairexists(table, text, url) {
     for (let i=0; i<table.length; i++) {
         if (table[i][2]==text && table[i][3]==url && url!='#'){
-            return table[i][1]}
+            return table[i][1]
+        }
         else{continue}
     }
 }
@@ -207,7 +211,7 @@ function createFloatingText(image, key){
     }
     document.body.appendChild(wrapper);
     ExistingKeys.push(key)
-    DataFrame.push([image, key, wrapper, $(image).closest("a, button, [role='button'], [role='tab'], paper-tab, paper-button").attr("href")])
+    DataFrame.push([image, key, wrapper, $(image).closest("a, button, [role='button'], [role='link'], [role='tab'], [role='menuitem'] [role='option']").attr("href")])
     return wrapper;
 }
 
@@ -218,6 +222,7 @@ function tether(label, element) {
 // assembles the TextDictionary asynchronously.
 async function asynchronousIterator() {
     idealLength = Math.ceil(Math.log(visibleTargets.length)/Math.log(homeRow.length));
+    visibleTargets.sort();
     for (var target of visibleTargets) {
         await addToTextDictionaryOrJustProcess(target);
     }
@@ -226,13 +231,27 @@ async function asynchronousIterator() {
 
 // creates the element-key TextDictionary that colorTextKeys will iterate over.
 async function addToTextDictionaryOrJustProcess(element) {
-    if ((element.tagName == 'A' || element.tagName == 'BUTTON' || element.tagName == 'PAPER-BUTTON' || element.tagName == 'PAPER-TAB' || String($(element).attr("role")).toLowerCase() == 'button' || String($(element).attr("role")).toLowerCase() == 'tab') /*&& $(element).text().trim()*/) {
-        var responsibleNode = await earmarkText(element);
-        var label = await AssignTextKey(responsibleNode)
-        if (label) {
-        ExistingKeys.push(String(label).toLowerCase());
-        TextDictionary[label] = responsibleNode;
-        return label;
+    if (element.tagName == 'A' || element.tagName == 'BUTTON' || String($(element).attr("role")).toLowerCase() == 'button' || String($(element).attr("role")).toLowerCase() == 'link' || String($(element).attr("role")).toLowerCase() == 'tab' || String($(element).attr("role")).toLowerCase() == 'option') {
+        if ($(element).text()) {
+            var responsibleNode = await earmarkText(element);
+            var label = await AssignTextKey(responsibleNode)
+            if (label) {
+            ExistingKeys.push(String(label).toLowerCase());
+            TextDictionary[label] = responsibleNode;
+            return label;
+            }
+        }
+        else if ($(element).find("img, svg, i").length == 0) {
+            for (permutationIndex; permutationIndex<permutations.length; permutationIndex++) {
+                if (!isLeftAbsent(permutations[permutationIndex])) {
+                    continue;
+                }
+                var label = createFloatingText(element, permutations[permutationIndex]);
+                $(label).addClass("Keys-Clickable-Text")
+                permutationIndex++;
+                tether(label, $(element).closest("a, button, [role='button'], [role='link'], [role='tab'], [role='option']"));
+                break;
+            }
         }
     }
     else if (element.tagName == 'IMG' || element.tagName == 'svg' || element.tagName == 'I'){
@@ -240,7 +259,7 @@ async function addToTextDictionaryOrJustProcess(element) {
             if (!isLeftAbsent(permutations[permutationIndex])) {
                 continue;
             }
-            if ((element.getBoundingClientRect().width<30 || element.getBoundingClientRect().height < 30) && $(element).closest("a, button, [role='button'], [role='tab'], paper-tab, paper-button").text().trim()) { break;}
+            if ((element.getBoundingClientRect().width<30 || element.getBoundingClientRect().height < 30) && $(element).closest("a, button, [role='button'], [role='link'], [role='tab']").text().trim()) { break;}
             var label = createFloatingText(element, permutations[permutationIndex]);
             permutationIndex++;
             tether(label, element);
@@ -265,10 +284,7 @@ async function addToTextDictionaryOrJustProcess(element) {
             return "";
     }
     else if (element.tagName == 'INPUT') {
-        createAndSwapSearchBarPlaceholder(element).then(function(inputKey) {
-            ExistingKeys.push(inputKey);
-            DataFrame.push([element, inputKey, element]);
-        });
+        createAndSwapSearchBarPlaceholder(element);
     }
     else {
         return "";
@@ -285,6 +301,7 @@ async function earmarkText(anchor) {
     }
     else {
         first_line = nodeFind(anchor)
+        
     }
     return first_line;
 }
@@ -307,7 +324,7 @@ $.prototype.immediateText = function() {
 function AssignTextKey(element) {
     var key;
     var text = $(element).text().trim();
-    var href = $(element).closest("a, button, [role='button'], [role='tab'], paper-tab, paper-button").attr("href");
+    var href = $(element).closest("a, button, [role='button'], [role='link'], [role='tab'], [role='option']").attr("href");
     if (pairexists(DataFrame, text, href)){key = pairexists(DataFrame, text, href);}
     else if (tryPrefixes(text, idealLength)) {
         key = tryPrefixes(text, idealLength);
@@ -320,7 +337,7 @@ function AssignTextKey(element) {
             var label = createFloatingText(element, permutations[permutationIndex]);
             $(label).addClass("Keys-Clickable-Text")
             permutationIndex++;
-            tether(label, $(element).closest("a, button, [role='button'], [role='tab'], paper-tab, paper-button"));
+            tether(label, element);
             break;
         }
     }
@@ -335,8 +352,23 @@ createAndSwapSearchBarPlaceholder =async(element)=> {
         $(element).attr("original_value", String($(element).val()))
         $(element).val("")
     }
+    if (element.getAttribute("type") != null && element.getAttribute("type").toLowerCase() == "submit" && element.getAttribute("value")) {
+        for (permutationIndex; permutationIndex<permutations.length; permutationIndex++) {
+            if (!isLeftAbsent(permutations[permutationIndex])) {
+                continue;
+            }
+            var label = createFloatingText(element, permutations[permutationIndex]);
+            $(label).addClass("Keys-Clickable-Text")
+            permutationIndex++;
+            tether(label, element);
+            break;
+        }
+        return permutations[permutationIndex-1];
+    }
     element.setAttribute("placeholder", tryPrefixes(getTextBoxText(element), idealLength));
-    return tryPrefixes(getTextBoxText(element), idealLength)
+    var inputKey = tryPrefixes(getTextBoxText(element), idealLength)
+    DataFrame.push([element, inputKey]);
+    ExistingKeys.push(tryPrefixes(getTextBoxText(element), idealLength))
 }
 
 function recordKeystrokes(keypress) {
@@ -350,16 +382,23 @@ function recordKeystrokes(keypress) {
             if (searchText.length < 1) {deactivate();}
         }
         DataFrame = DataFrame.filter(function(element) {
-            return typeof element[0] !== 'undefined';
+            return typeof element[0] !== 'undefined' && element[0];
         });
         for (var keyTriplet of DataFrame) {
-            if (typeof keyTriplet[0] === 'undefined' || !keyTriplet[0]) {
+            if (keyTriplet[0].tagName == 'INPUT' && keyTriplet[0].getAttribute("type") == "submit") {
+                recolorMatchingKeys(keyTriplet[0], $(keyTriplet[2]), keyTriplet[1].toLowerCase(), false)
+                if (keyTriplet[1].toLowerCase() == searchText.toLowerCase()) {
+                    $(keyTriplet[0]).click();
+                    $(keyTriplet[0]).submit();
+                    keyTriplet[0].focus()
+                    deactivate();
+                }
             }
             else if (keyTriplet[2] instanceof Element && keyTriplet[2].classList.contains("Keys-Floating-Key")) {
-                recolorMatchingKeys(keyTriplet[0], $(keyTriplet[2]), keyTriplet[1].toLowerCase())
+                recolorMatchingKeys(keyTriplet[0], $(keyTriplet[2]), keyTriplet[1].toLowerCase(), true)
             }
             else if (keyTriplet[0].classList.contains('Keys-Clickable-Text')){
-                recolorMatchingKeys(keyTriplet[0], $(keyTriplet[0]).prev(), keyTriplet[1].toLowerCase())
+                recolorMatchingKeys(keyTriplet[0], $(keyTriplet[0]).prev(), keyTriplet[1].toLowerCase(), true)
             }
             else if (keyTriplet[0].tagName == 'INPUT') {
                 if (keyTriplet[1].toLowerCase() == searchText.toLowerCase()) {
@@ -415,14 +454,9 @@ function deactivate() {
                 input.placeholder = input.getAttribute("original_placeholder");
             }
             else {input.placeholder = "";}
-            }
-        )
-    document.querySelectorAll("input[original_value]").forEach(
-        input => {
-            $(input).val(String($(input).attr("original_value")));
-            $(input).removeAttr("original_value");
-            }
-        )
+        }
+    )
+    resetAllInputValues();
     $(".Keys-Small-Clickable-Image").removeClass("Keys-Small-Clickable-Image");
     $(".Keys-Medium-Clickable-Image").removeClass("Keys-Medium-Clickable-Image");
     $(".Keys-Large-Clickable-Image").removeClass("Keys-Large-Clickable-Image");
@@ -430,6 +464,7 @@ function deactivate() {
     $(".Keys-Hidden-Originals").removeClass("Keys-Hidden-Originals");
     $(".faux").remove();
     $(".clickableTextWrapped").contents().unwrap();
+    $("html").one('keyup', function(){upSinceDeactivation=true})
     DataFrame = [];
     keysCurrentlyActive = false;
     $("#Keys-Input-Box").remove();
@@ -448,25 +483,20 @@ $("html").mouseup(clickAwayEvent => {
         deactivate();
     }
 })
-                            
+
 $(document).keydown(escapeEvent => {
-    if (keysCurrentlyActive == true && escapeEvent.key == "Escape") {
+    if (keysCurrentlyActive && escapeEvent.key == "Escape") {
         deactivate();
     }
 })
 
 // modifications that will occur after keys adds elements to the page.
 function siteSpecificModifications() {
-    var finalTime = new Date();
     Tether.position(); // important to update every tether's position for websites e.g. StackExchange.
     if (window.location.hostname == "twitter.com") {
         $(".Keys-Large-Clickable-Image").parent().addClass("Keys-Large-Clickable-Image");
         $(".Keys-Medium-Clickable-Image").parent().addClass("Keys-Medium-Clickable-Image");
         $(".Keys-Small-Clickable-Image").parent().addClass("Keys-Small-Clickable-Image");
-    }
-    if (window.location.hostname.includes("wikipedia.org")) {
-        $(".tocnumber").css("display", "contents")
-        
     }
     if (window.location.hostname == "www.apple.com") {
         $(".localnav-title.faux").css({'font-size':'inherit'});
@@ -484,9 +514,7 @@ function siteSpecificModifications() {
     }
     if (window.location.hostname === "www.netflix.com") {
         $(".profile-button span").css("border", "none")
-        $(".profile-button span").css("font-size", "15px")
-        $(".profile-button span").css("padding", "none")
-        $(".profile-button span").css("margin", "0px")
+        $(".profile-button span").css("display", "contents")
     }
     if (window.location.hostname === "samharris.org") {
         $(".home-content-listing__post-media").addClass("Keys-Container-of-Large-Image")
@@ -497,10 +525,12 @@ function siteSpecificModifications() {
 function priorSiteSpecificModifications() {
     if (window.location.hostname.includes("wikipedia.org")) {
         $("span.toctext").css("display", "contents");
+        $(".tocnumber").css("display", "contents");
     }
     if (window.location.hostname == "www.youtube.com") {
         $(".ytp-videowall-still-info-content").addClass("Keys-Show-While-Active");
         $(".ytp-videowall-still-info-content.faux").addClass("Keys-Show-While-Active");
+        $("paper-ripple").remove();
     }
     if (window.location.hostname == "www.github.com") {
         $("summary.btn-link").addClass("Keys-Show-While-Active");
@@ -523,28 +553,36 @@ function insertAfter(newNode, referenceNode) {
     referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
 }
 
-const mouseClickEvents = ['mousedown', 'click', 'mouseup'];
+const mouseClickEvents = ['mousedown', 'click', 'mouseup', 'focus'];
 
 function simulateMouseClick(element){
-  mouseClickEvents.forEach(mouseEventType =>
-    element.dispatchEvent(
-      new MouseEvent(mouseEventType, {
-          view: window,
-          bubbles: true,
-          cancelable: true,
-          buttons: 1
-      })
-    )
-  );
+    resetAllInputValues();
+    var closest = $(element).closest("a, button, [role='button'], [role='link'], [role='tab'], [role='option'], [role='menuitem'], input")[0];
+    mouseClickEvents.forEach(mouseEventType =>
+        element.dispatchEvent(
+          new MouseEvent(mouseEventType, {
+              view: window,
+              bubbles: true,
+              cancelable: true,
+              buttons: 1
+          })
+        )
+    );
+    console.log(element)
+    closest.click();
+    closest.click(); // want to send an odd number of click events so that open-close dialogs are ultimately opened.
+    closest.focus();
 }
 
-function recolorMatchingKeys(element, label, key) {
+function recolorMatchingKeys(element, label, key, shouldSimulateClick) {
     label.find(".Keys-Matching-Character").removeClass("Keys-Matching-Character");
     label.find(".Keys-Mismatched-Character").removeClass("Keys-Mismatched-Character");
     if (key == searchText.toLowerCase()) {
         label.find(".Keys-Character").slice(0, searchText.length).addClass("Keys-Matching-Character")
-        simulateMouseClick(element)
-        deactivate();
+        if (shouldSimulateClick == true) {
+            simulateMouseClick(element)
+            deactivate();
+        }
     }
     else if (key.startsWith(searchText.toLowerCase())) {
         label.find(".Keys-Character").slice(0, searchText.length).addClass("Keys-Matching-Character")
@@ -564,4 +602,13 @@ function handleMessage(event) {
     if (event.name == "keyIsCurrently" && event.message.currentKey != "Default key couldn't be read") {
         preferredActivationKey = event.message.currentKey;
     }
+}
+
+function resetAllInputValues() {
+    document.querySelectorAll("input[original_value]").forEach(
+    input => {
+        $(input).val(String($(input).attr("original_value")));
+        $(input).removeAttr("original_value");
+        }
+    )
 }
