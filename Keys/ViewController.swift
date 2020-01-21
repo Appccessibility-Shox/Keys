@@ -6,7 +6,7 @@ let defaults = UserDefaults.init(suiteName: SharedUserDefaults.suiteName)
 class ViewController: NSViewController {
     @IBOutlet var appNameLabel: NSTextField!
     @IBAction func reportPressed(_ sender: NSButton) {
-        NSWorkspace.shared.open(NSURL(string: "https://github.com/patrickshox/Keys-for-Safari/issues")! as URL)
+        NSWorkspace.shared.open(NSURL(string: "https://github.com/patrickshox/Keys/issues")! as URL)
     }
     override func viewDidAppear() {
         defaults!.register(defaults: ["activationKey" : "G"])

@@ -368,7 +368,7 @@ createAndSwapSearchBarPlaceholder =async(element)=> {
     element.setAttribute("placeholder", tryPrefixes(getTextBoxText(element), idealLength));
     var inputKey = tryPrefixes(getTextBoxText(element), idealLength)
     DataFrame.push([element, inputKey]);
-    ExistingKeys.push(tryPrefixes(getTextBoxText(element), idealLength))
+    ExistingKeys.push(tryPrefixes(getTextBoxText(element), idealLength).toLowerCase())
 }
 
 function recordKeystrokes(keypress) {
