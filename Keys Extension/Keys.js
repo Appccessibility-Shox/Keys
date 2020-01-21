@@ -392,6 +392,10 @@ function recordKeystrokes(keypress) {
                     $(keyTriplet[0]).submit();
                     keyTriplet[0].focus()
                     deactivate();
+                    $("html").one('keyup', function(){
+                        console.log("hi", upSinceDeactivation)
+                        upSinceDeactivation=true;
+                    })
                 }
             }
             else if (keyTriplet[2] instanceof Element && keyTriplet[2].classList.contains("Keys-Floating-Key")) {
@@ -406,6 +410,10 @@ function recordKeystrokes(keypress) {
                     $(keyTriplet[0]).val($(keyTriplet[0]).attr("original_value"));
                     deactivate();
                     keyTriplet[0].focus()
+                    $("html").one('keyup', function(){
+                        console.log("hi", upSinceDeactivation)
+                        upSinceDeactivation=true;
+                    })
                 }
             }
             else {}
@@ -464,7 +472,6 @@ function deactivate() {
     $(".Keys-Hidden-Originals").removeClass("Keys-Hidden-Originals");
     $(".faux").remove();
     $(".clickableTextWrapped").contents().unwrap();
-    $("html").one('keyup', function(){upSinceDeactivation=true})
     DataFrame = [];
     keysCurrentlyActive = false;
     $("#Keys-Input-Box").remove();
@@ -572,6 +579,10 @@ function simulateMouseClick(element){
     closest.click();
     closest.click(); // want to send an odd number of click events so that open-close dialogs are ultimately opened.
     closest.focus();
+    $("html").one('keyup', function(){
+        console.log("hi", upSinceDeactivation)
+        upSinceDeactivation=true;
+    })
 }
 
 function recolorMatchingKeys(element, label, key, shouldSimulateClick) {
