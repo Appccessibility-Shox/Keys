@@ -379,7 +379,12 @@ function recordKeystrokes(keypress) {
         }
         else if (keypress.key == "Backspace") {
             searchText = $("#Keys-Input-Box").val().slice(1, -1);
-            if (searchText.length < 1) {deactivate();}
+            if (searchText.length < 1) {
+                deactivate();
+                $("html").one('keyup', function(){
+                    upSinceDeactivation=true;
+                })
+            }
         }
         DataFrame = DataFrame.filter(function(element) {
             return typeof element[0] !== 'undefined' && element[0];
