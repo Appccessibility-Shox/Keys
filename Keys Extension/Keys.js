@@ -585,9 +585,6 @@ function simulateMouseClick(element){
         )
     );
     console.log(element)
-    closest.click();
-    closest.click(); // want to send an odd number of click events so that open-close dialogs are ultimately opened.
-    closest.focus();
     $("html").one('keyup', function(){
         upSinceDeactivation=true;
     })
