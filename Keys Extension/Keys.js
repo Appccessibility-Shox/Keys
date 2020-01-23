@@ -3,6 +3,7 @@
 2) Get addToTextDictionaryOrJustProcess to start treating checkboxes by editing adjacent text. Treat checkboxes with labels in the obvious way (label as clicakble text. If there's no associated label, add hover text to the box.)
 3) Refactor the available permutation index finder as its own function.
  Make a good sorting funciton of visibleTargets.
+4) Add a class Keys-Should-Generate-Floating-Text which, if found/scraped, will automatically generate floating text. Should help make prior site specific mods.
 */
 
 deactivate();
@@ -308,7 +309,7 @@ async function earmarkText(anchor) {
 // replaces earmarkText for elements that have naked text nodes i.e. nodes that aren't wrapped in an element.
 function nodeFind(anchor) {
     var textNodes = $(anchor).contents().filter(function() {
-      return (this.nodeType === 3 && this.textContent.trim().match(/[a-z]/i));
+      return (this.nodeType === 3 && this.textContent.trim().match(/[a-zA-Z0-9-_ ]/));
     })
     textNodes = textNodes.sort((a,b) => b.textContent.trim().length - a.textContent.trim().length)
     first_node = textNodes[0];
@@ -485,27 +486,21 @@ function deactivate() {
 $(window).on('scroll', function() {
     if (keysCurrentlyActive && Math.abs($(this).scrollTop() - scrollPositionWhenActivated) >= 190) {
         deactivate();
-        $("html").one('keyup', function(){
-            upSinceDeactivation=true;
-        })
+        upSinceDeactivation=true;
     }
 });
 
 $("html").mouseup(clickAwayEvent => {
     if (keysCurrentlyActive) {
         deactivate();
-        $("html").one('keyup', function(){
-            upSinceDeactivation=true;
-        })
+        upSinceDeactivation=true;
     }
 })
 
 $(document).keydown(escapeEvent => {
     if (keysCurrentlyActive && escapeEvent.key == "Escape") {
         deactivate();
-        $("html").one('keyup', function(){
-            upSinceDeactivation=true;
-        })
+        upSinceDeactivation=true;
     }
 })
 
@@ -542,6 +537,7 @@ function siteSpecificModifications() {
 
 // modifications that occur on initial G keypress (before Keys are assigned or rendered)
 function priorSiteSpecificModifications() {
+    console.log(window.location.hostname)
     if (window.location.hostname.includes("wikipedia.org")) {
         $("span.toctext").css("display", "contents");
         $(".tocnumber").css("display", "contents");
@@ -553,6 +549,12 @@ function priorSiteSpecificModifications() {
     }
     if (window.location.hostname == "www.github.com") {
         $("summary.btn-link").addClass("Keys-Show-While-Active");
+    }
+    if (window.location.hostname.includes("craigslist.org")) {
+        $("sup.c").remove();
+    }
+    if (window.location.hostname.includes("www.ebay")) {
+        $("a.hl-popular-destinations-link noscript").remove();
     }
 }
 
