@@ -485,16 +485,19 @@ function deactivate() {
 $(window).on('scroll', function() {
     if (keysCurrentlyActive && Math.abs($(this).scrollTop() - scrollPositionWhenActivated) >= 190) {
         deactivate();
+        $("html").one('keyup', function(){
+            upSinceDeactivation=true;
+        })
     }
 });
 
 $("html").mouseup(clickAwayEvent => {
     if (keysCurrentlyActive) {
         deactivate();
+        $("html").one('keyup', function(){
+            upSinceDeactivation=true;
+        })
     }
-    $("html").one('keyup', function(){
-        upSinceDeactivation=true;
-    })
 })
 
 $(document).keydown(escapeEvent => {
