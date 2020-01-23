@@ -39,8 +39,8 @@ $("html").on('keypress', function (activationEvent) {
         keysCurrentlyActive = true;
         upSinceDeactivation = false;
         $("html").attr("key_commands_were_activated", "true");
-        var targets = document.querySelectorAll("a, a i, a img, a svg, input, button, button i, button img, button svg, [role='button'], [role='button'] i, [role='button'] img, [role='button'] svg, [role='link'], [role='link'] i, [role='link'] img, [role='link'] svg, [role='tab'], [role='menuitem'] [role='option']");
         priorSiteSpecificModifications();
+        var targets = document.querySelectorAll("a, a i, a img, a svg, input, button, button i, button img, button svg, [role='button'], [role='button'] i, [role='button'] img, [role='button'] svg, [role='link'], [role='link'] i, [role='link'] img, [role='link'] svg, [role='tab'], [role='menuitem'] [role='option'], .Keys-Should-Generate-Floating-Text");
         var theNumberOfTargets = targets.length;
         var targetsObserved = 0;
         var visible =(target)=> {
@@ -232,6 +232,18 @@ async function asynchronousIterator() {
 
 // creates the element-key TextDictionary that colorTextKeys will iterate over.
 async function addToTextDictionaryOrJustProcess(element) {
+    if (element.classList.contains("Keys-Should-Generate-Floating-Text")) {
+        for (permutationIndex; permutationIndex<permutations.length; permutationIndex++) {
+            if (!isLeftAbsent(permutations[permutationIndex])) {
+                continue;
+            }
+            var label = createFloatingText(element, permutations[permutationIndex]);
+            $(label).addClass("Keys-Clickable-Text")
+            permutationIndex++;
+            tether(label, element);
+            break;
+        }
+    }
     if (element.tagName == 'A' || element.tagName == 'BUTTON' || String($(element).attr("role")).toLowerCase() == 'button' || String($(element).attr("role")).toLowerCase() == 'link' || String($(element).attr("role")).toLowerCase() == 'tab' || String($(element).attr("role")).toLowerCase() == 'option') {
         if ($(element).text()) {
             var responsibleNode = await earmarkText(element);
@@ -264,6 +276,7 @@ async function addToTextDictionaryOrJustProcess(element) {
             var label = createFloatingText(element, permutations[permutationIndex]);
             permutationIndex++;
             tether(label, element);
+            console.log(permutations[permutationIndex-1], element)
             if (element.tagName == 'IMG') {
                 if (element.getBoundingClientRect().width<30 || element.getBoundingClientRect().height < 30){
                     element.classList.add("Keys-Small-Clickable-Image")
@@ -555,6 +568,9 @@ function priorSiteSpecificModifications() {
     }
     if (window.location.hostname.includes("www.ebay")) {
         $("a.hl-popular-destinations-link noscript").remove();
+    }
+    if (window.location.hostname == "www.apple.com") {
+        $("ul.ac-gn-list a").not("#ac-gn-link-search").addClass("Keys-Should-Generate-Floating-Text");
     }
 }
 
