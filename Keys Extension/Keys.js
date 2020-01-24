@@ -2,8 +2,7 @@
 1) Treat div[background-image] the same as an IMG tag. Hopefully that improves the experience on HBO Go, for example.
 2) Get addToTextDictionaryOrJustProcess to start treating checkboxes by editing adjacent text. Treat checkboxes with labels in the obvious way (label as clicakble text. If there's no associated label, add hover text to the box.)
 3) Refactor the available permutation index finder as its own function.
- Make a good sorting funciton of visibleTargets.
-4) Add a class Keys-Should-Generate-Floating-Text which, if found/scraped, will automatically generate floating text. Should help make prior site specific mods.
+4) Make a good sorting funciton of visibleTargets.
 */
 
 deactivate();
@@ -276,7 +275,6 @@ async function addToTextDictionaryOrJustProcess(element) {
             var label = createFloatingText(element, permutations[permutationIndex]);
             permutationIndex++;
             tether(label, element);
-            console.log(permutations[permutationIndex-1], element)
             if (element.tagName == 'IMG') {
                 if (element.getBoundingClientRect().width<30 || element.getBoundingClientRect().height < 30){
                     element.classList.add("Keys-Small-Clickable-Image")
@@ -546,11 +544,13 @@ function siteSpecificModifications() {
     if (window.location.hostname === "samharris.org") {
         $(".home-content-listing__post-media").addClass("Keys-Container-of-Large-Image")
     }
+    if (window.location.hostname === "edition.cnn.com") {
+        $(".Keys-Floating-Key").insertAfter("head")
+    }
 }
 
 // modifications that occur on initial G keypress (before Keys are assigned or rendered)
 function priorSiteSpecificModifications() {
-    console.log(window.location.hostname)
     if (window.location.hostname.includes("wikipedia.org")) {
         $("span.toctext").css("display", "contents");
         $(".tocnumber").css("display", "contents");
@@ -572,6 +572,9 @@ function priorSiteSpecificModifications() {
     if (window.location.hostname == "www.apple.com") {
         $("ul.ac-gn-list a").not("#ac-gn-link-search").addClass("Keys-Should-Generate-Floating-Text");
     }
+    if (window.location.hostname.includes("yahoo")) {
+        $("#header-search-input").attr("aria-label", "search");
+    }
 }
 
 //stop focus stealing on bing
@@ -580,6 +583,17 @@ if (window.location.hostname == "www.bing.com") {
         if (focusStealingEvent.target.nodeName != "INPUT" || keysWasActive || keysCurrentlyActive) {
             $("#sb_form_q").one("focus", function(){
                 $("#sb_form_q").blur()
+                $("#Keys-Input-Box").focus();
+            })
+        }
+    })
+}
+                            
+if (window.location.hostname.includes("yahoo")) {
+    $("html").on("keydown", function(focusStealingEvent){
+        if (focusStealingEvent.target.nodeName != "INPUT" || keysWasActive || keysCurrentlyActive) {
+            $("#header-search-input").one("focus", function(){
+                $("header-search-input").blur()
                 $("#Keys-Input-Box").focus();
             })
         }
@@ -605,7 +619,6 @@ function simulateMouseClick(element){
           })
         )
     );
-    console.log(element)
     $("html").one('keyup', function(){
         upSinceDeactivation=true;
     })
