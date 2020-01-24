@@ -523,6 +523,9 @@ function siteSpecificModifications() {
         $(".Keys-Medium-Clickable-Image").parent().addClass("Keys-Medium-Clickable-Image");
         $(".Keys-Small-Clickable-Image").parent().addClass("Keys-Small-Clickable-Image");
     }
+    if (window.location.hostname.includes("facebook")) {
+        $("#u_0_9 input._5eay").css({'opacity':'0'});
+    }
     if (window.location.hostname == "www.apple.com") {
         $(".localnav-title.faux").css({'font-size':'inherit'});
         $(".localnav-title.faux").css({'color':'blue'});
