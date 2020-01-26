@@ -49,6 +49,7 @@
 
 /* Begin PBXFileReference section */
 		CB0D93DA23CBC4AC0098F654 /* SharedUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedUserDefaults.swift; sourceTree = "<group>"; };
+		CB1D5CE723DD642C00C23289 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		CB7C6DD423CE54D600759CC4 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		CB7C6DD523CE57C700759CC4 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		CB7C6DD623CE5A2500759CC4 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
@@ -211,6 +212,7 @@
 				es,
 				fr,
 				de,
+				ja,
 			);
 			mainGroup = CBA443E2235E4D94006FB35A;
 			productRefGroup = CBA443EC235E4D94006FB35A /* Products */;
@@ -285,6 +287,7 @@
 				CB7C6DD423CE54D600759CC4 /* es */,
 				CB7C6DD523CE57C700759CC4 /* fr */,
 				CB7C6DD623CE5A2500759CC4 /* de */,
+				CB1D5CE723DD642C00C23289 /* ja */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

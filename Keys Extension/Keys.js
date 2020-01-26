@@ -323,7 +323,7 @@ async function earmarkText(anchor) {
 // replaces earmarkText for elements that have naked text nodes i.e. nodes that aren't wrapped in an element.
 function nodeFind(anchor) {
     var textNodes = $(anchor).contents().filter(function() {
-      return (this.nodeType === 3 && this.textContent.trim().match(/[a-zA-Z0-9-_ ]/));
+      return (this.nodeType === 3 && this.textContent.trim()/*.match(/[a-zA-Z0-9-_ ]/)*/);
     })
     textNodes = textNodes.sort((a,b) => b.textContent.trim().length - a.textContent.trim().length)
     first_node = textNodes[0];
@@ -363,7 +363,7 @@ createAndSwapSearchBarPlaceholder =async(element)=> {
     if (!element.getAttribute("original_placeholder")){
         element.setAttribute("original_placeholder", element.getAttribute("placeholder"))
     }
-    if ($(element).attr("type") == "text" || $(element).attr("type") == "search") {
+    if (($(element).attr("type") == "text" || $(element).attr("type") == "search") && String($(element).val())) {
         $(element).attr("original_value", String($(element).val()))
         $(element).val("")
     }
@@ -380,10 +380,14 @@ createAndSwapSearchBarPlaceholder =async(element)=> {
         }
         return permutations[permutationIndex-1];
     }
-    element.setAttribute("placeholder", tryPrefixes(getTextBoxText(element), idealLength));
-    var inputKey = tryPrefixes(getTextBoxText(element), idealLength)
+    var boxtext = getTextBoxText(element);
+    if (!/^\w+$/.test(boxtext)) { // supports languages with non English characters.
+        boxtext = "search"
+    }
+    var inputKey = tryPrefixes(boxtext, idealLength)
+    element.placeholder = inputKey
     DataFrame.push([element, inputKey]);
-    ExistingKeys.push(tryPrefixes(getTextBoxText(element), idealLength).toLowerCase())
+    ExistingKeys.push(inputKey.toLowerCase())
 }
 
 function recordKeystrokes(keypress) {
@@ -596,20 +600,14 @@ if (window.location.hostname == "www.bing.com") {
     })
 }
 
-document.addEventListener('focusin', function() {
-  console.log('focused: ', document.activeElement)
-}, true);
-
 if (window.location.hostname.includes("yahoo")) {
     $("html").on("keydown", function(focusStealingEvent) {
-        console.log(focusStealingEvent.target.nodeName)
         if (focusStealingEvent.target.nodeName != "INPUT" || keysWasActive || keysCurrentlyActive) {
             $("#header-search-input").one("focus", function(){
                 $("#header-search-input").blur()
                 $("#Keys-Input-Box").focus();
             })
             $("#uh-search-box").on("focus", function(){
-                console.log("yolo")
                 $("#uh-search-box").blur()
                 $("#Keys-Input-Box").focus();
             })
