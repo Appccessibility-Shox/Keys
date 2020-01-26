@@ -558,10 +558,12 @@ function siteSpecificModifications() {
     if (window.location.hostname === "edition.cnn.com") {
         $(".Keys-Floating-Key").insertAfter("head")
     }
+    console.timeEnd('entireProgram')
 }
 
 // modifications that occur on initial G keypress (before Keys are assigned or rendered)
 function priorSiteSpecificModifications() {
+    console.time('entireProgram')
     if (window.location.hostname.includes("wikipedia.org")) {
         $("span.toctext").css("display", "contents");
         $(".tocnumber").css("display", "contents");
@@ -576,6 +578,10 @@ function priorSiteSpecificModifications() {
     }
     if (window.location.hostname.includes("craigslist.org")) {
         $("sup.c").remove();
+    }
+    if (window.location.hostname.includes("facebook")) {
+        $(".jewelButton, #stories_tray div.uiScaledImageContainer").addClass("Keys-Should-Generate-Floating-Text");
+        $("#stories_tray img").addClass("Keys-Large-Clickable-Image")
     }
     if (window.location.hostname.includes("www.ebay")) {
         $("a.hl-popular-destinations-link noscript").remove();
