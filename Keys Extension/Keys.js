@@ -70,9 +70,11 @@ $("html").on('keypress', function (activationEvent) {
         };
 
         function run () {
+            console.time('visible')
             for (var target of targets) {
                 visible(target);
             }
+            console.timeEnd('visible')
         }
 
         run();
@@ -216,6 +218,7 @@ function createFloatingText(image, key){
 }
 
 function tether(label, element) {
+    $(element).addClass(`Keys-${$(label).text()}`)
     new Tether({element: label, target: element, attachment: 'middle center', targetAttachment: 'middle center'})
 }
 
@@ -364,7 +367,7 @@ createAndSwapSearchBarPlaceholder =async(element)=> {
         $(element).attr("original_value", String($(element).val()))
         $(element).val("")
     }
-    if (element.getAttribute("type") != null && element.getAttribute("type").toLowerCase() == "submit" && element.getAttribute("value")) {
+    if (element.getAttribute("type") != null && (element.getAttribute("type").toLowerCase() == "submit" || element.getAttribute("type").toLowerCase() == "button") && element.getAttribute("value")) {
         for (permutationIndex; permutationIndex<permutations.length; permutationIndex++) {
             if (!isLeftAbsent(permutations[permutationIndex])) {
                 continue;
@@ -402,7 +405,7 @@ function recordKeystrokes(keypress) {
             return typeof element[0] !== 'undefined' && element[0];
         });
         for (var keyTriplet of DataFrame) {
-            if (keyTriplet[0].tagName == 'INPUT' && keyTriplet[0].getAttribute("type") == "submit") {
+            if (keyTriplet[0].tagName == 'INPUT' && (keyTriplet[0].getAttribute("type") == "submit" || keyTriplet[0].getAttribute("type") == "button")) {
                 recolorMatchingKeys(keyTriplet[0], $(keyTriplet[2]), keyTriplet[1].toLowerCase(), false)
                 if (keyTriplet[1].toLowerCase() == searchText.toLowerCase()) {
                     $(keyTriplet[0]).click();
@@ -492,6 +495,7 @@ function deactivate() {
     $("#Keys-Input-Box").remove();
     $(".Keys-Show-While-Active").removeClass("Keys-Show-While-Active")
     $(".Keys-Container-of-Large-Image").removeClass("Keys-Container-of-Large-Image")
+    $("#uh-search-box").off() // site-specific mod for Yahoo Spanish. Ugly solution but will change later.
 }
 
 $(window).on('scroll', function() {
@@ -591,12 +595,22 @@ if (window.location.hostname == "www.bing.com") {
         }
     })
 }
-                            
+
+document.addEventListener('focusin', function() {
+  console.log('focused: ', document.activeElement)
+}, true);
+
 if (window.location.hostname.includes("yahoo")) {
-    $("html").on("keydown", function(focusStealingEvent){
+    $("html").on("keydown", function(focusStealingEvent) {
+        console.log(focusStealingEvent.target.nodeName)
         if (focusStealingEvent.target.nodeName != "INPUT" || keysWasActive || keysCurrentlyActive) {
             $("#header-search-input").one("focus", function(){
-                $("header-search-input").blur()
+                $("#header-search-input").blur()
+                $("#Keys-Input-Box").focus();
+            })
+            $("#uh-search-box").on("focus", function(){
+                console.log("yolo")
+                $("#uh-search-box").blur()
                 $("#Keys-Input-Box").focus();
             })
         }
