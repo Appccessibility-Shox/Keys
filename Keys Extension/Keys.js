@@ -586,7 +586,7 @@ function priorSiteSpecificModifications() {
     if (window.location.hostname.includes("www.ebay")) {
         $("a.hl-popular-destinations-link noscript").remove();
     }
-    if (window.location.hostname == "www.apple.com") {
+    if (window.location.hostname == "www.apple.com" || window.location.hostname == "apps.apple.com") {
         $("ul.ac-gn-list a").not("#ac-gn-link-search").addClass("Keys-Should-Generate-Floating-Text");
     }
     if (window.location.hostname.includes("yahoo")) {
