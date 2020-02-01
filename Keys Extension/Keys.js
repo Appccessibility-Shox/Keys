@@ -564,6 +564,7 @@ function siteSpecificModifications() {
 // modifications that occur on initial G keypress (before Keys are assigned or rendered)
 function priorSiteSpecificModifications() {
     console.time('entireProgram')
+    console.log(window.location.hostname);
     if (window.location.hostname.includes("wikipedia.org")) {
         $("span.toctext").css("display", "contents");
         $(".tocnumber").css("display", "contents");
@@ -582,6 +583,10 @@ function priorSiteSpecificModifications() {
     if (window.location.hostname.includes("facebook")) {
         $(".jewelButton, #stories_tray div.uiScaledImageContainer").addClass("Keys-Should-Generate-Floating-Text");
         $("#stories_tray img").addClass("Keys-Large-Clickable-Image")
+    }
+    if (window.location.hostname == "www.tiktok.com") {
+        $("span.hamburger-menu-wrapper, a.logo-link, div.video-card, img.arrow-left, img.arrow-right").addClass("Keys-Should-Generate-Floating-Text");
+        $("div.video-card video, div.image-card").addClass("Keys-Large-Clickable-Image")
     }
     if (window.location.hostname.includes("www.ebay")) {
         $("a.hl-popular-destinations-link noscript").remove();
