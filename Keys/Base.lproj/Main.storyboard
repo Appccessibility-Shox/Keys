@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15702"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15705"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -86,13 +87,14 @@
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
+                <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="Keys" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="369" height="243"/>
+                        <rect key="frame" x="0.0" y="0.0" width="398" height="260"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <imageView translatesAutoresizingMaskIntoConstraints="NO" id="1Fm-5f-QVj">
-                                <rect key="frame" x="160" y="160" width="50" height="50"/>
+                                <rect key="frame" x="174" y="168" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Q8V-w4-NRE"/>
                                     <constraint firstAttribute="width" constant="50" id="eM3-p9-6PA"/>
@@ -103,10 +105,10 @@
                                 </connections>
                             </imageView>
                             <stackView wantsLayer="YES" distribution="fill" orientation="vertical" alignment="centerX" spacing="42" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZLV-xE-AGT">
-                                <rect key="frame" x="0.0" y="50" width="369" height="142"/>
+                                <rect key="frame" x="0.0" y="59" width="398" height="142"/>
                                 <subviews>
                                     <textField verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kSm-hc-Al0">
-                                        <rect key="frame" x="156" y="126" width="58" height="16"/>
+                                        <rect key="frame" x="170" y="126" width="58" height="16"/>
                                         <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" refusesFirstResponder="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="center" title="G" placeholderString="Activation Character " id="zyX-ua-QOM">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" name="redgreen"/>
@@ -120,7 +122,7 @@
                                         </connections>
                                     </textField>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Otd-WV-EJV">
-                                        <rect key="frame" x="27" y="56" width="316" height="32"/>
+                                        <rect key="frame" x="41" y="56" width="316" height="32"/>
                                         <buttonCell key="cell" type="push" title="Report an Issue or Suggest an Improvement…" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Mhd-k0-cfd">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
@@ -130,7 +132,7 @@
                                         </connections>
                                     </button>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ooh-eV-eLQ">
-                                        <rect key="frame" x="44" y="-7" width="282" height="32"/>
+                                        <rect key="frame" x="58" y="-7" width="282" height="32"/>
                                         <buttonCell key="cell" type="push" title="Open in Safari Extensions Preferences…" alternateTitle="Install" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingMiddle" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Srx-0j-A4D">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
@@ -156,22 +158,21 @@
                             </stackView>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="ZLV-xE-AGT" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="3di-hF-apa"/>
                             <constraint firstItem="1Fm-5f-QVj" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="8Q8-lY-OeD"/>
                             <constraint firstAttribute="trailing" secondItem="ZLV-xE-AGT" secondAttribute="trailing" id="Kio-HK-QpD"/>
                             <constraint firstItem="1Fm-5f-QVj" firstAttribute="centerX" secondItem="ZLV-xE-AGT" secondAttribute="centerX" id="M8h-wx-khB"/>
-                            <constraint firstItem="1Fm-5f-QVj" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="33" id="OpI-F7-UhU"/>
                             <constraint firstItem="ZLV-xE-AGT" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="X7Z-Jc-kfY"/>
-                            <constraint firstAttribute="bottom" secondItem="ZLV-xE-AGT" secondAttribute="bottom" constant="50" id="g17-S3-81V"/>
-                            <constraint firstItem="ZLV-xE-AGT" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="51" id="w3T-U5-9jk"/>
+                            <constraint firstItem="1Fm-5f-QVj" firstAttribute="centerY" secondItem="kSm-hc-Al0" secondAttribute="centerY" id="bSK-u5-n0i"/>
+                            <constraint firstItem="ZLV-xE-AGT" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="jxh-Af-RlY"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="customActivationKey" destination="kSm-hc-Al0" id="1ha-PN-hay"/>
                     </connections>
                 </viewController>
-                <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="19.5" y="661.5"/>
+            <point key="canvasLocation" x="34" y="698"/>
         </scene>
     </scenes>
     <resources>
