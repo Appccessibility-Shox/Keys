@@ -11,8 +11,18 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     
+    var windowController: OnboardingWindowController?
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
+        if windowController == nil {
+            windowController = OnboardingWindowController.loadFromNib()
+        }
+        if UserDefaults.standard.bool(forKey: "didShowTutorial") {
+            UserDefaults.standard.set(false, forKey: "didShowTutorial") // this causes it to alternate between showing and not showing. In the final version, remove this line.
+        } else {
+            UserDefaults.standard.set(true, forKey: "didShowTutorial")
+            windowController?.showWindow(self)
+        }
     }
     
     func applicationWillTerminate(_ aNotification: Notification) {

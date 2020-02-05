@@ -128,7 +128,7 @@
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
                                         <connections>
-                                            <action selector="reportPressed:" target="XfG-lQ-9wD" id="c2T-QP-ynf"/>
+                                            <action selector="reportPressed:" target="XfG-lQ-9wD" id="Jsz-E0-F3O"/>
                                         </connections>
                                     </button>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ooh-eV-eLQ">

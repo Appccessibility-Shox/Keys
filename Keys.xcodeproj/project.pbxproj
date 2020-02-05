@@ -21,6 +21,8 @@
 		CBA4441D235E4E2A006FB35A /* keystyles.css in Resources */ = {isa = PBXBuildFile; fileRef = CBA4441C235E4E2A006FB35A /* keystyles.css */; };
 		CBA4441F235E4E37006FB35A /* tether.js in Resources */ = {isa = PBXBuildFile; fileRef = CBA4441E235E4E37006FB35A /* tether.js */; };
 		CBA44421235E4E44006FB35A /* jquery.js in Resources */ = {isa = PBXBuildFile; fileRef = CBA44420235E4E44006FB35A /* jquery.js */; };
+		CBD0C3E723EA41340028DBC2 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBD0C3E523EA41340028DBC2 /* Onboarding.storyboard */; };
+		CBD0C3E923EA41FF0028DBC2 /* OnboardingWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD0C3E823EA41FF0028DBC2 /* OnboardingWindowController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		CBA4441C235E4E2A006FB35A /* keystyles.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = keystyles.css; sourceTree = "<group>"; };
 		CBA4441E235E4E37006FB35A /* tether.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = tether.js; sourceTree = "<group>"; };
 		CBA44420235E4E44006FB35A /* jquery.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jquery.js; sourceTree = "<group>"; };
+		CBD0C3E623EA41340028DBC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Keys/Base.lproj/Onboarding.storyboard; sourceTree = SOURCE_ROOT; };
+		CBD0C3E823EA41FF0028DBC2 /* OnboardingWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnboardingWindowController.swift; path = Keys/OnboardingWindowController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,7 @@
 		CBA443ED235E4D94006FB35A /* Keys */ = {
 			isa = PBXGroup;
 			children = (
+				CBD0C3E423EA40DF0028DBC2 /* Onboarding */,
 				CBA443EE235E4D94006FB35A /* Keys.entitlements */,
 				CBA443F0235E4D94006FB35A /* AppDelegate.swift */,
 				CBA443F2235E4D94006FB35A /* Main.storyboard */,
@@ -143,6 +148,15 @@
 				CBA44412235E4D95006FB35A /* Keys_Extension.entitlements */,
 			);
 			path = "Keys Extension";
+			sourceTree = "<group>";
+		};
+		CBD0C3E423EA40DF0028DBC2 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				CBD0C3E523EA41340028DBC2 /* Onboarding.storyboard */,
+				CBD0C3E823EA41FF0028DBC2 /* OnboardingWindowController.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBA443EF235E4D94006FB35A /* Keys.entitlements in Resources */,
+				CBD0C3E723EA41340028DBC2 /* Onboarding.storyboard in Resources */,
 				CBA443F8235E4D94006FB35A /* Assets.xcassets in Resources */,
 				CBA443F4235E4D94006FB35A /* Main.storyboard in Resources */,
 			);
@@ -254,6 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBD0C3E923EA41FF0028DBC2 /* OnboardingWindowController.swift in Sources */,
 				CBA443F6235E4D94006FB35A /* ViewController.swift in Sources */,
 				CB0D93DB23CBC4AC0098F654 /* SharedUserDefaults.swift in Sources */,
 				CBA443F1235E4D94006FB35A /* AppDelegate.swift in Sources */,
@@ -290,6 +306,14 @@
 				CB1D5CE723DD642C00C23289 /* ja */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CBD0C3E523EA41340028DBC2 /* Onboarding.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CBD0C3E623EA41340028DBC2 /* Base */,
+			);
+			name = Onboarding.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
