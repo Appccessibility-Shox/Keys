@@ -10,7 +10,7 @@
         <scene sceneID="XMx-qT-Kzy">
             <objects>
                 <windowController storyboardIdentifier="OnboardingWindowController" id="QBx-vi-chV" customClass="OnboardingWindowController" customModule="Keys" customModuleProvider="target" sceneMemberID="viewController">
-                    <window key="window" title="Welcome to Keys" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="BiT-lL-3Fa">
+                    <window key="window" title="Welcome to Keys" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="BiT-lL-3Fa">
                         <windowStyleMask key="styleMask" titled="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="249" width="480" height="270"/>
@@ -25,7 +25,7 @@
                 </windowController>
                 <customObject id="0PK-Bu-nSv" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138" y="101"/>
+            <point key="canvasLocation" x="138" y="34"/>
         </scene>
         <!--Secondary View Controller-->
         <scene sceneID="dwL-n9-nPb">
@@ -352,7 +352,7 @@ DQ
                 </viewController>
                 <customObject id="CWo-55-5Rd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="903.5" y="557"/>
+            <point key="canvasLocation" x="946" y="557"/>
         </scene>
         <!--Secondary View Controller-->
         <scene sceneID="fKj-89-DgD">
@@ -424,7 +424,7 @@ DQ
                                         </customSpacing>
                                     </stackView>
                                     <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="15" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="is7-1H-SH5">
-                                        <rect key="frame" x="0.0" y="80" width="317" height="40"/>
+                                        <rect key="frame" x="0.0" y="80" width="410" height="40"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sTO-uC-WWL">
                                                 <rect key="frame" x="-2" y="4" width="41" height="36"/>
@@ -435,7 +435,7 @@ DQ
                                                 </textFieldCell>
                                             </textField>
                                             <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tv7-QN-jqy">
-                                                <rect key="frame" x="52" y="0.0" width="265" height="40"/>
+                                                <rect key="frame" x="52" y="0.0" width="358" height="40"/>
                                                 <subviews>
                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gGb-lW-mjJ">
                                                         <rect key="frame" x="-2" y="24" width="142" height="16"/>
@@ -446,8 +446,8 @@ DQ
                                                         </textFieldCell>
                                                     </textField>
                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GTZ-tN-80t">
-                                                        <rect key="frame" x="-2" y="0.0" width="269" height="16"/>
-                                                        <textFieldCell key="cell" lineBreakMode="clipping" title="As you type a shortcut, it will become green." id="JEO-L4-6Ff">
+                                                        <rect key="frame" x="-2" y="0.0" width="362" height="16"/>
+                                                        <textFieldCell key="cell" lineBreakMode="clipping" title="If you mistype a key longer than 1 letter, just use backspace." id="JEO-L4-6Ff">
                                                             <font key="font" metaFont="systemLight" size="13"/>
                                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -474,7 +474,7 @@ DQ
                                         </customSpacing>
                                     </stackView>
                                     <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="15" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DVe-Ke-p8H">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="431" height="40"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="k9S-9X-vJw">
                                                 <rect key="frame" x="-2" y="5" width="36" height="35"/>
@@ -485,19 +485,19 @@ DQ
                                                 </textFieldCell>
                                             </textField>
                                             <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8a2-jV-qSt">
-                                                <rect key="frame" x="47" y="0.0" width="253" height="40"/>
+                                                <rect key="frame" x="47" y="0.0" width="384" height="40"/>
                                                 <subviews>
                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZxB-3R-MtR">
-                                                        <rect key="frame" x="-2" y="24" width="257" height="16"/>
-                                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Type the entire key to click the element." id="vUJ-PC-2FD">
+                                                        <rect key="frame" x="-2" y="24" width="180" height="16"/>
+                                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Cancel Clicking at Any Time" id="vUJ-PC-2FD">
                                                             <font key="font" metaFont="systemSemibold" size="13"/>
                                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                     </textField>
                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4hw-Fa-GB7">
-                                                        <rect key="frame" x="-2" y="0.0" width="147" height="16"/>
-                                                        <textFieldCell key="cell" lineBreakMode="clipping" title="No need to press enter. " id="eFa-Bc-KoD">
+                                                        <rect key="frame" x="-2" y="0.0" width="388" height="16"/>
+                                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Press escape, scroll away, or click the background to deactivate." id="eFa-Bc-KoD">
                                                             <font key="font" metaFont="systemLight" size="13"/>
                                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -553,7 +553,7 @@ DQ
 </string>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="openSafariExtensionPreferences:" target="MEq-Wf-TCa" id="lDt-fj-p4p"/>
+                                    <action selector="openSafariExtensionPreferences:" target="MEq-Wf-TCa" id="4b8-Vn-7ZW"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -569,7 +569,7 @@ DQ
                 </viewController>
                 <customObject id="OCU-At-VYB" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1669" y="557"/>
+            <point key="canvasLocation" x="1756" y="557"/>
         </scene>
     </scenes>
     <resources>

@@ -20,7 +20,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if UserDefaults.standard.bool(forKey: "didShowTutorial") {
             UserDefaults.standard.set(false, forKey: "didShowTutorial") // this causes it to alternate between showing and not showing. In the final version, remove this line.
         } else {
-            UserDefaults.standard.set(true, forKey: "didShowTutorial")
+            // UserDefaults.standard.set(true, forKey: "didShowTutorial")
             windowController?.showWindow(self)
         }
     }
