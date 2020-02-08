@@ -45,10 +45,7 @@ final class SecondaryViewController: NSViewController {
     }
 
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
-        if
-            segue.identifier == "next",
-            let destination = segue.destinationController as? SecondaryViewController
-        {
+        if let destination = segue.destinationController as? SecondaryViewController {
             destination.windowController = windowController
         }
     }
