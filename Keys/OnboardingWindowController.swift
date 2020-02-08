@@ -9,47 +9,34 @@
 import Cocoa
 import SafariServices.SFSafariApplication
 
-class OnboardingWindowController: NSWindowController {
-    
-    var preventsApplicationTerminationWhenModal: Bool { // ⭐️
-        return false
-    }
-    
+final class OnboardingWindowController: NSWindowController {
     class func loadFromNib() -> OnboardingWindowController {
-        let vc = NSStoryboard(name: "Onboarding", bundle: nil).instantiateController(withIdentifier: "OnboardingWindowController") as! OnboardingWindowController
-        return vc
+        return NSStoryboard(
+            name: "Onboarding",
+            bundle: nil
+        ).instantiateController(withIdentifier: "OnboardingWindowController") as! OnboardingWindowController
     }
-    
-    func windowShouldClose(_ sender: Any) -> Bool { // ⭐️
-        NSApplication.shared.terminate(self)
-        return true
-    }
-    
-
-    override func windowDidLoad() {
-        super.windowDidLoad()
-    }
-
 }
 
-class SecondaryViewController: NSViewController {
-    
-    var preventsApplicationTerminationWhenModal: Bool { // ⭐️
-        return false
-    }
-    
+final class SecondaryViewController: NSViewController {
+    /// Parent window controller
+    weak var windowController: OnboardingWindowController?
+
     @IBAction func didTapVideoTutorial(_ sender: Any) {
         NSWorkspace.shared.open(NSURL(string: "https://youtu.be/CQD_Lh503hI")! as URL)
     }
-    
-    func windowShouldClose(_ sender: Any) -> Bool { // ⭐️
-        NSApplication.shared.terminate(self)
-        return true
+
+    override func viewWillAppear() {
+        super.viewWillAppear()
+
+        if let controller = view.window?.windowController as? OnboardingWindowController {
+            windowController = controller
+        }
     }
 
     @IBAction func openSafariExtensionPreferences(_ sender: Any) {
-        self.view.window!.close() // ⭐️
-        self.view.window!.performClose(nil) // ⭐️
+        windowController?.close()
+
         SFSafariApplication.showPreferencesForExtension(withIdentifier: "shockerella.Keys.Extension") { error in
             if let _ = error {
                 // Insert code to inform the user that something went wrong.
@@ -57,4 +44,12 @@ class SecondaryViewController: NSViewController {
         }
     }
 
+    override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
+        if
+            segue.identifier == "next",
+            let destination = segue.destinationController as? SecondaryViewController
+        {
+            destination.windowController = windowController
+        }
+    }
 }
