@@ -27,7 +27,7 @@
 "Srx-0j-A4D.alternateTitle" = "Installer";
 
 /* Class = "NSButtonCell"; title = "Open in Safari Extensions Preferences…"; ObjectID = "Srx-0j-A4D"; */
-"Srx-0j-A4D.title" = "Ouvrez dans les Préférences de l'extension Safari.…";
+"Srx-0j-A4D.title" = "Ouvrez dans les Préférences de l'extension Safari…";
 
 /* Class = "NSMenuItem"; title = "Hide Others"; ObjectID = "Vdr-fp-XzO"; */
 "Vdr-fp-XzO.title" = "Masquer les Autres";

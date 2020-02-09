@@ -14,13 +14,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var windowController: OnboardingWindowController?
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        if windowController == nil {
-            windowController = OnboardingWindowController.loadFromNib()
-        }
-        if UserDefaults.standard.bool(forKey: "didShowTutorial") {
-            UserDefaults.standard.set(false, forKey: "didShowTutorial") // this causes it to alternate between showing and not showing. In the final version, remove this line.
-        } else {
-            // UserDefaults.standard.set(true, forKey: "didShowTutorial")
+        if UserDefaults.standard.bool(forKey: "didShowTutorial") { }
+        else {
+            if windowController == nil {
+                windowController = OnboardingWindowController.loadFromNib()
+            }
+            UserDefaults.standard.set(true, forKey: "didShowTutorial")
             windowController?.showWindow(self)
         }
     }
