@@ -10,27 +10,6 @@ Keys for Safari <b>free</b> is a browser extension that lets users <b>keyboard-n
 
 ![Keys Extension and Containing App Running on a MacBookPro](Resources/MacBook%20Pro.png)
 
-## Demo
 <p align="center">
   <img align="center" src="Resources/demo.gif" alt="Demonstration of Using Keys for Safari to render keys and click a shortcut key">
 </p>
-
-## Features
-<table style="width:100%">
-  <tr>
-    <td>
-      <img src="Resources/BeautifullyRendersKeys.png" alt="Renders Shortcut Keys Beautifully">
-    </td>
-    <td>
-      <img src="Resources/WorksAnywhere.png" alt="Works on any website">
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <img src="Resources/LightAndDark.png" alt="Light and Dark Mode Compatible">
-    </td>
-    <td>
-      <img src="Resources/CustomizableActivationKey.png" alt="Key that Generates Shortcut is Customizable">
-    </td>
-  </tr>
-</table>
