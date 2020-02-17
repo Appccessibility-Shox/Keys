@@ -119,18 +119,18 @@
                                         </connections>
                                     </textField>
                                     <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wE8-ZQ-T1p">
-                                        <rect key="frame" x="94" y="200" width="210" height="16"/>
+                                        <rect key="frame" x="96" y="200" width="207" height="16"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jrt-JK-2FL">
-                                                <rect key="frame" x="-2" y="0.0" width="147" height="16"/>
-                                                <textFieldCell key="cell" lineBreakMode="clipping" title="Current Activation Key: " id="PCF-hf-TAS">
+                                                <rect key="frame" x="-2" y="0.0" width="144" height="16"/>
+                                                <textFieldCell key="cell" lineBreakMode="clipping" title="Current Activation Key:" id="PCF-hf-TAS">
                                                     <font key="font" metaFont="system"/>
                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" preferredMaxLayoutWidth="19" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Txa-Om-n4G">
-                                                <rect key="frame" x="149" y="0.0" width="16" height="16"/>
+                                                <rect key="frame" x="146" y="0.0" width="16" height="16"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="12" id="wue-93-mUX"/>
                                                 </constraints>
@@ -144,7 +144,7 @@
                                                 </textFieldCell>
                                             </textField>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hZa-ho-UN9">
-                                                <rect key="frame" x="171" y="0.0" width="39" height="16"/>
+                                                <rect key="frame" x="168" y="0.0" width="39" height="16"/>
                                                 <buttonCell key="cell" type="bevel" title="Reset" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="9uT-0e-rA3">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
