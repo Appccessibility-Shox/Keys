@@ -8,6 +8,9 @@
 /* Class = "NSMenuItem"; title = "About Keys"; ObjectID = "5kV-Vb-QxS"; */
 "5kV-Vb-QxS.title" = "Keysについて";
 
+/* Class = "NSButtonCell"; title = "Reset"; ObjectID = "9uT-0e-rA3"; */
+"9uT-0e-rA3.title" = "リセット";
+
 /* Class = "NSMenu"; title = "Main Menu"; ObjectID = "AYu-sK-qS6"; */
 "AYu-sK-qS6.title" = "メインメニュー";
 
@@ -23,6 +26,12 @@
 /* Class = "NSMenuItem"; title = "Hide Keys"; ObjectID = "Olw-nP-bQN"; */
 "Olw-nP-bQN.title" = "Keysを非表示";
 
+/* Class = "NSTextFieldCell"; title = "Current Activation Key: "; ObjectID = "PCF-hf-TAS"; */
+"PCF-hf-TAS.title" = "現在の発動キー: ";
+
+/* Class = "NSTextFieldCell"; title = "If you find Keys useful, please consider sharing it on social media or blogging about it. Thank you! 🙏"; ObjectID = "Qcm-ny-hV1"; */
+"Qcm-ny-hV1.title" = "Keysが便利だと思ったら、ソーシャルメディアやブログでKeysをシェアしていただけると嬉しいです。ありがとうございます！🙏";
+
 /* Class = "NSButtonCell"; alternateTitle = "Install"; ObjectID = "Srx-0j-A4D"; */
 "Srx-0j-A4D.alternateTitle" = "インストール";
 
@@ -31,6 +40,9 @@
 
 /* Class = "NSMenuItem"; title = "Hide Others"; ObjectID = "Vdr-fp-XzO"; */
 "Vdr-fp-XzO.title" = "ほかを非表示";
+
+/* Class = "NSTextFieldCell"; title = "G"; ObjectID = "eXW-lN-7hX"; */
+"eXW-lN-7hX.title" = "G";
 
 /* Class = "NSMenu"; title = "Keys"; ObjectID = "uQy-DD-JDr"; */
 "uQy-DD-JDr.title" = "Keys";

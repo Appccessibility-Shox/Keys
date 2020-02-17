@@ -9,13 +9,13 @@
     {
       "size" : "16x16",
       "idiom" : "mac",
-      "filename" : "toolbar-icon.png",
+      "filename" : "32-1.png",
       "scale" : "2x"
     },
     {
       "size" : "32x32",
       "idiom" : "mac",
-      "filename" : "toolbar-icon-1.png",
+      "filename" : "32.png",
       "scale" : "1x"
     },
     {

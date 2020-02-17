@@ -16,12 +16,10 @@
 }
 
 span.Keys-Clickable-Text-Key, span.Keys-Character {
-    /* color: var(--systemRed);*/
     transition: none !important;
     border: none !important;
     display: contents !important;
     mix-blend-mode: difference !important;
-    /* font-size: 1em !important; */
 }
 
 span.Keys-Clickable-Text-Key span.Keys-Initial-Character {
@@ -42,8 +40,6 @@ span.Keys-Clickable-Text-Key {
 span.Keys-Floating-Key {
     color: white !important;
     font-weight: bold !important;
-    /* transform-style: preserve-3d;*/
-    /* text-shadow: 0.07em 0 4px black, 0 0.07em 4px black, -0.07em 0 4px black, 0 -0.07em 4px black; */
     text-shadow: 0.07em 0 4px black, 0 0.07em 4px black;
     -webkit-user-select: none;
     transition: none !important;
@@ -51,7 +47,6 @@ span.Keys-Floating-Key {
 
 span.Keys-Floating-Key .Keys-Character {
     text-transform: uppercase !important;
-    /* transform-style: preserve-3d;*/
 }
 
 .Keys-Small-Clickable-Image, .Keys-Medium-Clickable-Image {
