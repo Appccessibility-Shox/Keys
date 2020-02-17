@@ -33,7 +33,7 @@ window.addEventListener('load', (event) => {
 });
 
 $("html").on('keypress', function (activationEvent) {
-    if (!keysCurrentlyActive && upSinceDeactivation && activationEvent.key.toUpperCase() == preferredActivationKey  && activationEvent.target.nodeName != "INPUT" && activationEvent.target.nodeName != "TEXTAREA" && !activationEvent.target.isContentEditable) {
+    if (!keysCurrentlyActive && upSinceDeactivation && activationEvent.key.toUpperCase() == preferredActivationKey  && activationEvent.target.nodeName != "INPUT" && activationEvent.target.nodeName != "TEXTAREA" && !activationEvent.target.isContentEditable && !activationEvent.metaKey && !activationEvent.ctrlKey && !activationEvent.altKey && !activationEvent.altGraphKey) {
         deactivate();
         keysCurrentlyActive = true;
         upSinceDeactivation = false;
@@ -70,19 +70,16 @@ $("html").on('keypress', function (activationEvent) {
         };
 
         function run () {
-            console.time('visible')
             for (var target of targets) {
                 visible(target);
             }
-            console.timeEnd('visible')
         }
 
         run();
 
         generateInputBox();
-        $("html").on('keydown', "#Keys-Input-Box", function (secondarykeys) {recordKeystrokes(secondarykeys)})
-        $("html").on('keyup', "#Keys-Input-Box", function () {$("#Keys-Input-Box").val($("#Keys-Input-Box").val().replace(/[^0-9a-z]/gi, '')); })
-        
+        $("#Keys-Input-Box").on('keydown', function (secondarykeys) {recordKeystrokes(secondarykeys)})
+        $("#Keys-Input-Box").on('keyup', function () {$("#Keys-Input-Box").val($("#Keys-Input-Box").val().replace(/[^0-9a-z]/gi, '')); })
         scrollPositionWhenActivated = $(window).scrollTop();
     }
 });
@@ -93,6 +90,8 @@ function generateInputBox() {
     inputelement = document.createElement('input');
     inputelement.setAttribute("id", "Keys-Input-Box");
     inputelement.setAttribute("type", "text")
+    inputelement.setAttribute("autocomplete", "off")
+    inputelement.setAttribute("style", "ime-mode:disabled")
     document.body.appendChild(inputelement);
     inputelement.focus();
     }
@@ -394,11 +393,11 @@ function recordKeystrokes(keypress) {
     if (keysCurrentlyActive) {
         $(".Keys-Initial-Character").removeClass("Keys-Initial-Character");
         if (/[a-zA-Z0-9-_ ]/.test(keypress.key) && keypress.key.length == 1) {
-            searchText = $("#Keys-Input-Box").val().slice(1).concat(String.fromCharCode(keypress.which).toLowerCase());
+            searchText += keypress.key
         }
         else if (keypress.key == "Backspace") {
-            searchText = $("#Keys-Input-Box").val().slice(1, -1);
-            if (searchText.length < 1) {
+            searchText = searchText.slice(0, -1);
+            if (searchText.length == 0) {
                 deactivate();
                 $("html").one('keyup', function(){
                     upSinceDeactivation=true;
@@ -465,6 +464,7 @@ var getPermutations = function(homeRow, maxLen) {
 };
 
 function deactivate() {
+    searchText = "";
     permutationIndex = 0;
     $("#Keys-Input-Box").val("");
     TextDictionary= {};
@@ -558,13 +558,15 @@ function siteSpecificModifications() {
     if (window.location.hostname === "edition.cnn.com") {
         $(".Keys-Floating-Key").insertAfter("head")
     }
-    console.timeEnd('entireProgram')
+    if (window.location.hostname === "3.basecamp.com" && $("a.card__link")) {
+        $("article").on('click', function(event) {
+            window.open(event.target.closest("a").href, '_self')
+        });
+    }
 }
 
 // modifications that occur on initial G keypress (before Keys are assigned or rendered)
 function priorSiteSpecificModifications() {
-    console.time('entireProgram')
-    console.log(window.location.hostname);
     if (window.location.hostname.includes("wikipedia.org")) {
         $("span.toctext").css("display", "contents");
         $(".tocnumber").css("display", "contents");
@@ -596,6 +598,14 @@ function priorSiteSpecificModifications() {
     }
     if (window.location.hostname.includes("yahoo")) {
         $("#header-search-input").attr("aria-label", "search");
+    }
+    if (window.location.hostname === "3.basecamp.com") {
+        $("a.nav__link--pings, nav__link--hey").contents().first().wrap("<span>")
+        $("span.u-hide-on-media-small").wrap("<a>");
+        $("a.nav__link--accounts").addClass("Keys-Should-Generate-Floating-Text")
+        $("aside button.action-sheet__expansion-toggle").addClass("Keys-Should-Generate-Floating-Text")
+        $("button.help-button__icon").addClass("Keys-Should-Generate-Floating-Text")
+        $("button.camper-helper__toggle").addClass("Keys-Should-Generate-Floating-Text")
     }
 }
 

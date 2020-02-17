@@ -11,12 +11,12 @@ class ViewController: NSViewController {
     override func viewDidAppear() {
         defaults!.register(defaults: ["activationKey" : "G"])
         customActivationKey.stringValue = defaults!.string(forKey: "activationKey")!
+        secondaryLabelForCustomActivationKey.stringValue = customActivationKey.stringValue;
         self.customActivationKey.focusRingType = NSFocusRingType.none;
         customActivationKey.customizeCursorColor(NSColor.clear)
+        customActivationKey.currentEditor()?.selectedRange = NSMakeRange(0, 0)
     }
-    @IBAction func keyCapCkicked(_ sender: NSImageView) {
-        customActivationKey.becomeFirstResponder()
-    }
+    @IBOutlet weak var secondaryLabelForCustomActivationKey: NSTextField!
     @IBOutlet weak var customActivationKey: NSTextField!;
     @IBAction func openSafariExtensionPreferences(_ sender: AnyObject?) {
         SFSafariApplication.showPreferencesForExtension(withIdentifier: "shockerella.Keys.Extension") { error in
@@ -24,6 +24,10 @@ class ViewController: NSViewController {
                 // Insert code to inform the user that something went wrong.
             }
         }
+    }
+    @IBAction func resetClicked(_ sender: Any) {
+        customActivationKey.becomeFirstResponder()
+        self.customActivationKey.selectAll(nil)
     }
 }
 
@@ -35,7 +39,6 @@ extension String {
 
 extension ViewController: NSTextFieldDelegate {
     func controlTextDidChange(_ obj: Notification) {
-        print("did change")
         if (self.customActivationKey.stringValue.count > 0 && String(self.customActivationKey.stringValue.last!).isAlphanumeric) {
             self.customActivationKey.stringValue = String(self.customActivationKey.stringValue.last!.uppercased())
         }
@@ -48,6 +51,7 @@ extension ViewController: NSTextFieldDelegate {
         else {
             self.customActivationKey.stringValue = "G"
         }
+        secondaryLabelForCustomActivationKey.stringValue = self.customActivationKey.stringValue;
         defaults!.set(self.customActivationKey.stringValue, forKey: "activationKey");
         self.customActivationKey.moveToEndOfDocument(nil);
     }
