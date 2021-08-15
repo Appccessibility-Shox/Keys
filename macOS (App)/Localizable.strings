@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  Keys Multiplatform
+
+  Created by Patrick Botros on 8/15/21.
+  
+*/
+
+"enableModifier" = "Enable ⌘%@ to open background tab";
