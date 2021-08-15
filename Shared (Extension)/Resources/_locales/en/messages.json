@@ -1,10 +1,10 @@
 {
     "extension_name": {
-        "message": "Keys Multiplatform",
+        "message": "Keys for Safari on iOS",
         "description": "The display name for the extension."
     },
     "extension_description": {
-        "message": "This is Keys Multiplatform. You should tell us what your extension does here.",
+        "message": "Keys for Safari enables power users and the disabled alike to fly through the web via the keyboard.",
         "description": "Description of what the extension does."
     }
 }

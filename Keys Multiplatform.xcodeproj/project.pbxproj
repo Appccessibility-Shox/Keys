@@ -39,16 +39,12 @@
 		CB779EBE26C9C03000EC7D21 /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = CB779E7226C9C03000EC7D21 /* background.js */; };
 		CB779EBF26C9C03000EC7D21 /* keys.js in Resources */ = {isa = PBXBuildFile; fileRef = CB779E7326C9C03000EC7D21 /* keys.js */; };
 		CB779EC026C9C03000EC7D21 /* keys.js in Resources */ = {isa = PBXBuildFile; fileRef = CB779E7326C9C03000EC7D21 /* keys.js */; };
-		CB779EC126C9C03000EC7D21 /* popup.html in Resources */ = {isa = PBXBuildFile; fileRef = CB779E7426C9C03000EC7D21 /* popup.html */; };
-		CB779EC226C9C03000EC7D21 /* popup.html in Resources */ = {isa = PBXBuildFile; fileRef = CB779E7426C9C03000EC7D21 /* popup.html */; };
-		CB779EC326C9C03000EC7D21 /* popup.css in Resources */ = {isa = PBXBuildFile; fileRef = CB779E7526C9C03000EC7D21 /* popup.css */; };
-		CB779EC426C9C03000EC7D21 /* popup.css in Resources */ = {isa = PBXBuildFile; fileRef = CB779E7526C9C03000EC7D21 /* popup.css */; };
-		CB779EC526C9C03000EC7D21 /* popup.js in Resources */ = {isa = PBXBuildFile; fileRef = CB779E7626C9C03000EC7D21 /* popup.js */; };
-		CB779EC626C9C03000EC7D21 /* popup.js in Resources */ = {isa = PBXBuildFile; fileRef = CB779E7626C9C03000EC7D21 /* popup.js */; };
 		CBDB37DB26C9C5F80004CFB5 /* tether.js in Resources */ = {isa = PBXBuildFile; fileRef = CBDB37DA26C9C5F80004CFB5 /* tether.js */; };
 		CBDB37DC26C9C5F80004CFB5 /* tether.js in Resources */ = {isa = PBXBuildFile; fileRef = CBDB37DA26C9C5F80004CFB5 /* tether.js */; };
 		CBDB37DE26C9C6220004CFB5 /* jquery.js in Resources */ = {isa = PBXBuildFile; fileRef = CBDB37DD26C9C6220004CFB5 /* jquery.js */; };
 		CBDB37DF26C9C6220004CFB5 /* jquery.js in Resources */ = {isa = PBXBuildFile; fileRef = CBDB37DD26C9C6220004CFB5 /* jquery.js */; };
+		CBDB37E126C9D17B0004CFB5 /* keys.css in Resources */ = {isa = PBXBuildFile; fileRef = CBDB37E026C9D17B0004CFB5 /* keys.css */; };
+		CBDB37E226C9D17B0004CFB5 /* keys.css in Resources */ = {isa = PBXBuildFile; fileRef = CBDB37E026C9D17B0004CFB5 /* keys.css */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,9 +102,6 @@
 		CB779E7126C9C03000EC7D21 /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = manifest.json; sourceTree = "<group>"; };
 		CB779E7226C9C03000EC7D21 /* background.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = background.js; sourceTree = "<group>"; };
 		CB779E7326C9C03000EC7D21 /* keys.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = keys.js; sourceTree = "<group>"; };
-		CB779E7426C9C03000EC7D21 /* popup.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = popup.html; sourceTree = "<group>"; };
-		CB779E7526C9C03000EC7D21 /* popup.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = popup.css; sourceTree = "<group>"; };
-		CB779E7626C9C03000EC7D21 /* popup.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = popup.js; sourceTree = "<group>"; };
 		CB779E7B26C9C03000EC7D21 /* Keys Multiplatform.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Keys Multiplatform.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB779E7E26C9C03000EC7D21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB779E8026C9C03000EC7D21 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +118,7 @@
 		CB779EA826C9C03000EC7D21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CBDB37DA26C9C5F80004CFB5 /* tether.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = tether.js; sourceTree = "<group>"; };
 		CBDB37DD26C9C6220004CFB5 /* jquery.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = jquery.js; sourceTree = "<group>"; };
+		CBDB37E026C9D17B0004CFB5 /* keys.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = keys.css; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,13 +202,11 @@
 				CB779E6F26C9C03000EC7D21 /* _locales */,
 				CB779E7026C9C03000EC7D21 /* images */,
 				CB779E7126C9C03000EC7D21 /* manifest.json */,
+				CBDB37E026C9D17B0004CFB5 /* keys.css */,
 				CB779E7226C9C03000EC7D21 /* background.js */,
 				CB779E7326C9C03000EC7D21 /* keys.js */,
 				CBDB37DA26C9C5F80004CFB5 /* tether.js */,
 				CBDB37DD26C9C6220004CFB5 /* jquery.js */,
-				CB779E7426C9C03000EC7D21 /* popup.html */,
-				CB779E7526C9C03000EC7D21 /* popup.css */,
-				CB779E7626C9C03000EC7D21 /* popup.js */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -422,13 +414,11 @@
 			files = (
 				CBDB37DE26C9C6220004CFB5 /* jquery.js in Resources */,
 				CB779EBD26C9C03000EC7D21 /* background.js in Resources */,
-				CB779EC326C9C03000EC7D21 /* popup.css in Resources */,
-				CB779EC126C9C03000EC7D21 /* popup.html in Resources */,
 				CB779EB926C9C03000EC7D21 /* images in Resources */,
+				CBDB37E126C9D17B0004CFB5 /* keys.css in Resources */,
 				CB779EBB26C9C03000EC7D21 /* manifest.json in Resources */,
 				CB779EB726C9C03000EC7D21 /* _locales in Resources */,
 				CB779EBF26C9C03000EC7D21 /* keys.js in Resources */,
-				CB779EC526C9C03000EC7D21 /* popup.js in Resources */,
 				CBDB37DB26C9C5F80004CFB5 /* tether.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -439,13 +429,11 @@
 			files = (
 				CBDB37DF26C9C6220004CFB5 /* jquery.js in Resources */,
 				CB779EBE26C9C03000EC7D21 /* background.js in Resources */,
-				CB779EC426C9C03000EC7D21 /* popup.css in Resources */,
-				CB779EC226C9C03000EC7D21 /* popup.html in Resources */,
 				CB779EBA26C9C03000EC7D21 /* images in Resources */,
+				CBDB37E226C9D17B0004CFB5 /* keys.css in Resources */,
 				CB779EBC26C9C03000EC7D21 /* manifest.json in Resources */,
 				CB779EB826C9C03000EC7D21 /* _locales in Resources */,
 				CB779EC026C9C03000EC7D21 /* keys.js in Resources */,
-				CB779EC626C9C03000EC7D21 /* popup.js in Resources */,
 				CBDB37DC26C9C5F80004CFB5 /* tether.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,0 +1,122 @@
+:root {
+    --systemRed: #ff3b30;
+    --systemGreen: #34c759;
+    --systemRedWithTransparency: rgba(255, 59, 48,.7);
+    --brightness: 75%;
+    --shadowColor: rgb(255,255,255,.4);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --systemRed: #ff453a;
+        --systemGreen: #30d158;
+        --systemRedWithTransparency: rgba(255, 59, 48,.7);
+        --shadowColor: rgb(0,0,0,.4);
+    }
+}
+
+span.Keys-Clickable-Text-Key, span.Keys-Character {
+    /* color: var(--systemRed);*/
+    transition: none !important;
+    border: none !important;
+    display: contents !important;
+    mix-blend-mode: difference !important;
+    /* font-size: 1em !important; */
+}
+
+span.Keys-Clickable-Text-Key span.Keys-Initial-Character {
+    color: var(--systemRed) !important;
+    font-size: 1em !important;
+}
+
+span.Keys-Clickable-Text-Key span.Keys-Character {
+    color: var(--systemRed);
+    font-size: 1em !important;
+}
+
+span.Keys-Clickable-Text-Key {
+    color: var(--systemRed) !important;
+    text-shadow: 0.07em 0 4px var(--shadowColor);
+}
+
+span.Keys-Floating-Key {
+    color: white !important;
+    font-weight: bold !important;
+    /* transform-style: preserve-3d;*/
+    /* text-shadow: 0.07em 0 4px black, 0 0.07em 4px black, -0.07em 0 4px black, 0 -0.07em 4px black; */
+    text-shadow: 0.07em 0 4px black, 0 0.07em 4px black;
+    -webkit-user-select: none;
+    transition: none !important;
+}
+
+span.Keys-Floating-Key .Keys-Character {
+    text-transform: uppercase !important;
+    /* transform-style: preserve-3d;*/
+}
+
+.Keys-Small-Clickable-Image, .Keys-Medium-Clickable-Image {
+    filter: blur(.5px) brightness(var(--brightness)) !important;
+}
+
+.Keys-Large-Clickable-Image {
+    filter: blur(4px) brightness(var(--brightness)) !important;
+}
+
+.Keys-Clickable-Icon {
+    filter: brightness(var(--brightness)) !important;
+}
+
+.Keys-Container-of-Large-Image {
+    overflow:hidden !important;
+}
+
+.Keys-Small-Image-Key {
+    font-size: 10px;
+    z-index: 2147483647 !important;
+}
+
+.Keys-Medium-Image-Key {
+    font-size: 14px;
+    z-index: 2147483647 !important;
+}
+
+.Keys-Large-Image-Key {
+    font-size: 20px;
+    z-index: 2147483647 !important;
+}
+
+.Keys-Hidden-Originals {
+    height: 0 !important;
+    width: 0 !important;
+    visibility: none !important;
+    opacity: 0 !important;
+    position: absolute !important;
+    display: none !important;
+}
+
+#Keys-Input-Box {
+    height: 0 !important;
+    width: 0 !important;
+    visibility: none !important;
+    opacity: 0 !important;
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    z-index: -100 !important;
+}
+
+.Keys-Matching-Character {
+    color: var(--systemGreen) !important;
+}
+
+.Keys-Mismatched-Character {
+    color: var(--systemRedWithTransparency) !important;
+    text-decoration: line-through !important;
+    text-shadow: 0.07em 0 4px rgb(0,0,0,.2);
+}
+
+.Keys-Show-While-Active {
+    opacity:1 !important;
+    transition: opacity .1s ease-in-out !important;
+}
+

@@ -28,7 +28,7 @@ var blacklist = [];
 var originalEventUsedMetaKey;
 
 // get user's defaults/preferences.
-browser.runtime.sendMessage({message: "refreshPreferences"});
+browser.runtime.sendMessage("refreshPreferences");
 
 // a couple different ways to time focus stealing.
 $(document).ready(function() {
@@ -44,12 +44,12 @@ window.addEventListener("load", (event) => {
     }
 });
 
-// inject stylesheet.
+/* inject stylesheet.
 window.addEventListener("load", (event) => {
     var colors = document.createElement("style")
     colors.innerHTML = "body {background-color: blue;}"
     document.head.appendChild(colors)
-});
+}); */
 
 function isBlacklisted(url) {
     for (blacklistedSite of blacklist) {
