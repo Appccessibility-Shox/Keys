@@ -19,10 +19,21 @@
         "persistent": false
     },
 
-    "content_scripts": [{
-        "js": [ "content.js" ],
-        "matches": [ "*://example.com/*" ]
-    }],
+    "content_scripts": [
+        {
+            "matches": [ "<all_urls>" ],
+            "js": [ "tether.js" ]
+        },
+        {
+            "matches": [ "<all_urls>" ],
+            "js": [ "jquery.js" ]
+        },
+        {
+            "matches": [ "<all_urls>" ],
+            "js": [ "keys.js" ],
+            "css": [ "keys.css" ]
+        }
+    ],
 
     "browser_action": {
         "default_popup": "popup.html",
@@ -34,5 +45,5 @@
         }
     },
 
-    "permissions": [ ]
+    "permissions": [ "nativeMessaging" ]
 }
