@@ -1,0 +1,9 @@
+
+/* Class = "NSTextFieldCell"; title = "Blacklist"; ObjectID = "Ogv-lE-Fbo"; */
+"Ogv-lE-Fbo.title" = "Lista Negra";
+
+/* Class = "NSTextFieldCell"; title = "If a website's hostname includes any of the blacklisted strings, Keys will not run on that site."; ObjectID = "kdD-dr-CaB"; */
+"kdD-dr-CaB.title" = "Si el nombre de host de un sitio web incluye alguna de las cadenas de la lista negra, las claves no se ejecutarán en ese sitio.";
+
+/* Class = "NSWindow"; title = "Blacklist"; ObjectID = "poW-2K-Fr3"; */
+"poW-2K-Fr3.title" = "Lista Negra";

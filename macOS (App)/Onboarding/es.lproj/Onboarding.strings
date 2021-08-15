@@ -1,0 +1,81 @@
+
+/* Class = "NSTextFieldCell"; title = "􀆧"; ObjectID = "08f-FW-TOL"; */
+"08f-FW-TOL.title" = "􀆧";
+
+/* Class = "NSButtonCell"; title = "Open in Safari Extensions Preferences..."; ObjectID = "3Ww-Iw-YdM"; */
+"3Ww-Iw-YdM.title" = "Abrir en las preferencias de extensiones de Safari...";
+
+/* Class = "NSTextFieldCell"; title = "􀉀"; ObjectID = "9YV-bu-Fw3"; */
+"9YV-bu-Fw3.title" = "􀉀";
+
+/* Class = "NSWindow"; title = "Welcome to Keys"; ObjectID = "BiT-lL-3Fa"; */
+"BiT-lL-3Fa.title" = "Bienvenido a Teclas";
+
+/* Class = "NSTextFieldCell"; title = "􀂵"; ObjectID = "GW7-OF-7ul"; */
+"GW7-OF-7ul.title" = "􀂵";
+
+/* Class = "NSButtonCell"; title = "Continue"; ObjectID = "JAN-gC-mvO"; */
+"JAN-gC-mvO.title" = "Seguir";
+
+/* Class = "NSTextFieldCell"; title = "Disable Keys on whichever sites you prefer."; ObjectID = "JEO-L4-6Ff"; */
+"JEO-L4-6Ff.title" = "Deshabilite Teclas en los sitios que prefiera.";
+
+/* Class = "NSTextFieldCell"; title = "Dynamic keyboard shortcuts. Everywhere."; ObjectID = "Vwx-Nt-jyg"; */
+"Vwx-Nt-jyg.title" = "Atajos de teclado dinámicos. En todas partes.";
+
+/* Class = "NSTextFieldCell"; title = "Customizable Activation Key"; ObjectID = "Xjq-5P-G5I"; */
+"Xjq-5P-G5I.title" = "Tecla de Activación Personalizable";
+
+/* Class = "NSTextFieldCell"; title = "G is the activation Key"; ObjectID = "aDd-RP-SJT"; */
+"aDd-RP-SJT.title" = "G es la tecla de activación";
+
+/* Class = "NSTextFieldCell"; title = "Bind the activation character to whichever character you prefer."; ObjectID = "bTc-dO-dhE"; */
+"bTc-dO-dhE.title" = "Vincula la letra de activación al personaje que prefieras.";
+
+/* Class = "NSButtonCell"; title = "Continue"; ObjectID = "d0B-Jl-0FC"; */
+"d0B-Jl-0FC.title" = "Seguir";
+
+/* Class = "NSTextFieldCell"; title = "The shortcuts will appear in red."; ObjectID = "dAU-JS-Hni"; */
+"dAU-JS-Hni.title" = "Los atajos aparecerán en rojo.";
+
+/* Class = "NSTextFieldCell"; title = "Blacklist"; ObjectID = "dtJ-xi-2ZR"; */
+"dtJ-xi-2ZR.title" = "Lista Negra";
+
+/* Class = "NSTextFieldCell"; title = "Press escape, scroll away, or click the background to deactivate."; ObjectID = "eFa-Bc-KoD"; */
+"eFa-Bc-KoD.title" = "Presione escape, desplácese o haga clic en el fondo para desactivar.";
+
+/* Class = "NSButtonCell"; title = "Video Tutorial"; ObjectID = "fkC-De-bHT"; */
+"fkC-De-bHT.title" = "Video Tutorial";
+
+/* Class = "NSTextFieldCell"; title = "As you type a shortcut, it will become green."; ObjectID = "glv-8U-Ocg"; */
+"glv-8U-Ocg.title" = "A medida que escribe un acceso directo, se volverá verde.";
+
+/* Class = "NSTextFieldCell"; title = "􀇳"; ObjectID = "i1f-as-31J"; */
+"i1f-as-31J.title" = "􀇳";
+
+/* Class = "NSTextFieldCell"; title = "More Features"; ObjectID = "iIw-q3-iec"; */
+"iIw-q3-iec.title" = "Más Características";
+
+/* Class = "NSTextFieldCell"; title = "Welcome to Keys"; ObjectID = "jXm-sk-IEB"; */
+"jXm-sk-IEB.title" = "Bienvenido a Teclas";
+
+/* Class = "NSTextFieldCell"; title = "Press it to generate and render shortcuts over every clickable element."; ObjectID = "n2Z-gZ-IYg"; */
+"n2Z-gZ-IYg.title" = "Presiónelo para generar y representar accesos directos sobre cada elemento en el que se puede hacer clic.";
+
+/* Class = "NSTextFieldCell"; title = "Get Started"; ObjectID = "qZp-uo-Euq"; */
+"qZp-uo-Euq.title" = "Empezar";
+
+/* Class = "NSTextFieldCell"; title = "􀂡"; ObjectID = "qfo-O9-cnK"; */
+"qfo-O9-cnK.title" = "􀂡";
+
+/* Class = "NSTextFieldCell"; title = "Cancel Clicking at Any Time"; ObjectID = "vUJ-PC-2FD"; */
+"vUJ-PC-2FD.title" = "Cancelar Haciendo Clic en Cualquier Momento";
+
+/* Class = "NSTextFieldCell"; title = "Ab"; ObjectID = "vaM-Kw-TOq"; */
+"vaM-Kw-TOq.title" = "Ab";
+
+/* Class = "NSTextFieldCell"; title = "No need to press enter. "; ObjectID = "xME-Ww-roI"; */
+"xME-Ww-roI.title" = "No es necesario presionar enter.";
+
+/* Class = "NSTextFieldCell"; title = "Type the entire key to click the element."; ObjectID = "xsB-5d-0BS"; */
+"xsB-5d-0BS.title" = "Escriba el atajo completo para hacer clic en el elemento.";
