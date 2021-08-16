@@ -1,0 +1,81 @@
+
+/* Class = "NSTextFieldCell"; title = "􀆧"; ObjectID = "08f-FW-TOL"; */
+"08f-FW-TOL.title" = "􀆧";
+
+/* Class = "NSButtonCell"; title = "Open in Safari Extensions Preferences..."; ObjectID = "3Ww-Iw-YdM"; */
+"3Ww-Iw-YdM.title" = "Safari拡張機能の設定で開く...";
+
+/* Class = "NSTextFieldCell"; title = "􀉀"; ObjectID = "9YV-bu-Fw3"; */
+"9YV-bu-Fw3.title" = "􀉀";
+
+/* Class = "NSWindow"; title = "Welcome to Keys"; ObjectID = "BiT-lL-3Fa"; */
+"BiT-lL-3Fa.title" = "キーへようこそ";
+
+/* Class = "NSTextFieldCell"; title = "􀂵"; ObjectID = "GW7-OF-7ul"; */
+"GW7-OF-7ul.title" = "􀂵";
+
+/* Class = "NSButtonCell"; title = "Continue"; ObjectID = "JAN-gC-mvO"; */
+"JAN-gC-mvO.title" = "継続する";
+
+/* Class = "NSTextFieldCell"; title = "Disable Keys on whichever sites you prefer."; ObjectID = "JEO-L4-6Ff"; */
+"JEO-L4-6Ff.title" = "どちらのサイトでも、Keysアプリを無効にします。";
+
+/* Class = "NSTextFieldCell"; title = "Dynamic keyboard shortcuts. Everywhere."; ObjectID = "Vwx-Nt-jyg"; */
+"Vwx-Nt-jyg.title" = "動的キーボードショートカット。 どこにでも。";
+
+/* Class = "NSTextFieldCell"; title = "Customizable Activation Key"; ObjectID = "Xjq-5P-G5I"; */
+"Xjq-5P-G5I.title" = "カスタマイズ可能なアクティベーションキー";
+
+/* Class = "NSTextFieldCell"; title = "G is the activation Key"; ObjectID = "aDd-RP-SJT"; */
+"aDd-RP-SJT.title" = "Gはアクティベーションキャラクターです";
+
+/* Class = "NSTextFieldCell"; title = "Bind the activation character to whichever character you prefer."; ObjectID = "bTc-dO-dhE"; */
+"bTc-dO-dhE.title" = "アクティベーションキャラクターを好きなキャラクターにバインドします。";
+
+/* Class = "NSButtonCell"; title = "Continue"; ObjectID = "d0B-Jl-0FC"; */
+"d0B-Jl-0FC.title" = "継続する";
+
+/* Class = "NSTextFieldCell"; title = "The shortcuts will appear in red."; ObjectID = "dAU-JS-Hni"; */
+"dAU-JS-Hni.title" = "ショートカットは赤で表示されます。";
+
+/* Class = "NSTextFieldCell"; title = "Blacklist"; ObjectID = "dtJ-xi-2ZR"; */
+"dtJ-xi-2ZR.title" = "ブラックリスト";
+
+/* Class = "NSTextFieldCell"; title = "Press escape, scroll away, or click the background to deactivate."; ObjectID = "eFa-Bc-KoD"; */
+"eFa-Bc-KoD.title" = "Escキーを押すか、スクロールして離れるか、背景をクリックして非アクティブ化します。";
+
+/* Class = "NSButtonCell"; title = "Video Tutorial"; ObjectID = "fkC-De-bHT"; */
+"fkC-De-bHT.title" = "ビデオチュートリアル";
+
+/* Class = "NSTextFieldCell"; title = "As you type a shortcut, it will become green."; ObjectID = "glv-8U-Ocg"; */
+"glv-8U-Ocg.title" = "ショートカットを入力すると、緑色になります。";
+
+/* Class = "NSTextFieldCell"; title = "􀇳"; ObjectID = "i1f-as-31J"; */
+"i1f-as-31J.title" = "􀇳";
+
+/* Class = "NSTextFieldCell"; title = "More Features"; ObjectID = "iIw-q3-iec"; */
+"iIw-q3-iec.title" = "その他の機能";
+
+/* Class = "NSTextFieldCell"; title = "Welcome to Keys"; ObjectID = "jXm-sk-IEB"; */
+"jXm-sk-IEB.title" = "キーへようこそ";
+
+/* Class = "NSTextFieldCell"; title = "Press it to generate and render shortcuts over every clickable element."; ObjectID = "n2Z-gZ-IYg"; */
+"n2Z-gZ-IYg.title" = "クリックして、クリック可能なすべての要素にショートカットを生成およびレンダリングします。";
+
+/* Class = "NSTextFieldCell"; title = "Get Started"; ObjectID = "qZp-uo-Euq"; */
+"qZp-uo-Euq.title" = "始めましょう";
+
+/* Class = "NSTextFieldCell"; title = "􀂡"; ObjectID = "qfo-O9-cnK"; */
+"qfo-O9-cnK.title" = "􀂡";
+
+/* Class = "NSTextFieldCell"; title = "Cancel Clicking at Any Time"; ObjectID = "vUJ-PC-2FD"; */
+"vUJ-PC-2FD.title" = "いつでもクリックをキャンセル";
+
+/* Class = "NSTextFieldCell"; title = "Ab"; ObjectID = "vaM-Kw-TOq"; */
+"vaM-Kw-TOq.title" = "Ab";
+
+/* Class = "NSTextFieldCell"; title = "No need to press enter. "; ObjectID = "xME-Ww-roI"; */
+"xME-Ww-roI.title" = "Enterキーを押す必要はありません。";
+
+/* Class = "NSTextFieldCell"; title = "Type the entire key to click the element."; ObjectID = "xsB-5d-0BS"; */
+"xsB-5d-0BS.title" = "キー全体を入力して要素をクリックします。";
