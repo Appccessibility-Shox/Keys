@@ -23,8 +23,6 @@
 		CB779EAE26C9C03000EC7D21 /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = CB779E6826C9C02E00EC7D21 /* Style.css */; };
 		CB779EAF26C9C03000EC7D21 /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = CB779E6926C9C02E00EC7D21 /* Script.js */; };
 		CB779EB026C9C03000EC7D21 /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = CB779E6926C9C02E00EC7D21 /* Script.js */; };
-		CB779EB126C9C03000EC7D21 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB779E6A26C9C02E00EC7D21 /* ViewController.swift */; };
-		CB779EB226C9C03000EC7D21 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB779E6A26C9C02E00EC7D21 /* ViewController.swift */; };
 		CB779EB326C9C03000EC7D21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB779E6B26C9C03000EC7D21 /* Assets.xcassets */; };
 		CB779EB426C9C03000EC7D21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB779E6B26C9C03000EC7D21 /* Assets.xcassets */; };
 		CB779EB526C9C03000EC7D21 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB779E6D26C9C03000EC7D21 /* SafariWebExtensionHandler.swift */; };
@@ -45,6 +43,16 @@
 		CBDB37DF26C9C6220004CFB5 /* jquery.js in Resources */ = {isa = PBXBuildFile; fileRef = CBDB37DD26C9C6220004CFB5 /* jquery.js */; };
 		CBDB37E126C9D17B0004CFB5 /* keys.css in Resources */ = {isa = PBXBuildFile; fileRef = CBDB37E026C9D17B0004CFB5 /* keys.css */; };
 		CBDB37E226C9D17B0004CFB5 /* keys.css in Resources */ = {isa = PBXBuildFile; fileRef = CBDB37E026C9D17B0004CFB5 /* keys.css */; };
+		CBDB384B26C9F1FC0004CFB5 /* Blacklist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CBDB384026C9F1FC0004CFB5 /* Blacklist.strings */; };
+		CBDB384C26C9F1FC0004CFB5 /* BlackListWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDB384226C9F1FC0004CFB5 /* BlackListWindowController.swift */; };
+		CBDB384E26C9F1FC0004CFB5 /* BlackListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDB384726C9F1FC0004CFB5 /* BlackListViewController.swift */; };
+		CBDB384F26C9F1FC0004CFB5 /* Blacklist.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBDB384826C9F1FC0004CFB5 /* Blacklist.storyboard */; };
+		CBDB385926C9F2320004CFB5 /* Onboarding.strings in Resources */ = {isa = PBXBuildFile; fileRef = CBDB385126C9F2320004CFB5 /* Onboarding.strings */; };
+		CBDB385A26C9F2320004CFB5 /* OnboardingWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDB385426C9F2320004CFB5 /* OnboardingWindowController.swift */; };
+		CBDB385B26C9F2320004CFB5 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBDB385626C9F2320004CFB5 /* Onboarding.storyboard */; };
+		CBDB385D26C9F24B0004CFB5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDB385C26C9F24B0004CFB5 /* ViewController.swift */; };
+		CBDB386126C9F6E50004CFB5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CBDB386026C9F6E50004CFB5 /* Localizable.strings */; };
+		CBDB386B26C9F7D50004CFB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBDB386A26C9F7D50004CFB5 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,7 +102,6 @@
 		CB779E6726C9C02E00EC7D21 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		CB779E6826C9C02E00EC7D21 /* Style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = Style.css; sourceTree = "<group>"; };
 		CB779E6926C9C02E00EC7D21 /* Script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Script.js; sourceTree = "<group>"; };
-		CB779E6A26C9C02E00EC7D21 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CB779E6B26C9C03000EC7D21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB779E6D26C9C03000EC7D21 /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
 		CB779E6F26C9C03000EC7D21 /* _locales */ = {isa = PBXFileReference; lastKnownFileType = folder; path = _locales; sourceTree = "<group>"; };
@@ -119,6 +126,29 @@
 		CBDB37DA26C9C5F80004CFB5 /* tether.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = tether.js; sourceTree = "<group>"; };
 		CBDB37DD26C9C6220004CFB5 /* jquery.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = jquery.js; sourceTree = "<group>"; };
 		CBDB37E026C9D17B0004CFB5 /* keys.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = keys.css; sourceTree = "<group>"; };
+		CBDB384126C9F1FC0004CFB5 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Blacklist.strings; sourceTree = "<group>"; };
+		CBDB384226C9F1FC0004CFB5 /* BlackListWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlackListWindowController.swift; sourceTree = "<group>"; };
+		CBDB384326C9F1FC0004CFB5 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Blacklist.strings; sourceTree = "<group>"; };
+		CBDB384426C9F1FC0004CFB5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Blacklist.strings; sourceTree = "<group>"; };
+		CBDB384526C9F1FC0004CFB5 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Blacklist.strings; sourceTree = "<group>"; };
+		CBDB384726C9F1FC0004CFB5 /* BlackListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlackListViewController.swift; sourceTree = "<group>"; };
+		CBDB384926C9F1FC0004CFB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Blacklist.storyboard; sourceTree = "<group>"; };
+		CBDB384A26C9F1FC0004CFB5 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Blacklist.strings; sourceTree = "<group>"; };
+		CBDB385226C9F2320004CFB5 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Onboarding.strings; sourceTree = "<group>"; };
+		CBDB385326C9F2320004CFB5 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Onboarding.strings; sourceTree = "<group>"; };
+		CBDB385426C9F2320004CFB5 /* OnboardingWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingWindowController.swift; sourceTree = "<group>"; };
+		CBDB385526C9F2320004CFB5 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Onboarding.strings; sourceTree = "<group>"; };
+		CBDB385726C9F2320004CFB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Onboarding.storyboard; sourceTree = "<group>"; };
+		CBDB385826C9F2320004CFB5 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Onboarding.strings; sourceTree = "<group>"; };
+		CBDB385C26C9F24B0004CFB5 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CBDB386026C9F6E50004CFB5 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		CBDB386326C9F6F90004CFB5 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		CBDB386526C9F6FB0004CFB5 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		CBDB386726C9F6FE0004CFB5 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
+		CBDB386926C9F7010004CFB5 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		CBDB386A26C9F7D50004CFB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CBDF08B726CAB22B00C714F5 /* Keys Multiplatform Extension (macOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Keys Multiplatform Extension (macOS).entitlements"; sourceTree = "<group>"; };
+		CBDF08B826CAB26500C714F5 /* Keys Multiplatform Extension (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Keys Multiplatform Extension (iOS).entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +186,9 @@
 		CB779E5E26C9C02D00EC7D21 = {
 			isa = PBXGroup;
 			children = (
+				CBDF08B826CAB26500C714F5 /* Keys Multiplatform Extension (iOS).entitlements */,
+				CBDF08B726CAB22B00C714F5 /* Keys Multiplatform Extension (macOS).entitlements */,
+				CB779E9426C9C03000EC7D21 /* Keys Multiplatform.entitlements */,
 				CB779E6326C9C02E00EC7D21 /* Shared (App) */,
 				CB779E6C26C9C03000EC7D21 /* Shared (Extension) */,
 				CB779E7D26C9C03000EC7D21 /* iOS (App) */,
@@ -169,7 +202,6 @@
 		CB779E6326C9C02E00EC7D21 /* Shared (App) */ = {
 			isa = PBXGroup;
 			children = (
-				CB779E6A26C9C02E00EC7D21 /* ViewController.swift */,
 				CB779E6B26C9C03000EC7D21 /* Assets.xcassets */,
 				CB779E6426C9C02E00EC7D21 /* Resources */,
 			);
@@ -238,8 +270,12 @@
 			isa = PBXGroup;
 			children = (
 				CB779E8F26C9C03000EC7D21 /* AppDelegate.swift */,
+				CBDB386026C9F6E50004CFB5 /* Localizable.strings */,
+				CBDB385C26C9F24B0004CFB5 /* ViewController.swift */,
+				CBDB386A26C9F7D50004CFB5 /* Assets.xcassets */,
 				CB779E9126C9C03000EC7D21 /* Main.storyboard */,
-				CB779E9426C9C03000EC7D21 /* Keys Multiplatform.entitlements */,
+				CBDB385026C9F2320004CFB5 /* Onboarding */,
+				CBDB383F26C9F1FC0004CFB5 /* Blacklist */,
 			);
 			path = "macOS (App)";
 			sourceTree = "<group>";
@@ -258,6 +294,27 @@
 				CB779EA826C9C03000EC7D21 /* Info.plist */,
 			);
 			path = "macOS (Extension)";
+			sourceTree = "<group>";
+		};
+		CBDB383F26C9F1FC0004CFB5 /* Blacklist */ = {
+			isa = PBXGroup;
+			children = (
+				CBDB384026C9F1FC0004CFB5 /* Blacklist.strings */,
+				CBDB384226C9F1FC0004CFB5 /* BlackListWindowController.swift */,
+				CBDB384726C9F1FC0004CFB5 /* BlackListViewController.swift */,
+				CBDB384826C9F1FC0004CFB5 /* Blacklist.storyboard */,
+			);
+			path = Blacklist;
+			sourceTree = "<group>";
+		};
+		CBDB385026C9F2320004CFB5 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				CBDB385126C9F2320004CFB5 /* Onboarding.strings */,
+				CBDB385426C9F2320004CFB5 /* OnboardingWindowController.swift */,
+				CBDB385626C9F2320004CFB5 /* Onboarding.storyboard */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -366,6 +423,10 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
+				ja,
+				es,
+				fr,
 			);
 			mainGroup = CB779E5E26C9C02D00EC7D21;
 			productRefGroup = CB779E7C26C9C03000EC7D21 /* Products */;
@@ -400,10 +461,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB779EAC26C9C03000EC7D21 /* Icon.png in Resources */,
+				CBDB385B26C9F2320004CFB5 /* Onboarding.storyboard in Resources */,
+				CBDB386126C9F6E50004CFB5 /* Localizable.strings in Resources */,
 				CB779EAE26C9C03000EC7D21 /* Style.css in Resources */,
+				CBDB384B26C9F1FC0004CFB5 /* Blacklist.strings in Resources */,
+				CBDB385926C9F2320004CFB5 /* Onboarding.strings in Resources */,
 				CB779E9326C9C03000EC7D21 /* Main.storyboard in Resources */,
+				CBDB384F26C9F1FC0004CFB5 /* Blacklist.storyboard in Resources */,
 				CB779EB026C9C03000EC7D21 /* Script.js in Resources */,
 				CB779EB426C9C03000EC7D21 /* Assets.xcassets in Resources */,
+				CBDB386B26C9F7D50004CFB5 /* Assets.xcassets in Resources */,
 				CB779EAA26C9C03000EC7D21 /* Main.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -445,7 +512,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB779EB126C9C03000EC7D21 /* ViewController.swift in Sources */,
 				CB779E7F26C9C03000EC7D21 /* AppDelegate.swift in Sources */,
 				CB779E8126C9C03000EC7D21 /* SceneDelegate.swift in Sources */,
 			);
@@ -455,8 +521,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB779EB226C9C03000EC7D21 /* ViewController.swift in Sources */,
 				CB779E9026C9C03000EC7D21 /* AppDelegate.swift in Sources */,
+				CBDB384C26C9F1FC0004CFB5 /* BlackListWindowController.swift in Sources */,
+				CBDB385D26C9F24B0004CFB5 /* ViewController.swift in Sources */,
+				CBDB385A26C9F2320004CFB5 /* OnboardingWindowController.swift in Sources */,
+				CBDB384E26C9F1FC0004CFB5 /* BlackListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,8 +589,51 @@
 			isa = PBXVariantGroup;
 			children = (
 				CB779E9226C9C03000EC7D21 /* Base */,
+				CBDB386326C9F6F90004CFB5 /* fr */,
+				CBDB386526C9F6FB0004CFB5 /* de */,
+				CBDB386726C9F6FE0004CFB5 /* ja */,
+				CBDB386926C9F7010004CFB5 /* es */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CBDB384026C9F1FC0004CFB5 /* Blacklist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CBDB384126C9F1FC0004CFB5 /* de */,
+				CBDB384326C9F1FC0004CFB5 /* ja */,
+				CBDB384426C9F1FC0004CFB5 /* en */,
+				CBDB384526C9F1FC0004CFB5 /* es */,
+				CBDB384A26C9F1FC0004CFB5 /* fr */,
+			);
+			name = Blacklist.strings;
+			sourceTree = "<group>";
+		};
+		CBDB384826C9F1FC0004CFB5 /* Blacklist.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CBDB384926C9F1FC0004CFB5 /* Base */,
+			);
+			name = Blacklist.storyboard;
+			sourceTree = "<group>";
+		};
+		CBDB385126C9F2320004CFB5 /* Onboarding.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CBDB385226C9F2320004CFB5 /* de */,
+				CBDB385326C9F2320004CFB5 /* ja */,
+				CBDB385526C9F2320004CFB5 /* es */,
+				CBDB385826C9F2320004CFB5 /* fr */,
+			);
+			name = Onboarding.strings;
+			sourceTree = "<group>";
+		};
+		CBDB385626C9F2320004CFB5 /* Onboarding.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CBDB385726C9F2320004CFB5 /* Base */,
+			);
+			name = Onboarding.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -641,6 +753,7 @@
 		CB779ECA26C9C03000EC7D21 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Keys Multiplatform Extension (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = L27L4K8SQU;
@@ -665,13 +778,14 @@
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
 		CB779ECB26C9C03000EC7D21 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Keys Multiplatform Extension (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = L27L4K8SQU;
@@ -696,7 +810,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -707,6 +821,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Keys Multiplatform.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = L27L4K8SQU;
@@ -735,7 +850,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -745,6 +860,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Keys Multiplatform.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = L27L4K8SQU;
@@ -773,7 +889,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -781,6 +897,7 @@
 		CB779ED126C9C03000EC7D21 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Keys Multiplatform Extension (macOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = L27L4K8SQU;
@@ -814,6 +931,7 @@
 		CB779ED226C9C03000EC7D21 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Keys Multiplatform Extension (macOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = L27L4K8SQU;
@@ -850,7 +968,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "macOS (App)/Keys Multiplatform.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Keys Multiplatform.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = L27L4K8SQU;
@@ -887,7 +1005,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "macOS (App)/Keys Multiplatform.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Keys Multiplatform.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = L27L4K8SQU;

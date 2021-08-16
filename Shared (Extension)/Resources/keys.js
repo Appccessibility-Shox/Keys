@@ -21,18 +21,29 @@ var inputelement;
 var permutationIndex = 0;
 var permutations;
 var scrollPositionWhenActivated;
-var preferredActivationKey = "G";
+var preferredActivationKey;
 var shouldStealFocus;
 var modifierEnabled;
 var blacklist = [];
 var originalEventUsedMetaKey;
 
 // get user's defaults/preferences.
-browser.runtime.sendMessage("refreshPreferences");
+browser.runtime.sendMessage({message: "refreshPreferences"}).then(handleResponse, handleError)
+
+function handleResponse(message) {
+    console.log(34)
+    console.log(message.updatedPreferences.currentKey);
+    console.log(36)
+    return true
+}
+
+function handleError(error) {
+    console.log(`Error: ${error}`);
+}
 
 // a couple different ways to time focus stealing.
 $(document).ready(function() {
-    browser.runtime.sendMessage({message: "refreshPreferences"});
+    browser.runtime.sendMessage({message: "refreshPreferences"}).then(handleResponse, handleError)
     if (shouldStealFocus) {
         $(":focus").blur();
     }
@@ -685,7 +696,7 @@ function simulateMouseClick(element){
             )
         );
     } else {
-        browser.runtime.sendMessage({message: "metaOpen"}) // bound to be bused need url.
+        // browser.runtime.sendMessage({message: "metaOpen", url: href}) // bound to be bused need url.
     }
     $("html").one("keyup", function(){
         upSinceDeactivation=true;
@@ -714,9 +725,8 @@ $("html").on("keyup", function(){
     keysWasActive = keysCurrentlyActive;
 })
 
-// browser.runtime.addListener("message", handleMessage);
-
 function handleMessage(event) {
+    console.log("hm triggered")
     shouldStealFocus = event.message.shouldStealFocus;
     modifierEnabled = event.message.enableModifier;
     preferredActivationKey = event.message.currentKey;
