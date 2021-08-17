@@ -6,6 +6,7 @@
 //
 
 import SafariServices
+import SafariServices.SFSafariApplication
 import os.log
 
 let SFExtensionMessageKey = "message"
@@ -37,36 +38,12 @@ class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
         os_log(.default, "Received message from browser.runtime.sendNativeMessage: %@", message as! CVarArg)
 
         let response = NSExtensionItem()
-/*
-        if message == ["message": "refreshPreferences"] {
-            // response.userInfo = [ SFExtensionMessageKey : [ "updateOfPreferences": preferences ]]
-            response.userInfo = [ SFExtensionMessageKey: [ "Response to 43": message ] ]
-        }
-        
-        if message as? String == "metaOpen" {
-            let value = item.userInfo?["url"]
-            if let string = value as? String {
-                let url = URL(string: string)!
-                SFSafariApplication.getActiveWindow { activeWindow in
-                    activeWindow?.openTab(with: url, makeActiveIfPossible: false)
-                }
-            }
-        } */
+
         if let message = message as? [String: Any] {
             let messageName = message["message"] as! String
             if messageName == "refreshPreferences" {
                 response.userInfo = [ SFExtensionMessageKey: [ "updatedPreferences": preferences ] ]
-            } else if messageName == "metaOpen" {
-                let value = item.userInfo?["url"]
-                if let string = value as? String {
-                    let url = URL(string: string)!
-                    SFSafariApplication.getActiveWindow { activeWindow in
-                        activeWindow?.openTab(with: url, makeActiveIfPossible: false)
-                    }
-                }
             }
-        } else {
-            response.userInfo = [ SFExtensionMessageKey: [ "Failure to update preferences": nil ]]
         }
 
         context.completeRequest(returningItems: [response], completionHandler: nil)

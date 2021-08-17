@@ -31,10 +31,10 @@ var originalEventUsedMetaKey;
 browser.runtime.sendMessage({message: "refreshPreferences"}).then(handleResponse, handleError)
 
 function handleResponse(message) {
-    console.log(34)
-    console.log(message.updatedPreferences.currentKey);
-    console.log(36)
-    return true
+    shouldStealFocus = message.updatedPreferences.shouldStealFocus;
+    modifierEnabled = message.updatedPreferences.enableModifier;
+    preferredActivationKey = message.updatedPreferences.currentKey;
+    blacklist = message.updatedPreferences.blacklist;
 }
 
 function handleError(error) {
@@ -696,7 +696,7 @@ function simulateMouseClick(element){
             )
         );
     } else {
-        // browser.runtime.sendMessage({message: "metaOpen", url: href}) // bound to be bused need url.
+        browser.runtime.sendMessage({message: "metaOpen", options: {"url": href} })
     }
     $("html").one("keyup", function(){
         upSinceDeactivation=true;
@@ -724,14 +724,6 @@ function recolorMatchingKeys(element, label, key, shouldSimulateClick) {
 $("html").on("keyup", function(){
     keysWasActive = keysCurrentlyActive;
 })
-
-function handleMessage(event) {
-    console.log("hm triggered")
-    shouldStealFocus = event.message.shouldStealFocus;
-    modifierEnabled = event.message.enableModifier;
-    preferredActivationKey = event.message.currentKey;
-    blacklist = event.message.blacklist;
-}
 
 function resetAllInputValues() {
     document.querySelectorAll("input[original_value]").forEach(

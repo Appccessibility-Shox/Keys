@@ -35,5 +35,5 @@
         }
     ],
 
-    "permissions": [ "nativeMessaging" ]
+    "permissions": [ "nativeMessaging", "tabs" ]
 }
