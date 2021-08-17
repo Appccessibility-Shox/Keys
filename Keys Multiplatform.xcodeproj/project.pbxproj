@@ -7,24 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CB779E7F26C9C03000EC7D21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB779E7E26C9C03000EC7D21 /* AppDelegate.swift */; };
-		CB779E8126C9C03000EC7D21 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB779E8026C9C03000EC7D21 /* SceneDelegate.swift */; };
-		CB779E8426C9C03000EC7D21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB779E8226C9C03000EC7D21 /* LaunchScreen.storyboard */; };
-		CB779E8726C9C03000EC7D21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB779E8526C9C03000EC7D21 /* Main.storyboard */; };
 		CB779E9026C9C03000EC7D21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB779E8F26C9C03000EC7D21 /* AppDelegate.swift */; };
 		CB779E9326C9C03000EC7D21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB779E9126C9C03000EC7D21 /* Main.storyboard */; };
-		CB779E9A26C9C03000EC7D21 /* Keys Multiplatform Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CB779E9926C9C03000EC7D21 /* Keys Multiplatform Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CB779EA426C9C03000EC7D21 /* Keys Multiplatform Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CB779EA326C9C03000EC7D21 /* Keys Multiplatform Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		CB779EA926C9C03000EC7D21 /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = CB779E6526C9C02E00EC7D21 /* Main.html */; };
-		CB779EAA26C9C03000EC7D21 /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = CB779E6526C9C02E00EC7D21 /* Main.html */; };
-		CB779EAB26C9C03000EC7D21 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CB779E6726C9C02E00EC7D21 /* Icon.png */; };
-		CB779EAC26C9C03000EC7D21 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CB779E6726C9C02E00EC7D21 /* Icon.png */; };
-		CB779EAD26C9C03000EC7D21 /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = CB779E6826C9C02E00EC7D21 /* Style.css */; };
-		CB779EAE26C9C03000EC7D21 /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = CB779E6826C9C02E00EC7D21 /* Style.css */; };
-		CB779EAF26C9C03000EC7D21 /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = CB779E6926C9C02E00EC7D21 /* Script.js */; };
-		CB779EB026C9C03000EC7D21 /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = CB779E6926C9C02E00EC7D21 /* Script.js */; };
-		CB779EB326C9C03000EC7D21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB779E6B26C9C03000EC7D21 /* Assets.xcassets */; };
-		CB779EB426C9C03000EC7D21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB779E6B26C9C03000EC7D21 /* Assets.xcassets */; };
 		CB779EB526C9C03000EC7D21 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB779E6D26C9C03000EC7D21 /* SafariWebExtensionHandler.swift */; };
 		CB779EB626C9C03000EC7D21 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB779E6D26C9C03000EC7D21 /* SafariWebExtensionHandler.swift */; };
 		CB779EB726C9C03000EC7D21 /* _locales in Resources */ = {isa = PBXBuildFile; fileRef = CB779E6F26C9C03000EC7D21 /* _locales */; };
@@ -53,16 +38,14 @@
 		CBDB385D26C9F24B0004CFB5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDB385C26C9F24B0004CFB5 /* ViewController.swift */; };
 		CBDB386126C9F6E50004CFB5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CBDB386026C9F6E50004CFB5 /* Localizable.strings */; };
 		CBDB386B26C9F7D50004CFB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBDB386A26C9F7D50004CFB5 /* Assets.xcassets */; };
+		CBEDBFBD26CB668E00EE084F /* iOS__App_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEDBFBC26CB668E00EE084F /* iOS__App_App.swift */; };
+		CBEDBFBF26CB668E00EE084F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEDBFBE26CB668E00EE084F /* ContentView.swift */; };
+		CBEDBFC126CB669000EE084F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBEDBFC026CB669000EE084F /* Assets.xcassets */; };
+		CBEDBFC426CB669000EE084F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBEDBFC326CB669000EE084F /* Preview Assets.xcassets */; };
+		CBEDC09126CB6F1800EE084F /* Keys Multiplatform Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CB779E9926C9C03000EC7D21 /* Keys Multiplatform Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		CB779E9B26C9C03000EC7D21 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CB779E5F26C9C02D00EC7D21 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CB779E9826C9C03000EC7D21;
-			remoteInfo = "Keys Multiplatform Extension (iOS)";
-		};
 		CB779EA526C9C03000EC7D21 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CB779E5F26C9C02D00EC7D21 /* Project object */;
@@ -70,20 +53,16 @@
 			remoteGlobalIDString = CB779EA226C9C03000EC7D21;
 			remoteInfo = "Keys Multiplatform Extension (macOS)";
 		};
+		CBEDBFCA26CB66F500EE084F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB779E5F26C9C02D00EC7D21 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB779E9826C9C03000EC7D21;
+			remoteInfo = "Keys Multiplatform Extension (iOS)";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		CB779ECC26C9C03000EC7D21 /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				CB779E9A26C9C03000EC7D21 /* Keys Multiplatform Extension.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		CB779ED326C9C03000EC7D21 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -95,26 +74,26 @@
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CBEDBFCC26CB66F500EE084F /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				CBEDC09126CB6F1800EE084F /* Keys Multiplatform Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		CB779E6626C9C02E00EC7D21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = ../Base.lproj/Main.html; sourceTree = "<group>"; };
-		CB779E6726C9C02E00EC7D21 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
-		CB779E6826C9C02E00EC7D21 /* Style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = Style.css; sourceTree = "<group>"; };
-		CB779E6926C9C02E00EC7D21 /* Script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Script.js; sourceTree = "<group>"; };
-		CB779E6B26C9C03000EC7D21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB779E6D26C9C03000EC7D21 /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
 		CB779E6F26C9C03000EC7D21 /* _locales */ = {isa = PBXFileReference; lastKnownFileType = folder; path = _locales; sourceTree = "<group>"; };
 		CB779E7026C9C03000EC7D21 /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
 		CB779E7126C9C03000EC7D21 /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = manifest.json; sourceTree = "<group>"; };
 		CB779E7226C9C03000EC7D21 /* background.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = background.js; sourceTree = "<group>"; };
 		CB779E7326C9C03000EC7D21 /* keys.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = keys.js; sourceTree = "<group>"; };
-		CB779E7B26C9C03000EC7D21 /* Keys Multiplatform.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Keys Multiplatform.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CB779E7E26C9C03000EC7D21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CB779E8026C9C03000EC7D21 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CB779E8326C9C03000EC7D21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		CB779E8626C9C03000EC7D21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		CB779E8826C9C03000EC7D21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB779E8D26C9C03000EC7D21 /* Keys Multiplatform.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Keys Multiplatform.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB779E8F26C9C03000EC7D21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB779E9226C9C03000EC7D21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -149,16 +128,15 @@
 		CBDB386A26C9F7D50004CFB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CBDF08B726CAB22B00C714F5 /* Keys Multiplatform Extension (macOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Keys Multiplatform Extension (macOS).entitlements"; sourceTree = "<group>"; };
 		CBDF08B826CAB26500C714F5 /* Keys Multiplatform Extension (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Keys Multiplatform Extension (iOS).entitlements"; sourceTree = "<group>"; };
+		CBEDBFBA26CB668E00EE084F /* Keys Multiplatform.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Keys Multiplatform.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBEDBFBC26CB668E00EE084F /* iOS__App_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS__App_App.swift; sourceTree = "<group>"; };
+		CBEDBFBE26CB668E00EE084F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CBEDBFC026CB669000EE084F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CBEDBFC326CB669000EE084F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CBEDBFCD26CB673300EE084F /* iOS (App).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "iOS (App).entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		CB779E7826C9C03000EC7D21 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		CB779E8A26C9C03000EC7D21 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -180,6 +158,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CBEDBFB726CB668E00EE084F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -189,34 +174,14 @@
 				CBDF08B826CAB26500C714F5 /* Keys Multiplatform Extension (iOS).entitlements */,
 				CBDF08B726CAB22B00C714F5 /* Keys Multiplatform Extension (macOS).entitlements */,
 				CB779E9426C9C03000EC7D21 /* Keys Multiplatform.entitlements */,
-				CB779E6326C9C02E00EC7D21 /* Shared (App) */,
 				CB779E6C26C9C03000EC7D21 /* Shared (Extension) */,
-				CB779E7D26C9C03000EC7D21 /* iOS (App) */,
+				CBEDBFBB26CB668E00EE084F /* iOS (App) */,
 				CB779E8E26C9C03000EC7D21 /* macOS (App) */,
 				CB779E9D26C9C03000EC7D21 /* iOS (Extension) */,
 				CB779EA726C9C03000EC7D21 /* macOS (Extension) */,
 				CB779E7C26C9C03000EC7D21 /* Products */,
+				CBEDBFC826CB66F500EE084F /* Frameworks */,
 			);
-			sourceTree = "<group>";
-		};
-		CB779E6326C9C02E00EC7D21 /* Shared (App) */ = {
-			isa = PBXGroup;
-			children = (
-				CB779E6B26C9C03000EC7D21 /* Assets.xcassets */,
-				CB779E6426C9C02E00EC7D21 /* Resources */,
-			);
-			path = "Shared (App)";
-			sourceTree = "<group>";
-		};
-		CB779E6426C9C02E00EC7D21 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				CB779E6526C9C02E00EC7D21 /* Main.html */,
-				CB779E6726C9C02E00EC7D21 /* Icon.png */,
-				CB779E6826C9C02E00EC7D21 /* Style.css */,
-				CB779E6926C9C02E00EC7D21 /* Script.js */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		CB779E6C26C9C03000EC7D21 /* Shared (Extension) */ = {
@@ -246,24 +211,12 @@
 		CB779E7C26C9C03000EC7D21 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CB779E7B26C9C03000EC7D21 /* Keys Multiplatform.app */,
 				CB779E8D26C9C03000EC7D21 /* Keys Multiplatform.app */,
 				CB779E9926C9C03000EC7D21 /* Keys Multiplatform Extension.appex */,
 				CB779EA326C9C03000EC7D21 /* Keys Multiplatform Extension.appex */,
+				CBEDBFBA26CB668E00EE084F /* Keys Multiplatform.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		CB779E7D26C9C03000EC7D21 /* iOS (App) */ = {
-			isa = PBXGroup;
-			children = (
-				CB779E7E26C9C03000EC7D21 /* AppDelegate.swift */,
-				CB779E8026C9C03000EC7D21 /* SceneDelegate.swift */,
-				CB779E8226C9C03000EC7D21 /* LaunchScreen.storyboard */,
-				CB779E8526C9C03000EC7D21 /* Main.storyboard */,
-				CB779E8826C9C03000EC7D21 /* Info.plist */,
-			);
-			path = "iOS (App)";
 			sourceTree = "<group>";
 		};
 		CB779E8E26C9C03000EC7D21 /* macOS (App) */ = {
@@ -317,28 +270,36 @@
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
+		CBEDBFBB26CB668E00EE084F /* iOS (App) */ = {
+			isa = PBXGroup;
+			children = (
+				CBEDBFCD26CB673300EE084F /* iOS (App).entitlements */,
+				CBEDBFBC26CB668E00EE084F /* iOS__App_App.swift */,
+				CBEDBFBE26CB668E00EE084F /* ContentView.swift */,
+				CBEDBFC026CB669000EE084F /* Assets.xcassets */,
+				CBEDBFC226CB669000EE084F /* Preview Content */,
+			);
+			path = "iOS (App)";
+			sourceTree = "<group>";
+		};
+		CBEDBFC226CB669000EE084F /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				CBEDBFC326CB669000EE084F /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CBEDBFC826CB66F500EE084F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CB779E7A26C9C03000EC7D21 /* Keys Multiplatform (iOS) */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CB779ECD26C9C03000EC7D21 /* Build configuration list for PBXNativeTarget "Keys Multiplatform (iOS)" */;
-			buildPhases = (
-				CB779E7726C9C03000EC7D21 /* Sources */,
-				CB779E7826C9C03000EC7D21 /* Frameworks */,
-				CB779E7926C9C03000EC7D21 /* Resources */,
-				CB779ECC26C9C03000EC7D21 /* Embed App Extensions */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CB779E9C26C9C03000EC7D21 /* PBXTargetDependency */,
-			);
-			name = "Keys Multiplatform (iOS)";
-			productName = "Keys Multiplatform (iOS)";
-			productReference = CB779E7B26C9C03000EC7D21 /* Keys Multiplatform.app */;
-			productType = "com.apple.product-type.application";
-		};
 		CB779E8C26C9C03000EC7D21 /* Keys Multiplatform (macOS) */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CB779ED426C9C03000EC7D21 /* Build configuration list for PBXNativeTarget "Keys Multiplatform (macOS)" */;
@@ -392,6 +353,25 @@
 			productReference = CB779EA326C9C03000EC7D21 /* Keys Multiplatform Extension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		CBEDBFB926CB668E00EE084F /* Keys Multiplatform (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CBEDBFC526CB669000EE084F /* Build configuration list for PBXNativeTarget "Keys Multiplatform (iOS)" */;
+			buildPhases = (
+				CBEDBFB626CB668E00EE084F /* Sources */,
+				CBEDBFB726CB668E00EE084F /* Frameworks */,
+				CBEDBFB826CB668E00EE084F /* Resources */,
+				CBEDBFCC26CB66F500EE084F /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CBEDBFCB26CB66F500EE084F /* PBXTargetDependency */,
+			);
+			name = "Keys Multiplatform (iOS)";
+			productName = "iOS (App)";
+			productReference = CBEDBFBA26CB668E00EE084F /* Keys Multiplatform.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -402,9 +382,6 @@
 				LastSwiftUpdateCheck = 1300;
 				LastUpgradeCheck = 1300;
 				TargetAttributes = {
-					CB779E7A26C9C03000EC7D21 = {
-						CreatedOnToolsVersion = 13.0;
-					};
 					CB779E8C26C9C03000EC7D21 = {
 						CreatedOnToolsVersion = 13.0;
 					};
@@ -412,6 +389,9 @@
 						CreatedOnToolsVersion = 13.0;
 					};
 					CB779EA226C9C03000EC7D21 = {
+						CreatedOnToolsVersion = 13.0;
+					};
+					CBEDBFB926CB668E00EE084F = {
 						CreatedOnToolsVersion = 13.0;
 					};
 				};
@@ -433,7 +413,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CB779E7A26C9C03000EC7D21 /* Keys Multiplatform (iOS) */,
+				CBEDBFB926CB668E00EE084F /* Keys Multiplatform (iOS) */,
 				CB779E8C26C9C03000EC7D21 /* Keys Multiplatform (macOS) */,
 				CB779E9826C9C03000EC7D21 /* Keys Multiplatform Extension (iOS) */,
 				CB779EA226C9C03000EC7D21 /* Keys Multiplatform Extension (macOS) */,
@@ -442,36 +422,17 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		CB779E7926C9C03000EC7D21 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CB779EAB26C9C03000EC7D21 /* Icon.png in Resources */,
-				CB779E8426C9C03000EC7D21 /* LaunchScreen.storyboard in Resources */,
-				CB779EA926C9C03000EC7D21 /* Main.html in Resources */,
-				CB779EAF26C9C03000EC7D21 /* Script.js in Resources */,
-				CB779EB326C9C03000EC7D21 /* Assets.xcassets in Resources */,
-				CB779E8726C9C03000EC7D21 /* Main.storyboard in Resources */,
-				CB779EAD26C9C03000EC7D21 /* Style.css in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		CB779E8B26C9C03000EC7D21 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB779EAC26C9C03000EC7D21 /* Icon.png in Resources */,
 				CBDB385B26C9F2320004CFB5 /* Onboarding.storyboard in Resources */,
 				CBDB386126C9F6E50004CFB5 /* Localizable.strings in Resources */,
-				CB779EAE26C9C03000EC7D21 /* Style.css in Resources */,
 				CBDB384B26C9F1FC0004CFB5 /* Blacklist.strings in Resources */,
 				CBDB385926C9F2320004CFB5 /* Onboarding.strings in Resources */,
 				CB779E9326C9C03000EC7D21 /* Main.storyboard in Resources */,
 				CBDB384F26C9F1FC0004CFB5 /* Blacklist.storyboard in Resources */,
-				CB779EB026C9C03000EC7D21 /* Script.js in Resources */,
-				CB779EB426C9C03000EC7D21 /* Assets.xcassets in Resources */,
 				CBDB386B26C9F7D50004CFB5 /* Assets.xcassets in Resources */,
-				CB779EAA26C9C03000EC7D21 /* Main.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,18 +466,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		CB779E7726C9C03000EC7D21 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
+		CBEDBFB826CB668E00EE084F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB779E7F26C9C03000EC7D21 /* AppDelegate.swift in Sources */,
-				CB779E8126C9C03000EC7D21 /* SceneDelegate.swift in Sources */,
+				CBEDBFC426CB669000EE084F /* Preview Assets.xcassets in Resources */,
+				CBEDBFC126CB669000EE084F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
 		CB779E8926C9C03000EC7D21 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -545,46 +506,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CBEDBFB626CB668E00EE084F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBEDBFBF26CB668E00EE084F /* ContentView.swift in Sources */,
+				CBEDBFBD26CB668E00EE084F /* iOS__App_App.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		CB779E9C26C9C03000EC7D21 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CB779E9826C9C03000EC7D21 /* Keys Multiplatform Extension (iOS) */;
-			targetProxy = CB779E9B26C9C03000EC7D21 /* PBXContainerItemProxy */;
-		};
 		CB779EA626C9C03000EC7D21 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CB779EA226C9C03000EC7D21 /* Keys Multiplatform Extension (macOS) */;
 			targetProxy = CB779EA526C9C03000EC7D21 /* PBXContainerItemProxy */;
 		};
+		CBEDBFCB26CB66F500EE084F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CB779E9826C9C03000EC7D21 /* Keys Multiplatform Extension (iOS) */;
+			targetProxy = CBEDBFCA26CB66F500EE084F /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		CB779E6526C9C02E00EC7D21 /* Main.html */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CB779E6626C9C02E00EC7D21 /* Base */,
-			);
-			name = Main.html;
-			sourceTree = "<group>";
-		};
-		CB779E8226C9C03000EC7D21 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CB779E8326C9C03000EC7D21 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		CB779E8526C9C03000EC7D21 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CB779E8626C9C03000EC7D21 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CB779E9126C9C03000EC7D21 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -815,85 +761,6 @@
 			};
 			name = Release;
 		};
-		CB779ECE26C9C03000EC7D21 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "Keys Multiplatform.entitlements";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = L27L4K8SQU;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "iOS (App)/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Keys Multiplatform";
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				OTHER_LDFLAGS = (
-					"-framework",
-					SafariServices,
-					"-framework",
-					WebKit,
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "shockerella.Keys-Multiplatform";
-				PRODUCT_NAME = "Keys Multiplatform";
-				SDKROOT = iphoneos;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 2;
-			};
-			name = Debug;
-		};
-		CB779ECF26C9C03000EC7D21 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "Keys Multiplatform.entitlements";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = L27L4K8SQU;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "iOS (App)/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Keys Multiplatform";
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				OTHER_LDFLAGS = (
-					"-framework",
-					SafariServices,
-					"-framework",
-					WebKit,
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "shockerella.Keys-Multiplatform";
-				PRODUCT_NAME = "Keys Multiplatform";
-				SDKROOT = iphoneos;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 2;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
 		CB779ED126C9C03000EC7D21 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1036,6 +903,71 @@
 			};
 			name = Release;
 		};
+		CBEDBFC626CB669000EE084F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "iOS (App)/iOS (App).entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"iOS (App)/Preview Content\"";
+				DEVELOPMENT_TEAM = L27L4K8SQU;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "shockerella.Keys-Multiplatform";
+				PRODUCT_NAME = "Keys Multiplatform";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		CBEDBFC726CB669000EE084F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "iOS (App)/iOS (App).entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"iOS (App)/Preview Content\"";
+				DEVELOPMENT_TEAM = L27L4K8SQU;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "shockerella.Keys-Multiplatform";
+				PRODUCT_NAME = "Keys Multiplatform";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1057,15 +989,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CB779ECD26C9C03000EC7D21 /* Build configuration list for PBXNativeTarget "Keys Multiplatform (iOS)" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CB779ECE26C9C03000EC7D21 /* Debug */,
-				CB779ECF26C9C03000EC7D21 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		CB779ED026C9C03000EC7D21 /* Build configuration list for PBXNativeTarget "Keys Multiplatform Extension (macOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1080,6 +1003,15 @@
 			buildConfigurations = (
 				CB779ED526C9C03000EC7D21 /* Debug */,
 				CB779ED626C9C03000EC7D21 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CBEDBFC526CB669000EE084F /* Build configuration list for PBXNativeTarget "Keys Multiplatform (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CBEDBFC626CB669000EE084F /* Debug */,
+				CBEDBFC726CB669000EE084F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

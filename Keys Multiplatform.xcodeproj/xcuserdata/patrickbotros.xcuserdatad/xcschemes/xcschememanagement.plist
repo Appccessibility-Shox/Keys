@@ -7,7 +7,7 @@
 		<key>Keys Multiplatform (iOS).xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>1</integer>
 		</dict>
 		<key>Keys Multiplatform (macOS).xcscheme_^#shared#^_</key>
 		<dict>
@@ -28,6 +28,11 @@
 			<true/>
 		</dict>
 		<key>CB779EA226C9C03000EC7D21</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CBEDBFB926CB668E00EE084F</key>
 		<dict>
 			<key>primary</key>
 			<true/>

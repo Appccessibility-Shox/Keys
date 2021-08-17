@@ -17,7 +17,7 @@ class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
 
     func beginRequest(with context: NSExtensionContext) {
 
-        // defaults!.register(defaults: ["activationKey": "G"])
+        defaults!.register(defaults: ["activationKey": "G"])
         defaults!.register(defaults: ["shouldStealFocus": true])
         defaults!.register(defaults: ["enableModifier": false])
         defaults!.register(defaults: ["blacklist": [String]()])

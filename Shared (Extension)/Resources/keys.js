@@ -21,7 +21,7 @@ var inputelement;
 var permutationIndex = 0;
 var permutations;
 var scrollPositionWhenActivated;
-var preferredActivationKey;
+var preferredActivationKey = "G";
 var shouldStealFocus;
 var modifierEnabled;
 var blacklist = [];
@@ -31,6 +31,8 @@ var originalEventUsedMetaKey;
 browser.runtime.sendMessage({message: "refreshPreferences"}).then(handleResponse, handleError)
 
 function handleResponse(message) {
+    console.log("handling")
+    console.log(message)
     shouldStealFocus = message.updatedPreferences.shouldStealFocus;
     modifierEnabled = message.updatedPreferences.enableModifier;
     preferredActivationKey = message.updatedPreferences.currentKey;
@@ -72,6 +74,8 @@ function isBlacklisted(url) {
 }
 
 $("html").on("keydown", function (activationEvent) {
+    console.log(activationEvent.key)
+    console.log(preferredActivationKey)
     if (!keysCurrentlyActive && upSinceDeactivation && activationEvent.key.toUpperCase() == preferredActivationKey  && activationEvent.target.nodeName != "INPUT" && activationEvent.target.nodeName != "TEXTAREA" && !activationEvent.target.isContentEditable && (!activationEvent.metaKey || modifierEnabled) && !activationEvent.ctrlKey && !activationEvent.altKey && !activationEvent.altGraphKey && !isBlacklisted(window.location.hostname)) {
         deactivate();
         activationEvent.preventDefault();
