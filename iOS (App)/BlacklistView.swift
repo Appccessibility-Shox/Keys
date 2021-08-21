@@ -52,7 +52,7 @@ struct BlacklistView: View {
                 defaults.set(newArray, forKey: "blacklist")
                 fromDefaults = newArray
             }
-        }
+        }.background(Color("blackwhite"))
     }
     
     func delete(at offsets: IndexSet) {
@@ -61,15 +61,16 @@ struct BlacklistView: View {
     }
 }
 
-struct BlacklistView_Previews: PreviewProvider {
-    static var previews: some View {
-        BlacklistView()
-    }
-}
-
 extension Sequence where Iterator.Element: Hashable {
     func unique() -> [Iterator.Element] {
         var seen: Set<Iterator.Element> = []
         return filter { seen.insert($0).inserted }
+    }
+}
+
+
+struct BlacklistView_Previews: PreviewProvider {
+    static var previews: some View {
+        BlacklistView().colorScheme(.dark)
     }
 }

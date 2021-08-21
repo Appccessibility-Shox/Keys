@@ -48,7 +48,6 @@ struct DashboardView: View {
                     }
                      */
                 }.padding(.all, 30)
-                EnabledOrDisabledView()
                 
                 Spacer()
             }
@@ -109,43 +108,8 @@ struct QuickActionButton: View {
     }
 }
 
-struct NumberView: View {
-    var number: Int
-    var desription: String
-    var color: Color
-
-    var body: some View {
-        VStack {
-            Text("\(number)")
-                .font(.system(size: 75))
-            Text(desription)
-                .bold()
-        }
-        .foregroundColor(.black)
-        .padding(30)
-        .padding(.vertical, 10)
-        .background(color)
-        .cornerRadius(20)
-    }
-}
-
-struct EnabledOrDisabledView: View {
-    let extensionIdentifier = "com.acme.MyAppExtension"
-    var body: some View {
-        HStack {
-            Image(systemName: "checkmark.circle.fill")
-            VStack(alignment: .leading) {
-                Text("Keys is currently enabled!")
-                Text("Open Safari and type G to get started.")
-                    .font(.body).bold()
-            }
-        }.font(.largeTitle)
-        .foregroundColor(Color("green"))
-    }
-}
-
 struct DashboardView_Preview: PreviewProvider {
     static var previews: some View {
-        DashboardView(selectedView: .constant(1)).colorScheme(.light)
+        DashboardView(selectedView: .constant(1)).colorScheme(.dark)
     }
 }

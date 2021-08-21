@@ -57,15 +57,16 @@ struct BlacklistPopupView: View {
                         .background(Color.blue)
                         .cornerRadius(10)
                 }
+
             }
         }
         .padding(30)
         .frame(width: 500, height: 400, alignment: .center)
-        .background(Color.white)
+        .background(Color("blackwhite"))
         .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
         .offset(y: isShown ? 0: UIScreen.main.bounds.height)
         .animation(.spring())
-        .shadow(color: Color.gray, radius: 5, x: 0, y: 5)
+        .shadow(color: Color.black.opacity(0.3), radius: 5, x: 0, y: 3)
     }
 }
 

@@ -12,66 +12,64 @@ struct PreferencesView: View {
     @State var activationKey = defaults.string(forKey: "activationKey") ?? "G"
 
     var body: some View {
-        ZStack {
-            VStack {
-                HStack {
-                    Text("Preferences")
-                        .font(.largeTitle)
-                        .bold()
-                }
-                VStack(spacing: 50) {
+        HStack(alignment: .center) {
+            Spacer()
+            ZStack {
+                VStack {
                     HStack {
-                        Text("Current Activation Key:")
-                        Button(action: {
-                            activationKeyIsPresented = true
-                        }) {
-                            Text(activationKey)
-                                .padding(10)
-                                .background(Color("othergray"))
-                            .cornerRadius(5)
-                        }
-                    }.font(.title)
-                    CheckboxView(text: "Take Focus on Page Load", subtext: "Some websites, like Google.com, take cursor focus on page load. \nToggling option prevents this, so you can use keys immediately.", defaultsName: "shouldStealFocus", checked: defaults.bool(forKey: "shouldStealFocus"))
-                    CheckboxView(text: "Enable ⌘" + activationKey + " to open link in background tab.", defaultsName: "enableModifier", checked: defaults.bool(forKey: "enableModifier") ?? false)
-                    /*
-                    VStack {
-                        Text("Primary Color:")
-                            .font(.title)
-                        HStack {
-                            ColorView(color: Color.red)
-                            ColorView(color: Color.orange)
-                            ColorView(color: Color.yellow)
-                            ColorView(color: Color.green)
-                            ColorView(color: Color.blue)
-                            ColorView(color: Color.purple)
-                        }
+                        Text("Preferences")
+                            .font(.largeTitle)
+                            .bold()
                     }
-                    
-                    VStack {
-                        Text("Secondary Color:")
-                            .font(.title)
+                    VStack(spacing: 50) {
                         HStack {
-                            ColorView(color: Color.red)
-                            ColorView(color: Color.orange)
-                            ColorView(color: Color.yellow)
-                            ColorView(color: Color.green)
-                            ColorView(color: Color.blue)
-                            ColorView(color: Color.purple)
+                            Text("Current Activation Key:")
+                            Button(action: {
+                                activationKeyIsPresented = true
+                            }) {
+                                Text(activationKey)
+                                    .padding(10)
+                                    .background(Color("othergray"))
+                                .cornerRadius(5)
+                            }
+                        }.font(.title)
+                        CheckboxView(text: "Take Focus on Page Load", subtext: "Some websites, like Google.com, take cursor focus on page load. \nToggling option prevents this, so you can use keys immediately.", defaultsName: "shouldStealFocus", checked: defaults.bool(forKey: "shouldStealFocus"))
+                        CheckboxView(text: "Enable ⌘" + activationKey + " to open link in background tab.", defaultsName: "enableModifier", checked: defaults.bool(forKey: "enableModifier") ?? false)
+                        /*
+                        VStack {
+                            Text("Primary Color:")
+                                .font(.title)
+                            HStack {
+                                ColorView(color: Color.red)
+                                ColorView(color: Color.orange)
+                                ColorView(color: Color.yellow)
+                                ColorView(color: Color.green)
+                                ColorView(color: Color.blue)
+                                ColorView(color: Color.purple)
+                            }
                         }
-                    }
-                     */
-                    
-                }.padding(.vertical, 80)
-                Spacer()
+                        
+                        VStack {
+                            Text("Secondary Color:")
+                                .font(.title)
+                            HStack {
+                                ColorView(color: Color.red)
+                                ColorView(color: Color.orange)
+                                ColorView(color: Color.yellow)
+                                ColorView(color: Color.green)
+                                ColorView(color: Color.blue)
+                                ColorView(color: Color.purple)
+                            }
+                        }
+                         */
+                        
+                    }.padding(.vertical, 80)
+                    Spacer()
+                }
+                ActivationKeyPopupView(stringToUpdate: $activationKey, isShown: $activationKeyIsPresented, activationKey: defaults.string(forKey: "activationKey") ?? "G")
             }
-            ActivationKeyPopupView(stringToUpdate: $activationKey, isShown: $activationKeyIsPresented, activationKey: defaults.string(forKey: "activationKey") ?? "G")
-        }
-    }
-}
-
-struct PreferencesView_Previews: PreviewProvider {
-    static var previews: some View {
-        PreferencesView()
+            Spacer()
+        }.background(Color(UIColor.systemBackground))
     }
 }
 
@@ -103,6 +101,7 @@ struct CheckboxView: View {
     }
 }
 
+/*
 struct ColorView: View {
     var color: Color
     var body: some View {
@@ -114,7 +113,10 @@ struct ColorView: View {
         })
     }
 }
+*/
 
-func printHi() {
-    print("hi")
+struct PreferencesView_Previews: PreviewProvider {
+    static var previews: some View {
+        PreferencesView().colorScheme(.dark)
+    }
 }

@@ -7,34 +7,18 @@
 
 import SwiftUI
 import Combine
-/*
-class ActivationKeyViewModel: ObservableObject {
-    @Published var activationKey: String = defaults.string(forKey: "activationKey") ?? "G" {
-        didSet {
-            let j = activationKey
-            if activationKey.count > 1 {
-                if String(j.suffix(1)).isAlphanumeric {
-                    activationKey = String(j.suffix(1))
-                } else {
-                    activationKey = String(j.prefix(1))
-                }
-            }
-        }
-    }
-} */
 
 struct ActivationKeyPopupView: View {
     @Binding var stringToUpdate: String
     @Binding var isShown: Bool
     @State var activationKey: String
     var title: String = "Set the activation key"
-    // @ObservedObject var viewModel: ActivationKeyViewModel
 
     var description = "The activation key should be a single, case-insensitive character."
     var onDone: ((String) -> Void)?
 
     
-    let textLimit = 3 //Your limit
+    let textLimit = 3
 
     func limitText(_ upper: Int) {
         if activationKey.count > 1 {
@@ -96,11 +80,11 @@ struct ActivationKeyPopupView: View {
         }
         .padding(30)
         .frame(width: 500, height: 400, alignment: .center)
-        .background(Color.white)
+        .background(Color("blackwhite"))
         .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
         .offset(y: isShown ? 0: UIScreen.main.bounds.height)
         .animation(.spring())
-        .shadow(color: Color.gray, radius: 5, x: 0, y: 5)
+        .shadow(color: Color.black.opacity(0.3), radius: 5, x: 0, y: 3)
 }
 }
 
