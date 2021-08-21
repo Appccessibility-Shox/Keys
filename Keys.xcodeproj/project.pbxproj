@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		CB779E9026C9C03000EC7D21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB779E8F26C9C03000EC7D21 /* AppDelegate.swift */; };
 		CB779E9326C9C03000EC7D21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB779E9126C9C03000EC7D21 /* Main.storyboard */; };
-		CB779EA426C9C03000EC7D21 /* Keys Multiplatform Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CB779EA326C9C03000EC7D21 /* Keys Multiplatform Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CB779EA426C9C03000EC7D21 /* Keys Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CB779EA326C9C03000EC7D21 /* Keys Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CB779EB526C9C03000EC7D21 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB779E6D26C9C03000EC7D21 /* SafariWebExtensionHandler.swift */; };
 		CB779EB626C9C03000EC7D21 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB779E6D26C9C03000EC7D21 /* SafariWebExtensionHandler.swift */; };
 		CB779EB726C9C03000EC7D21 /* _locales in Resources */ = {isa = PBXBuildFile; fileRef = CB779E6F26C9C03000EC7D21 /* _locales */; };
@@ -22,6 +22,12 @@
 		CB779EBE26C9C03000EC7D21 /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = CB779E7226C9C03000EC7D21 /* background.js */; };
 		CB779EBF26C9C03000EC7D21 /* keys.js in Resources */ = {isa = PBXBuildFile; fileRef = CB779E7326C9C03000EC7D21 /* keys.js */; };
 		CB779EC026C9C03000EC7D21 /* keys.js in Resources */ = {isa = PBXBuildFile; fileRef = CB779E7326C9C03000EC7D21 /* keys.js */; };
+		CB87B7AA26D0C1E100C6DDD3 /* ActivationKeyPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB87B7A926D0C1E100C6DDD3 /* ActivationKeyPopupView.swift */; };
+		CB87B7AC26D0C1F400C6DDD3 /* BlacklistPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB87B7AB26D0C1F400C6DDD3 /* BlacklistPopupView.swift */; };
+		CB98D13226CB7A1A00B0DC82 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB98D13126CB7A1A00B0DC82 /* DashboardView.swift */; };
+		CB98D13426CB7A4200B0DC82 /* BlacklistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB98D13326CB7A4200B0DC82 /* BlacklistView.swift */; };
+		CB98D13626CB7A6500B0DC82 /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB98D13526CB7A6500B0DC82 /* PreferencesView.swift */; };
+		CB98D13926CB7A9600B0DC82 /* WrappingHStack in Frameworks */ = {isa = PBXBuildFile; productRef = CB98D13826CB7A9600B0DC82 /* WrappingHStack */; };
 		CBDB37DB26C9C5F80004CFB5 /* tether.js in Resources */ = {isa = PBXBuildFile; fileRef = CBDB37DA26C9C5F80004CFB5 /* tether.js */; };
 		CBDB37DC26C9C5F80004CFB5 /* tether.js in Resources */ = {isa = PBXBuildFile; fileRef = CBDB37DA26C9C5F80004CFB5 /* tether.js */; };
 		CBDB37DE26C9C6220004CFB5 /* jquery.js in Resources */ = {isa = PBXBuildFile; fileRef = CBDB37DD26C9C6220004CFB5 /* jquery.js */; };
@@ -38,11 +44,11 @@
 		CBDB385D26C9F24B0004CFB5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDB385C26C9F24B0004CFB5 /* ViewController.swift */; };
 		CBDB386126C9F6E50004CFB5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CBDB386026C9F6E50004CFB5 /* Localizable.strings */; };
 		CBDB386B26C9F7D50004CFB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBDB386A26C9F7D50004CFB5 /* Assets.xcassets */; };
-		CBEDBFBD26CB668E00EE084F /* iOS__App_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEDBFBC26CB668E00EE084F /* iOS__App_App.swift */; };
+		CBEDBFBD26CB668E00EE084F /* Keys_iOS_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEDBFBC26CB668E00EE084F /* Keys_iOS_App.swift */; };
 		CBEDBFBF26CB668E00EE084F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEDBFBE26CB668E00EE084F /* ContentView.swift */; };
 		CBEDBFC126CB669000EE084F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBEDBFC026CB669000EE084F /* Assets.xcassets */; };
 		CBEDBFC426CB669000EE084F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBEDBFC326CB669000EE084F /* Preview Assets.xcassets */; };
-		CBEDC09126CB6F1800EE084F /* Keys Multiplatform Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CB779E9926C9C03000EC7D21 /* Keys Multiplatform Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CBEDC09126CB6F1800EE084F /* Keys Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CB779E9926C9C03000EC7D21 /* Keys Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,7 +75,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				CB779EA426C9C03000EC7D21 /* Keys Multiplatform Extension.appex in Embed App Extensions */,
+				CB779EA426C9C03000EC7D21 /* Keys Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -80,7 +86,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				CBEDC09126CB6F1800EE084F /* Keys Multiplatform Extension.appex in Embed App Extensions */,
+				CBEDC09126CB6F1800EE084F /* Keys Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -94,14 +100,19 @@
 		CB779E7126C9C03000EC7D21 /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = manifest.json; sourceTree = "<group>"; };
 		CB779E7226C9C03000EC7D21 /* background.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = background.js; sourceTree = "<group>"; };
 		CB779E7326C9C03000EC7D21 /* keys.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = keys.js; sourceTree = "<group>"; };
-		CB779E8D26C9C03000EC7D21 /* Keys Multiplatform.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Keys Multiplatform.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB779E8D26C9C03000EC7D21 /* Keys.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Keys.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB779E8F26C9C03000EC7D21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB779E9226C9C03000EC7D21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CB779E9426C9C03000EC7D21 /* Keys Multiplatform.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Keys Multiplatform.entitlements"; sourceTree = "<group>"; };
-		CB779E9926C9C03000EC7D21 /* Keys Multiplatform Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Keys Multiplatform Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB779E9926C9C03000EC7D21 /* Keys Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Keys Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB779E9E26C9C03000EC7D21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CB779EA326C9C03000EC7D21 /* Keys Multiplatform Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Keys Multiplatform Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB779EA326C9C03000EC7D21 /* Keys Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Keys Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB779EA826C9C03000EC7D21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB87B7A926D0C1E100C6DDD3 /* ActivationKeyPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivationKeyPopupView.swift; sourceTree = "<group>"; };
+		CB87B7AB26D0C1F400C6DDD3 /* BlacklistPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlacklistPopupView.swift; sourceTree = "<group>"; };
+		CB98D13126CB7A1A00B0DC82 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		CB98D13326CB7A4200B0DC82 /* BlacklistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlacklistView.swift; sourceTree = "<group>"; };
+		CB98D13526CB7A6500B0DC82 /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
 		CBDB37DA26C9C5F80004CFB5 /* tether.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = tether.js; sourceTree = "<group>"; };
 		CBDB37DD26C9C6220004CFB5 /* jquery.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = jquery.js; sourceTree = "<group>"; };
 		CBDB37E026C9D17B0004CFB5 /* keys.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = keys.css; sourceTree = "<group>"; };
@@ -128,8 +139,8 @@
 		CBDB386A26C9F7D50004CFB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CBDF08B726CAB22B00C714F5 /* Keys Multiplatform Extension (macOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Keys Multiplatform Extension (macOS).entitlements"; sourceTree = "<group>"; };
 		CBDF08B826CAB26500C714F5 /* Keys Multiplatform Extension (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Keys Multiplatform Extension (iOS).entitlements"; sourceTree = "<group>"; };
-		CBEDBFBA26CB668E00EE084F /* Keys Multiplatform.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Keys Multiplatform.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CBEDBFBC26CB668E00EE084F /* iOS__App_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS__App_App.swift; sourceTree = "<group>"; };
+		CBEDBFBA26CB668E00EE084F /* Keys.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Keys.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBEDBFBC26CB668E00EE084F /* Keys_iOS_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys_iOS_App.swift; sourceTree = "<group>"; };
 		CBEDBFBE26CB668E00EE084F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CBEDBFC026CB669000EE084F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CBEDBFC326CB669000EE084F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -162,6 +173,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB98D13926CB7A9600B0DC82 /* WrappingHStack in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,10 +223,10 @@
 		CB779E7C26C9C03000EC7D21 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CB779E8D26C9C03000EC7D21 /* Keys Multiplatform.app */,
-				CB779E9926C9C03000EC7D21 /* Keys Multiplatform Extension.appex */,
-				CB779EA326C9C03000EC7D21 /* Keys Multiplatform Extension.appex */,
-				CBEDBFBA26CB668E00EE084F /* Keys Multiplatform.app */,
+				CB779E8D26C9C03000EC7D21 /* Keys.app */,
+				CB779E9926C9C03000EC7D21 /* Keys Extension.appex */,
+				CB779EA326C9C03000EC7D21 /* Keys Extension.appex */,
+				CBEDBFBA26CB668E00EE084F /* Keys.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -274,8 +286,13 @@
 			isa = PBXGroup;
 			children = (
 				CBEDBFCD26CB673300EE084F /* iOS (App).entitlements */,
-				CBEDBFBC26CB668E00EE084F /* iOS__App_App.swift */,
+				CBEDBFBC26CB668E00EE084F /* Keys_iOS_App.swift */,
 				CBEDBFBE26CB668E00EE084F /* ContentView.swift */,
+				CB98D13126CB7A1A00B0DC82 /* DashboardView.swift */,
+				CB98D13526CB7A6500B0DC82 /* PreferencesView.swift */,
+				CB98D13326CB7A4200B0DC82 /* BlacklistView.swift */,
+				CB87B7A926D0C1E100C6DDD3 /* ActivationKeyPopupView.swift */,
+				CB87B7AB26D0C1F400C6DDD3 /* BlacklistPopupView.swift */,
 				CBEDBFC026CB669000EE084F /* Assets.xcassets */,
 				CBEDBFC226CB669000EE084F /* Preview Content */,
 			);
@@ -300,9 +317,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CB779E8C26C9C03000EC7D21 /* Keys Multiplatform (macOS) */ = {
+		CB779E8C26C9C03000EC7D21 /* Keys (macOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CB779ED426C9C03000EC7D21 /* Build configuration list for PBXNativeTarget "Keys Multiplatform (macOS)" */;
+			buildConfigurationList = CB779ED426C9C03000EC7D21 /* Build configuration list for PBXNativeTarget "Keys (macOS)" */;
 			buildPhases = (
 				CB779E8926C9C03000EC7D21 /* Sources */,
 				CB779E8A26C9C03000EC7D21 /* Frameworks */,
@@ -314,14 +331,14 @@
 			dependencies = (
 				CB779EA626C9C03000EC7D21 /* PBXTargetDependency */,
 			);
-			name = "Keys Multiplatform (macOS)";
+			name = "Keys (macOS)";
 			productName = "Keys Multiplatform (macOS)";
-			productReference = CB779E8D26C9C03000EC7D21 /* Keys Multiplatform.app */;
+			productReference = CB779E8D26C9C03000EC7D21 /* Keys.app */;
 			productType = "com.apple.product-type.application";
 		};
-		CB779E9826C9C03000EC7D21 /* Keys Multiplatform Extension (iOS) */ = {
+		CB779E9826C9C03000EC7D21 /* Keys Extension (iOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CB779EC926C9C03000EC7D21 /* Build configuration list for PBXNativeTarget "Keys Multiplatform Extension (iOS)" */;
+			buildConfigurationList = CB779EC926C9C03000EC7D21 /* Build configuration list for PBXNativeTarget "Keys Extension (iOS)" */;
 			buildPhases = (
 				CB779E9526C9C03000EC7D21 /* Sources */,
 				CB779E9626C9C03000EC7D21 /* Frameworks */,
@@ -331,14 +348,14 @@
 			);
 			dependencies = (
 			);
-			name = "Keys Multiplatform Extension (iOS)";
+			name = "Keys Extension (iOS)";
 			productName = "Keys Multiplatform Extension (iOS)";
-			productReference = CB779E9926C9C03000EC7D21 /* Keys Multiplatform Extension.appex */;
+			productReference = CB779E9926C9C03000EC7D21 /* Keys Extension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
-		CB779EA226C9C03000EC7D21 /* Keys Multiplatform Extension (macOS) */ = {
+		CB779EA226C9C03000EC7D21 /* Keys Extension (macOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CB779ED026C9C03000EC7D21 /* Build configuration list for PBXNativeTarget "Keys Multiplatform Extension (macOS)" */;
+			buildConfigurationList = CB779ED026C9C03000EC7D21 /* Build configuration list for PBXNativeTarget "Keys Extension (macOS)" */;
 			buildPhases = (
 				CB779E9F26C9C03000EC7D21 /* Sources */,
 				CB779EA026C9C03000EC7D21 /* Frameworks */,
@@ -348,14 +365,14 @@
 			);
 			dependencies = (
 			);
-			name = "Keys Multiplatform Extension (macOS)";
+			name = "Keys Extension (macOS)";
 			productName = "Keys Multiplatform Extension (macOS)";
-			productReference = CB779EA326C9C03000EC7D21 /* Keys Multiplatform Extension.appex */;
+			productReference = CB779EA326C9C03000EC7D21 /* Keys Extension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
-		CBEDBFB926CB668E00EE084F /* Keys Multiplatform (iOS) */ = {
+		CBEDBFB926CB668E00EE084F /* Keys (iOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CBEDBFC526CB669000EE084F /* Build configuration list for PBXNativeTarget "Keys Multiplatform (iOS)" */;
+			buildConfigurationList = CBEDBFC526CB669000EE084F /* Build configuration list for PBXNativeTarget "Keys (iOS)" */;
 			buildPhases = (
 				CBEDBFB626CB668E00EE084F /* Sources */,
 				CBEDBFB726CB668E00EE084F /* Frameworks */,
@@ -367,9 +384,12 @@
 			dependencies = (
 				CBEDBFCB26CB66F500EE084F /* PBXTargetDependency */,
 			);
-			name = "Keys Multiplatform (iOS)";
+			name = "Keys (iOS)";
+			packageProductDependencies = (
+				CB98D13826CB7A9600B0DC82 /* WrappingHStack */,
+			);
 			productName = "iOS (App)";
-			productReference = CBEDBFBA26CB668E00EE084F /* Keys Multiplatform.app */;
+			productReference = CBEDBFBA26CB668E00EE084F /* Keys.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -396,7 +416,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CB779E6226C9C02D00EC7D21 /* Build configuration list for PBXProject "Keys Multiplatform" */;
+			buildConfigurationList = CB779E6226C9C02D00EC7D21 /* Build configuration list for PBXProject "Keys" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -409,14 +429,17 @@
 				fr,
 			);
 			mainGroup = CB779E5E26C9C02D00EC7D21;
+			packageReferences = (
+				CB98D13726CB7A9600B0DC82 /* XCRemoteSwiftPackageReference "WrappingHStack" */,
+			);
 			productRefGroup = CB779E7C26C9C03000EC7D21 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CBEDBFB926CB668E00EE084F /* Keys Multiplatform (iOS) */,
-				CB779E8C26C9C03000EC7D21 /* Keys Multiplatform (macOS) */,
-				CB779E9826C9C03000EC7D21 /* Keys Multiplatform Extension (iOS) */,
-				CB779EA226C9C03000EC7D21 /* Keys Multiplatform Extension (macOS) */,
+				CBEDBFB926CB668E00EE084F /* Keys (iOS) */,
+				CB779E8C26C9C03000EC7D21 /* Keys (macOS) */,
+				CB779E9826C9C03000EC7D21 /* Keys Extension (iOS) */,
+				CB779EA226C9C03000EC7D21 /* Keys Extension (macOS) */,
 			);
 		};
 /* End PBXProject section */
@@ -510,8 +533,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB98D13626CB7A6500B0DC82 /* PreferencesView.swift in Sources */,
+				CB87B7AC26D0C1F400C6DDD3 /* BlacklistPopupView.swift in Sources */,
+				CB87B7AA26D0C1E100C6DDD3 /* ActivationKeyPopupView.swift in Sources */,
 				CBEDBFBF26CB668E00EE084F /* ContentView.swift in Sources */,
-				CBEDBFBD26CB668E00EE084F /* iOS__App_App.swift in Sources */,
+				CB98D13226CB7A1A00B0DC82 /* DashboardView.swift in Sources */,
+				CB98D13426CB7A4200B0DC82 /* BlacklistView.swift in Sources */,
+				CBEDBFBD26CB668E00EE084F /* Keys_iOS_App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,12 +548,12 @@
 /* Begin PBXTargetDependency section */
 		CB779EA626C9C03000EC7D21 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CB779EA226C9C03000EC7D21 /* Keys Multiplatform Extension (macOS) */;
+			target = CB779EA226C9C03000EC7D21 /* Keys Extension (macOS) */;
 			targetProxy = CB779EA526C9C03000EC7D21 /* PBXContainerItemProxy */;
 		};
 		CBEDBFCB26CB66F500EE084F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CB779E9826C9C03000EC7D21 /* Keys Multiplatform Extension (iOS) */;
+			target = CB779E9826C9C03000EC7D21 /* Keys Extension (iOS) */;
 			targetProxy = CBEDBFCA26CB66F500EE084F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -719,7 +747,7 @@
 					SafariServices,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "shockerella.Keys-Multiplatform.Extension";
-				PRODUCT_NAME = "Keys Multiplatform Extension";
+				PRODUCT_NAME = "Keys Extension";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -751,7 +779,7 @@
 					SafariServices,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "shockerella.Keys-Multiplatform.Extension";
-				PRODUCT_NAME = "Keys Multiplatform Extension";
+				PRODUCT_NAME = "Keys Extension";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -787,7 +815,7 @@
 					SafariServices,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "shockerella.Keys-Multiplatform.Extension";
-				PRODUCT_NAME = "Keys Multiplatform Extension";
+				PRODUCT_NAME = "Keys Extension";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -821,7 +849,7 @@
 					SafariServices,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "shockerella.Keys-Multiplatform.Extension";
-				PRODUCT_NAME = "Keys Multiplatform Extension";
+				PRODUCT_NAME = "Keys Extension";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -859,7 +887,7 @@
 					WebKit,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "shockerella.Keys-Multiplatform";
-				PRODUCT_NAME = "Keys Multiplatform";
+				PRODUCT_NAME = Keys;
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -896,7 +924,7 @@
 					WebKit,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "shockerella.Keys-Multiplatform";
-				PRODUCT_NAME = "Keys Multiplatform";
+				PRODUCT_NAME = Keys;
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -927,7 +955,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "shockerella.Keys-Multiplatform";
-				PRODUCT_NAME = "Keys Multiplatform";
+				PRODUCT_NAME = Keys;
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -959,7 +987,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "shockerella.Keys-Multiplatform";
-				PRODUCT_NAME = "Keys Multiplatform";
+				PRODUCT_NAME = Keys;
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -971,7 +999,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CB779E6226C9C02D00EC7D21 /* Build configuration list for PBXProject "Keys Multiplatform" */ = {
+		CB779E6226C9C02D00EC7D21 /* Build configuration list for PBXProject "Keys" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CB779EC726C9C03000EC7D21 /* Debug */,
@@ -980,7 +1008,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CB779EC926C9C03000EC7D21 /* Build configuration list for PBXNativeTarget "Keys Multiplatform Extension (iOS)" */ = {
+		CB779EC926C9C03000EC7D21 /* Build configuration list for PBXNativeTarget "Keys Extension (iOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CB779ECA26C9C03000EC7D21 /* Debug */,
@@ -989,7 +1017,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CB779ED026C9C03000EC7D21 /* Build configuration list for PBXNativeTarget "Keys Multiplatform Extension (macOS)" */ = {
+		CB779ED026C9C03000EC7D21 /* Build configuration list for PBXNativeTarget "Keys Extension (macOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CB779ED126C9C03000EC7D21 /* Debug */,
@@ -998,7 +1026,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CB779ED426C9C03000EC7D21 /* Build configuration list for PBXNativeTarget "Keys Multiplatform (macOS)" */ = {
+		CB779ED426C9C03000EC7D21 /* Build configuration list for PBXNativeTarget "Keys (macOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CB779ED526C9C03000EC7D21 /* Debug */,
@@ -1007,7 +1035,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CBEDBFC526CB669000EE084F /* Build configuration list for PBXNativeTarget "Keys Multiplatform (iOS)" */ = {
+		CBEDBFC526CB669000EE084F /* Build configuration list for PBXNativeTarget "Keys (iOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CBEDBFC626CB669000EE084F /* Debug */,
@@ -1017,6 +1045,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CB98D13726CB7A9600B0DC82 /* XCRemoteSwiftPackageReference "WrappingHStack" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dkk/WrappingHStack";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CB98D13826CB7A9600B0DC82 /* WrappingHStack */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CB98D13726CB7A9600B0DC82 /* XCRemoteSwiftPackageReference "WrappingHStack" */;
+			productName = WrappingHStack;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CB779E5F26C9C02D00EC7D21 /* Project object */;
 }
