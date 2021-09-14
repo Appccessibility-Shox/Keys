@@ -1,5 +1,5 @@
 ## Major Contributors
-Thank you to George Botros, Patrick Botros, Trevor Stevenson, and LEoREo2247 for making this project a reality.
+Thank you to George Botros, Margaret Botros, LEoREo2247, Patrick Botros, Trevor Stevenson, and other Appccessibility Shox members for making this project a reality.
 
 <h1 align="center">
   <span align="center">
