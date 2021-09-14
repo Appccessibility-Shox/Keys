@@ -1,3 +1,6 @@
+## Major Contributors
+Thank you to George Botros, Patrick Botros, Trevor Stevenson, and LEoREo2247 for making this project a reality.
+
 <h1 align="center">
   <span align="center">
     Keys for Safari <img src="Resources/icon.png" alt="logo" width="32" height="32">
