@@ -34,7 +34,7 @@ struct PreferencesView: View {
                             }
                         }.font(.title)
                         CheckboxView(text: "Take Focus on Page Load", subtext: "Some websites, like Google.com, take cursor focus on page load. \nToggling option prevents this, so you can use keys immediately.", defaultsName: "shouldStealFocus", checked: defaults.bool(forKey: "shouldStealFocus"))
-                        CheckboxView(text: "Enable ⌘" + activationKey + " to open link in background tab.", defaultsName: "enableModifier", checked: defaults.bool(forKey: "enableModifier") ?? false)
+                        CheckboxView(text: "Enable ⌘" + activationKey + " to open link in background tab.", defaultsName: "enableModifier", checked: defaults.bool(forKey: "enableModifier") )
                         /*
                         VStack {
                             Text("Primary Color:")

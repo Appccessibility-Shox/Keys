@@ -537,6 +537,7 @@ function deactivate() {
     $(".clickableTextWrapped").contents().unwrap();
     DataFrame = [];
     keysCurrentlyActive = false;
+    $("#Keys-Input-Box").blur()
     $("#Keys-Input-Box").remove();
     $(".Keys-Show-While-Active").removeClass("Keys-Show-While-Active")
     $(".Keys-Container-of-Large-Image").removeClass("Keys-Container-of-Large-Image")
