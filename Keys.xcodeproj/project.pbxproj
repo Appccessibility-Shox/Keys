@@ -82,14 +82,14 @@
 		};
 		CBEDBFCC26CB66F500EE084F /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
 				CBEDC09126CB6F1800EE084F /* Keys Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -144,7 +144,7 @@
 		CBEDBFBE26CB668E00EE084F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CBEDBFC026CB669000EE084F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CBEDBFC326CB669000EE084F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		CBEDBFCD26CB673300EE084F /* iOS (App).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "iOS (App).entitlements"; sourceTree = "<group>"; };
+		CBF7CA612705CA94000A7FDC /* iOS (App).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "iOS (App).entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				CBDF08B826CAB26500C714F5 /* Keys Multiplatform Extension (iOS).entitlements */,
+				CBF7CA612705CA94000A7FDC /* iOS (App).entitlements */,
 				CBDF08B726CAB22B00C714F5 /* Keys Multiplatform Extension (macOS).entitlements */,
 				CB779E9426C9C03000EC7D21 /* Keys Multiplatform.entitlements */,
 				CB779E6C26C9C03000EC7D21 /* Shared (Extension) */,
@@ -285,7 +286,6 @@
 		CBEDBFBB26CB668E00EE084F /* iOS (App) */ = {
 			isa = PBXGroup;
 			children = (
-				CBEDBFCD26CB673300EE084F /* iOS (App).entitlements */,
 				CBEDBFBC26CB668E00EE084F /* Keys_iOS_App.swift */,
 				CBEDBFBE26CB668E00EE084F /* ContentView.swift */,
 				CB98D13126CB7A1A00B0DC82 /* DashboardView.swift */,
@@ -778,7 +778,7 @@
 					"-framework",
 					SafariServices,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "shockerella.Keys-Multiplatform.Extension";
+				PRODUCT_BUNDLE_IDENTIFIER = shockerella.Keys.Extension;
 				PRODUCT_NAME = "Keys Extension";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -848,7 +848,7 @@
 					"-framework",
 					SafariServices,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "shockerella.Keys-Multiplatform.Extension";
+				PRODUCT_BUNDLE_IDENTIFIER = shockerella.Keys.Extension;
 				PRODUCT_NAME = "Keys Extension";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -887,7 +887,7 @@
 					"-framework",
 					WebKit,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "shockerella.Keys-Multiplatform";
+				PRODUCT_BUNDLE_IDENTIFIER = shockerella.Keys;
 				PRODUCT_NAME = Keys;
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -925,7 +925,7 @@
 					"-framework",
 					WebKit,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "shockerella.Keys-Multiplatform";
+				PRODUCT_BUNDLE_IDENTIFIER = shockerella.Keys;
 				PRODUCT_NAME = Keys;
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -938,9 +938,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "iOS (App)/iOS (App).entitlements";
+				CODE_SIGN_ENTITLEMENTS = "iOS (App).entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"iOS (App)/Preview Content\"";
 				DEVELOPMENT_TEAM = L27L4K8SQU;
 				ENABLE_PREVIEWS = YES;
@@ -956,7 +956,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "shockerella.Keys-Multiplatform";
+				PRODUCT_BUNDLE_IDENTIFIER = shockerella.Keys;
 				PRODUCT_NAME = Keys;
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -970,9 +970,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "iOS (App)/iOS (App).entitlements";
+				CODE_SIGN_ENTITLEMENTS = "iOS (App).entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"iOS (App)/Preview Content\"";
 				DEVELOPMENT_TEAM = L27L4K8SQU;
 				ENABLE_PREVIEWS = YES;
@@ -988,7 +988,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "shockerella.Keys-Multiplatform";
+				PRODUCT_BUNDLE_IDENTIFIER = shockerella.Keys;
 				PRODUCT_NAME = Keys;
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
