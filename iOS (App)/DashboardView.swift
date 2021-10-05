@@ -8,6 +8,11 @@
 import SwiftUI
 import WrappingHStack
 
+enum Field: Hashable {
+    case activationKeyPopup
+    case blacklistPopup
+}
+
 struct DashboardView: View {
     @Environment(\.openURL) var openURL
     @State var dummy = ""
@@ -15,20 +20,16 @@ struct DashboardView: View {
     @State var activationKeyIsPresented = false
     @State var blockString: String = ""
     @Binding var selectedView: Int?
+    @FocusState var focused: Field?
     
     var body: some View {
         ZStack {
             VStack {
                 Spacer()
-                /*
-                HStack {
-                    NumberView(number: 157, desription: "uses thus far", color: Color("green"))
-                    NumberView(number: 8, desription: "uses this week", color: Color("red"))
-                }
-                 */
                 WrappingHStack(alignment: .center) {
                     QuickActionButton(color: Color("gray"), image: "xmark.octagon.fill", description: "Add string to URL blacklist") {
-                        blacklistIsPresented = true
+                        blacklistIsPresented = true;
+                        focused = .blacklistPopup;
                     }
                     QuickActionButton(color: Color("gray"), image: "exclamationmark.bubble.fill", description: "Report an issue or suggest an improvement") {
                         openURL(URL(string: "https://github.com/patrickshox/Keys/issues")!)
@@ -40,20 +41,16 @@ struct DashboardView: View {
                         openURL(URL(string: "https://youtube.com/")!)
                     }
                     QuickActionButton(color: Color("gray"), image: "keyboard", description: "Reset activation key") {
-                        activationKeyIsPresented = true
+                        activationKeyIsPresented = true;
+                        focused = .activationKeyPopup;
                     }
-                    /*
-                    QuickActionButton(color: Color("gray"), image: "paintpalette.fill", description: "Customize colorway") {
-                        selectedView = 2
-                    }
-                     */
                 }.padding(.all, 30)
                 
                 Spacer()
             }
             .background(Color("blackwhite"))
             .edgesIgnoringSafeArea(.all)
-            BlacklistPopupView(isShown: $blacklistIsPresented, blockString: $blockString) { string in
+            BlacklistPopupView(isShown: $blacklistIsPresented, blockString: $blockString, focused: $focused) { string in
                 var newArray = [String]()
                 if var currentBlacklist = defaults.stringArray(forKey: "blacklist") {
                     currentBlacklist += [string.lowercased()]
@@ -64,7 +61,7 @@ struct DashboardView: View {
                 newArray = newArray.unique()
                 defaults.set(newArray, forKey: "blacklist")
             }
-            ActivationKeyPopupView(stringToUpdate: $dummy, isShown: $activationKeyIsPresented, activationKey: defaults.string(forKey: "activationKey") ?? "G")
+            ActivationKeyPopupView(stringToUpdate: $dummy, isShown: $activationKeyIsPresented, activationKey: defaults.string(forKey: "activationKey") ?? "G", focused: $focused)
         }
     }
 }
@@ -101,7 +98,6 @@ struct QuickActionButton: View {
         }).background(color)
         .foregroundColor(.primary)
         .cornerRadius(20)
-        .hoverEffect(.lift)
         .padding(.all, 5)
         .padding(.vertical, 3)
         .shadow(color: Color("shadow"), radius: 2)

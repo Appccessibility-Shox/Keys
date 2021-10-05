@@ -10,6 +10,7 @@ import SwiftUI
 struct PreferencesView: View {
     @State var activationKeyIsPresented = false
     @State var activationKey = defaults.string(forKey: "activationKey") ?? "G"
+    @FocusState var focused: Field?
 
     var body: some View {
         HStack(alignment: .center) {
@@ -25,7 +26,8 @@ struct PreferencesView: View {
                         HStack {
                             Text("Current Activation Key:")
                             Button(action: {
-                                activationKeyIsPresented = true
+                                activationKeyIsPresented = true;
+                                focused = .activationKeyPopup
                             }) {
                                 Text(activationKey)
                                     .padding(10)
@@ -35,38 +37,11 @@ struct PreferencesView: View {
                         }.font(.title)
                         CheckboxView(text: "Take Focus on Page Load", subtext: "Some websites, like Google.com, take cursor focus on page load. \nToggling option prevents this, so you can use keys immediately.", defaultsName: "shouldStealFocus", checked: defaults.bool(forKey: "shouldStealFocus"))
                         CheckboxView(text: "Enable ⌘" + activationKey + " to open link in background tab.", defaultsName: "enableModifier", checked: defaults.bool(forKey: "enableModifier") )
-                        /*
-                        VStack {
-                            Text("Primary Color:")
-                                .font(.title)
-                            HStack {
-                                ColorView(color: Color.red)
-                                ColorView(color: Color.orange)
-                                ColorView(color: Color.yellow)
-                                ColorView(color: Color.green)
-                                ColorView(color: Color.blue)
-                                ColorView(color: Color.purple)
-                            }
-                        }
-                        
-                        VStack {
-                            Text("Secondary Color:")
-                                .font(.title)
-                            HStack {
-                                ColorView(color: Color.red)
-                                ColorView(color: Color.orange)
-                                ColorView(color: Color.yellow)
-                                ColorView(color: Color.green)
-                                ColorView(color: Color.blue)
-                                ColorView(color: Color.purple)
-                            }
-                        }
-                         */
                         
                     }.padding(.vertical, 80)
                     Spacer()
                 }
-                ActivationKeyPopupView(stringToUpdate: $activationKey, isShown: $activationKeyIsPresented, activationKey: defaults.string(forKey: "activationKey") ?? "G")
+                ActivationKeyPopupView(stringToUpdate: $activationKey, isShown: $activationKeyIsPresented, activationKey: defaults.string(forKey: "activationKey") ?? "G", focused: $focused)
             }
             Spacer()
         }.background(Color(UIColor.systemBackground))

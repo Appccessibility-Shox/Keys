@@ -14,6 +14,7 @@ struct BlacklistView: View {
     @State var blacklistIsPresented = false
     @State var blockString: String = ""
     @State var fromDefaults: [String] = defaults.stringArray(forKey: "blacklist") ?? []
+    @FocusState var focused: Field?
 
     var body: some View {
         ZStack {
@@ -25,7 +26,8 @@ struct BlacklistView: View {
                         .bold()
                     Spacer()
                     Button(action: {
-                        blacklistIsPresented = true
+                        blacklistIsPresented = true;
+                        focused = .blacklistPopup;
                     }) {
                         Image(systemName: "plus")
                             .padding(.trailing, 20)
@@ -40,7 +42,7 @@ struct BlacklistView: View {
             }.onAppear {
                 fromDefaults = defaults.stringArray(forKey: "blacklist") ?? []
             }
-            BlacklistPopupView(isShown: $blacklistIsPresented, blockString: $blockString) { string in
+            BlacklistPopupView(isShown: $blacklistIsPresented, blockString: $blockString, focused: $focused) { string in
                 var newArray = [String]()
                 if var currentBlacklist = defaults.stringArray(forKey: "blacklist") {
                     currentBlacklist += [string.lowercased()]

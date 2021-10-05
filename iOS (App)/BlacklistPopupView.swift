@@ -13,14 +13,16 @@ struct BlacklistPopupView: View {
     var title: String = "Type String to Block"
     @Binding var blockString: String
     var description = "If the hostname of a website contains any of the blocked strings, Keys will not function on that site."
+    var focused: FocusState<Field?>.Binding
     var onDone: ((String) -> Void)?
-    
+
     var body: some View {
         VStack(spacing: 50) {
             Text(title)
                 .font(.title)
                 .bold()
             TextField("", text: $blockString)
+                .focused(focused, equals: Field.blacklistPopup)
                 .keyboardType(.URL)
                 .font(.title2)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -70,9 +72,11 @@ struct BlacklistPopupView: View {
     }
 }
 
+/*
 struct BlacklistPopupView_Previews: PreviewProvider {
     static var previews: some View {
         BlacklistPopupView(isShown: .constant(true), blockString: .constant("googGle"))
     }
 }
 
+*/

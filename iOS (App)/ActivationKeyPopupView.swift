@@ -15,7 +15,10 @@ struct ActivationKeyPopupView: View {
     var title: String = "Set the activation key"
 
     var description = "The activation key should be a single, case-insensitive character."
+    var focused: FocusState<Field?>.Binding
+
     var onDone: ((String) -> Void)?
+    
 
     
     let textLimit = 3
@@ -38,6 +41,7 @@ struct ActivationKeyPopupView: View {
                 .font(.title)
                 .bold()
             TextField("", text: $activationKey)
+                .focused(focused, equals: Field.activationKeyPopup)
                 .onReceive(Just(activationKey)) { _ in
                     limitText(textLimit)
                 }
@@ -88,11 +92,13 @@ struct ActivationKeyPopupView: View {
 }
 }
 
+/*
 struct ActivationKeyPopupView_Previews: PreviewProvider {
     static var previews: some View {
         ActivationKeyPopupView(stringToUpdate: .constant("k"), isShown: .constant(true), activationKey: "A" )
     }
 }
+*/
 
 extension String {
     var isAlphanumeric: Bool {
