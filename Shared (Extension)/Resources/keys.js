@@ -37,6 +37,9 @@ function handleResponse(message) {
     modifierEnabled = message.updatedPreferences.enableModifier;
     preferredActivationKey = message.updatedPreferences.currentKey;
     blacklist = message.updatedPreferences.blacklist;
+    if (shouldStealFocus) {
+        $(":focus").blur();
+    }
 }
 
 function handleError(error) {
