@@ -34,11 +34,11 @@ struct DashboardView: View {
                     QuickActionButton(color: Color("gray"), image: "exclamationmark.bubble.fill", description: "Report an issue or suggest an improvement") {
                         openURL(URL(string: "https://github.com/patrickshox/Keys/issues")!)
                     }
-                    QuickActionButton(color: Color("gray"), image: "gearshape.fill", description: "Open Keys in the Safari extension preferences") {
+                    QuickActionButton(color: Color("gray"), image: "gearshape.fill", description: "Enable Keys through Safari Settings") {
                         UIApplication.shared.open(URL.init(string: UIApplication.openSettingsURLString)!, options: [:], completionHandler: nil)
                     }
                     QuickActionButton(color: Color("gray"), image: "play.rectangle.fill", description: "Watch tutorial on YouTube") {
-                        openURL(URL(string: "https://youtube.com/")!)
+                        openURL(URL(string: "https://youtu.be/CQD_Lh503hI")!)
                     }
                     QuickActionButton(color: Color("gray"), image: "keyboard", description: "Reset activation key") {
                         activationKeyIsPresented = true;
