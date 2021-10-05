@@ -1,5 +1,3 @@
-## Major Contributors
-Thank you to George Botros, Margaret Botros, LEoREo2247, Patrick Botros, Trevor Stevenson, and other Appccessibility Shox members for making this project a reality!
 
 <h1 align="center">
   <span align="center">
@@ -19,6 +17,6 @@ All proceeds are donated to the Durham Nursing and Rehabilitation Center, a gros
 
 ![Keys Extension and Containing App Running on a MacBookPro](Resources/MacBook%20Pro.png)
 
-## Soon to be available on iPad!
+## Now available on iPad!
 ![Keys Extension Running on iPad with Smart Folio Keyboard](Resources/iPad%20Pro.png)
-Keys is soon to be available on iPad, making it the first and only (to our knowledge) keyboard-navigation extension available on a mobile device. And Keys + iPad is an incredible combination, particularly if your keyboard case doesn't come with a trackpad. And since the iPad is an incredibly popular device among those with accessibility needs, Keys is now able to reach more of its most important users.
+Keys is now available on iPad, making it the first and only (to our knowledge) keyboard-navigation extension available on a mobile device. Keys + iPad is an incredible combination, particularly if your keyboard case doesn't come with a trackpad (such as the Smart Folio case doesn't). And since the iPad is an incredibly popular device among those with accessibility needs, Keys is now able to reach more of its most important users.
