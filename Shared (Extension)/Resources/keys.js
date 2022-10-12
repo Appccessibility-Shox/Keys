@@ -31,8 +31,8 @@ var originalEventUsedMetaKey;
 browser.runtime.sendMessage({message: "refreshPreferences"}).then(handleResponse, handleError)
 
 function handleResponse(message) {
-    console.log("handling")
-    console.log(message)
+    // console.log("handling")
+    // console.log(message)
     shouldStealFocus = message.updatedPreferences.shouldStealFocus;
     modifierEnabled = message.updatedPreferences.enableModifier;
     preferredActivationKey = message.updatedPreferences.currentKey;
@@ -43,7 +43,7 @@ function handleResponse(message) {
 }
 
 function handleError(error) {
-    console.log(`Error: ${error}`);
+    // console.log(`Error: ${error}`);
 }
 
 // a couple different ways to time focus stealing.
@@ -77,12 +77,12 @@ function isBlacklisted(url) {
 }
 
 $("html").on("keydown", function (activationEvent) {
-    console.log(activationEvent.key)
-    console.log(preferredActivationKey)
+    // console.log(activationEvent.key)
+    // console.log(preferredActivationKey)
     if (!keysCurrentlyActive && upSinceDeactivation && activationEvent.key.toUpperCase() == preferredActivationKey  && activationEvent.target.nodeName != "INPUT" && activationEvent.target.nodeName != "TEXTAREA" && !activationEvent.target.isContentEditable && (!activationEvent.metaKey || modifierEnabled) && !activationEvent.ctrlKey && !activationEvent.altKey && !activationEvent.altGraphKey && !isBlacklisted(window.location.hostname)) {
         deactivate();
         activationEvent.preventDefault();
-        console.log("preferred key pressed.")
+        // console.log("preferred key pressed.")
         originalEventUsedMetaKey = activationEvent.metaKey;
         keysCurrentlyActive = true;
         upSinceDeactivation = false;
@@ -742,4 +742,4 @@ function resetAllInputValues() {
     )
 }
 
-console.log(preferredActivationKey)
+// console.log(preferredActivationKey)
