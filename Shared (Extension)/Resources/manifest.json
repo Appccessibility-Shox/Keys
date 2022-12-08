@@ -24,7 +24,7 @@
             "16": "images/icon-96-mono.png",
             "24": "images/icon-96-mono.png",
             "32": "images/icon-96-mono.png"
-        },
+        }
     },
 
     "content_scripts": [
