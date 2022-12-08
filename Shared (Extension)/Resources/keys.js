@@ -31,8 +31,6 @@ var originalEventUsedMetaKey;
 browser.runtime.sendMessage({message: "refreshPreferences"}).then(handleResponse, handleError)
 
 function handleResponse(message) {
-    console.log("handling")
-    console.log(message)
     shouldStealFocus = message.updatedPreferences.shouldStealFocus;
     modifierEnabled = message.updatedPreferences.enableModifier;
     preferredActivationKey = message.updatedPreferences.currentKey;
@@ -77,12 +75,9 @@ function isBlacklisted(url) {
 }
 
 $("html").on("keydown", function (activationEvent) {
-    console.log(activationEvent.key)
-    console.log(preferredActivationKey)
     if (!keysCurrentlyActive && upSinceDeactivation && activationEvent.key.toUpperCase() == preferredActivationKey  && activationEvent.target.nodeName != "INPUT" && activationEvent.target.nodeName != "TEXTAREA" && !activationEvent.target.isContentEditable && (!activationEvent.metaKey || modifierEnabled) && !activationEvent.ctrlKey && !activationEvent.altKey && !activationEvent.altGraphKey && !isBlacklisted(window.location.hostname)) {
         deactivate();
         activationEvent.preventDefault();
-        console.log("preferred key pressed.")
         originalEventUsedMetaKey = activationEvent.metaKey;
         keysCurrentlyActive = true;
         upSinceDeactivation = false;
@@ -588,7 +583,7 @@ function siteSpecificModifications() {
         $(".ytp-chrome-bottom").addClass("Keys-Show-While-Active");
         $("ytd-menu-renderer").addClass("Keys-Show-While-Active");
         $(".yt-img-shadow").addClass("Keys-Container-of-Large-Image");
-        $(".faux").removeClass("is-empty")
+        $(".faux").removeAttr("is-empty")
     }
     if (window.location.hostname === "www.msn.com" || $("html").hasClass("gr__msn_com")) {
         $("li.popularnow li .faux, li.popularnow li .faux .Keys-Character").css("font-size", "12px");
@@ -742,4 +737,3 @@ function resetAllInputValues() {
     )
 }
 
-console.log(preferredActivationKey)
