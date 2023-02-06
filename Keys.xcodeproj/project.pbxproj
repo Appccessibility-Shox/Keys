@@ -187,6 +187,7 @@
 				CBF7CA612705CA94000A7FDC /* iOS (App).entitlements */,
 				CBDF08B726CAB22B00C714F5 /* Keys Multiplatform Extension (macOS).entitlements */,
 				CB779E9426C9C03000EC7D21 /* Keys Multiplatform.entitlements */,
+				CBEDBFCD26CB673300EE084F /* iOS (App).entitlements */,
 				CB779E6C26C9C03000EC7D21 /* Shared (Extension) */,
 				CBEDBFBB26CB668E00EE084F /* iOS (App) */,
 				CB779E8E26C9C03000EC7D21 /* macOS (App) */,
