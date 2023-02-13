@@ -15,7 +15,7 @@
     }
 }
 
-span.Keys-Clickable-Text-Key, span.Keys-Character {
+span.Keys-Character {
     /* color: var(--systemRed);*/
     transition: none !important;
     border: none !important;
@@ -24,22 +24,12 @@ span.Keys-Clickable-Text-Key, span.Keys-Character {
     /* font-size: 1em !important; */
 }
 
-span.Keys-Clickable-Text-Key span.Keys-Initial-Character {
-    color: var(--systemRed) !important;
-    font-size: 1em !important;
-}
-
-span.Keys-Clickable-Text-Key span.Keys-Character {
+span.Keys-Character {
     color: var(--systemRed);
     font-size: 1em !important;
 }
 
-span.Keys-Clickable-Text-Key {
-    color: var(--systemRed) !important;
-    text-shadow: 0.07em 0 4px var(--shadowColor);
-}
-
-span.Keys-Floating-Key {
+span.Keys-Floating-Key .Keys-Character {
     color: white !important;
     font-weight: bold !important;
     /* transform-style: preserve-3d;*/
@@ -55,7 +45,7 @@ span.Keys-Floating-Key .Keys-Character {
 }
 
 .Keys-Small-Clickable-Image, .Keys-Medium-Clickable-Image {
-    filter: blur(.5px) brightness(var(--brightness)) !important;
+    filter: blur(.2px) brightness(var(--brightness)) !important;
 }
 
 .Keys-Large-Clickable-Image {
@@ -64,10 +54,6 @@ span.Keys-Floating-Key .Keys-Character {
 
 .Keys-Clickable-Icon {
     filter: brightness(var(--brightness)) !important;
-}
-
-.Keys-Container-of-Large-Image {
-    overflow:hidden !important;
 }
 
 .Keys-Small-Image-Key {
@@ -105,11 +91,11 @@ span.Keys-Floating-Key .Keys-Character {
     z-index: -100 !important;
 }
 
-.Keys-Matching-Character {
+span.Keys-Floating-Key .Keys-Matching-Character, .Keys-Matching-Character {
     color: var(--systemGreen) !important;
 }
 
-.Keys-Mismatched-Character {
+span.Keys-Floating-Key .Keys-Mismatched-Character, .Keys-Mismatched-Character {
     color: var(--systemRedWithTransparency) !important;
     text-decoration: line-through !important;
     text-shadow: 0.07em 0 4px rgb(0,0,0,.2);
