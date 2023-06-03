@@ -1,0 +1,35 @@
+{
+  "name": "keys",
+  "version": "1.0.0",
+  "description": "<h1 align=\"center\">   <span align=\"center\">     Keys for Safari <img src=\"Resources/icon.png\" alt=\"logo\" width=\"32\" height=\"32\">   </span>   <a href=\"https://apps.apple.com/us/app/keys-for-safari/id1494642810?mt=12\">     <img align=\"right\" style=\"position: absolute\" src=\"Resources/AppStoreBadge.svg\">   </a> </h1> An accessibility tool that doesn't look like an accessibility tool, Keys for Safari is a browser extension that lets users <b>keyboard-navigate</b> the web by dynamically generating and rendering shortcut keys in the least ugly/confusing way possible.  <br> If you have a motor disability or other accessibility issue, please email keys4safari@gmail.com for 100% off this extension. No questions asked.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint --fix --ext .js ."
+  },
+  "eslintIgnore": [
+    "/Shared (Extension)/Resources/tether.js",
+    "/Shared (Extension)/Resources/jquery.js"
+  ],
+  "jest": {
+    "setupFiles": [
+      "./setup-jest.js"
+    ],
+    "preset": "jest-puppeteer"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^29.5.0",
+    "jest-environment-jsdom": "^29.5.0",
+    "jest-puppeteer": "^9.0.0",
+    "jquery": "^3.7.0",
+    "jsdom": "^22.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.42.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.5"
+  }
+}
