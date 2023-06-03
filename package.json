@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
+    "unit-test": "npm test -- keys.test.js",
+    "calculate-coverage": "jest --coverage",
     "lint": "eslint --fix --ext .js .",
     "build": "xcodebuild -scheme 'Keys (macOS)' build",
     "list": "xcodebuild -list"
