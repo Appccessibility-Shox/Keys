@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "lint": "eslint --fix --ext .js ."
+    "lint": "eslint --fix --ext .js .",
+    "build": "xcodebuild -scheme 'Keys (macOS)' build",
+    "list": "xcodebuild -list"
   },
   "eslintIgnore": [
     "/Shared (Extension)/Resources/tether.js",
