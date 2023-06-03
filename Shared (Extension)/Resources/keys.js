@@ -5,11 +5,7 @@ console.log('KEYS IS RUNNING');
 let isTestEnvironment = false;
 if (typeof browser === 'undefined') {
   console.log('🚧 Running unit tests 🚧');
-
   isTestEnvironment = true;
-  if (typeof module !== 'undefined') {
-    module.exports = { sum, product };
-  }
 }
 
 // MARK: - Constants
@@ -119,14 +115,15 @@ $('html').on('keydown', async (e) => {
       model.push(modelMember);
     });
     imageLikeTargets.filter((t) => !elementIsHiddenViaStyles(t)).forEach((target) => {
-      const keyString = combos.find(isAbsent); // TODO: Optimize
+      const keyString = combos.find((c) => isAbsent(c)); // TODO: Optimize
       const modelMember = {
         key: keyString, element: target, type: ElementTypes.imagelike, responsibleNode: target.querySelector('img, svg, i, .Keys-isEssentiallyAnImage') || target,
       };
       model.push(modelMember);
     });
     fieldLikeTargets.forEach((target) => {
-      const keyString = tryPrefixes(target.placeholder, minLengthRequired) || combos.find(isAbsent);
+      const keyString = tryPrefixes(target.placeholder, minLengthRequired)
+       || combos.find((c) => isAbsent(c));
       const modelMember = { key: keyString, element: target, type: ElementTypes.fieldlike };
       model.push(modelMember);
     });
@@ -299,7 +296,7 @@ const assignTextKey = (e, minLengthRequired) => {
   }
 };
 
-const tryPrefixes = (innerText, width) => {
+const tryPrefixes = (innerText, width, m = model) => {
   // TODO: I'm feeling lucky bug.
   const words = innerText.split(/[^A-Za-z0-9]/).filter((word) => (word !== ''));
   const firstWords = words.slice(0, 3);
@@ -307,17 +304,17 @@ const tryPrefixes = (innerText, width) => {
     .map((word) => word.substring(0, width))
     .filter((p) => p.length === width);
   for (const prefix of prefixes) {
-    if (isAbsent(prefix)) {
+    if (isAbsent(prefix, m)) {
       return prefix;
     }
   }
-  return getContiguousUniqueSubsequence(words, width);
+  return getContiguousUniqueSubsequence(words, width, m);
 };
 
-const getContiguousUniqueSubsequence = (words, width) => {
+const getContiguousUniqueSubsequence = (words, width, m = model) => {
   for (const innerText of words) {
     for (let position = 0; position <= innerText.length - width; position += 1) {
-      if (isAbsent(innerText.substring(position, position + width))) {
+      if (isAbsent(innerText.substring(position, position + width), m)) {
         const found = innerText.substring(position, position + width);
         return found;
       }
@@ -326,8 +323,20 @@ const getContiguousUniqueSubsequence = (words, width) => {
   }
 };
 
-const isAbsent = (string) => {
-  const existingKeys = model.map((e) => e.key?.toLowerCase());
+const isAbsent = (string, m = model) => {
+  if (typeof string !== 'string') {
+    throw new TypeError();
+  }
+
+  if (typeof m === 'number') {
+    throw new TypeError('Did you write something like `.find(isAbsent)`?');
+  }
+
+  if (typeof m !== 'object' || !Array.isArray(m)) {
+    throw new TypeError();
+  }
+
+  const existingKeys = m.map((e) => e.key?.toLowerCase());
   return !existingKeys.includes(string.toLowerCase());
 };
 
@@ -387,7 +396,7 @@ const textIsHiddenViaStyles = (e) => {
 
 const nodeWrap = (anchor) => {
   let textNodes = $(anchor).contents().filter(function () {
-    return (this.nodeType === 3 && this.textContent.trim()/* .match(/[a-zA-Z0-9-_ ]/) */);
+    return (this.nodeType === 3 && this.textContent.trim());
   });
 
   textNodes = textNodes.sort((a, b) => b.textContent.trim().length - a.textContent.trim().length);
@@ -406,17 +415,17 @@ const postSiteSpecificModifications = () => {
   }
 };
 
-const getCombinations = (length, curr = ['']) => {
+const getCombinations = (length, curr = [''], letters = homeRow) => {
   // base case
   if (length === 0) {
     return curr;
   }
 
   // set up
-  const newCurr = curr.flatMap((combo) => homeRow.flatMap((letter) => combo + letter));
+  const newCurr = curr.flatMap((combo) => letters.flatMap((letter) => combo + letter));
 
   // iterate
-  return getCombinations(length - 1, newCurr);
+  return getCombinations(length - 1, newCurr, letters);
 };
 
 // TODO: Revisit this and rewrite
@@ -495,10 +504,9 @@ const isTextLike = (t) => {
   return hasText && hasSubstantiveText && isNotATextArea;
 };
 
-function sum(a, b) {
-  return a + b;
-}
-
-function product(a, b) {
-  return a * b;
+if (isTestEnvironment) {
+  if (typeof module !== 'undefined') {
+    // eslint-disable-next-line object-curly-newline
+    module.exports = { getCombinations, homeRow, isAbsent, getContiguousUniqueSubsequence, tryPrefixes };
+  }
 }
