@@ -2,12 +2,16 @@
     "env": {
         "browser": true,
         "commonjs": true,
-        "es2021": true
+        "es2021": true,
+        "jest": true,
+        "webextensions": true,
+        "jquery": true
     },
     "extends": "airbnb-base",
     "parserOptions": {
         "ecmaVersion": "latest"
     },
     "rules": {
+        "no-use-before-define": "off"
     }
 }
