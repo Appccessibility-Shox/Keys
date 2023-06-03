@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6EE74C542A2AD83300F9C38B /* e2e.test.js in Resources */ = {isa = PBXBuildFile; fileRef = 6EE74C532A2AD83300F9C38B /* e2e.test.js */; };
+		6EE74C552A2AD83300F9C38B /* e2e.test.js in Resources */ = {isa = PBXBuildFile; fileRef = 6EE74C532A2AD83300F9C38B /* e2e.test.js */; };
+		6EE74C582A2ADC2600F9C38B /* keys.test.js in Resources */ = {isa = PBXBuildFile; fileRef = 6EE74C572A2ADC2600F9C38B /* keys.test.js */; };
+		6EE74C592A2ADC2600F9C38B /* keys.test.js in Resources */ = {isa = PBXBuildFile; fileRef = 6EE74C572A2ADC2600F9C38B /* keys.test.js */; };
 		CB779E9026C9C03000EC7D21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB779E8F26C9C03000EC7D21 /* AppDelegate.swift */; };
 		CB779E9326C9C03000EC7D21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB779E9126C9C03000EC7D21 /* Main.storyboard */; };
 		CB779EA426C9C03000EC7D21 /* Keys Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CB779EA326C9C03000EC7D21 /* Keys Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -94,6 +98,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6EE74C522A2AD7E700F9C38B /* setup-jest.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "setup-jest.js"; sourceTree = "<group>"; };
+		6EE74C532A2AD83300F9C38B /* e2e.test.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = e2e.test.js; sourceTree = "<group>"; };
+		6EE74C562A2AD9A700F9C38B /* package.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = package.json; sourceTree = "<group>"; };
+		6EE74C572A2ADC2600F9C38B /* keys.test.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = keys.test.js; sourceTree = "<group>"; };
 		CB779E6D26C9C03000EC7D21 /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
 		CB779E6F26C9C03000EC7D21 /* _locales */ = {isa = PBXFileReference; lastKnownFileType = folder; path = _locales; sourceTree = "<group>"; };
 		CB779E7026C9C03000EC7D21 /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
@@ -183,10 +191,12 @@
 		CB779E5E26C9C02D00EC7D21 = {
 			isa = PBXGroup;
 			children = (
+				6EE74C562A2AD9A700F9C38B /* package.json */,
 				CBDF08B826CAB26500C714F5 /* Keys Multiplatform Extension (iOS).entitlements */,
 				CBF7CA612705CA94000A7FDC /* iOS (App).entitlements */,
 				CBDF08B726CAB22B00C714F5 /* Keys Multiplatform Extension (macOS).entitlements */,
 				CB779E9426C9C03000EC7D21 /* Keys Multiplatform.entitlements */,
+				6EE74C522A2AD7E700F9C38B /* setup-jest.js */,
 				CBEDBFCD26CB673300EE084F /* iOS (App).entitlements */,
 				CB779E6C26C9C03000EC7D21 /* Shared (Extension) */,
 				CBEDBFBB26CB668E00EE084F /* iOS (App) */,
@@ -202,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				CB779E6D26C9C03000EC7D21 /* SafariWebExtensionHandler.swift */,
+				6EE74C532A2AD83300F9C38B /* e2e.test.js */,
 				CB779E6E26C9C03000EC7D21 /* Resources */,
 			);
 			path = "Shared (Extension)";
@@ -216,6 +227,7 @@
 				CBDB37E026C9D17B0004CFB5 /* keys.css */,
 				CB779E7226C9C03000EC7D21 /* background.js */,
 				CB779E7326C9C03000EC7D21 /* keys.js */,
+				6EE74C572A2ADC2600F9C38B /* keys.test.js */,
 				CBDB37DA26C9C5F80004CFB5 /* tether.js */,
 				CBDB37DD26C9C6220004CFB5 /* jquery.js */,
 			);
@@ -467,9 +479,11 @@
 				CBDB37DE26C9C6220004CFB5 /* jquery.js in Resources */,
 				CB779EBD26C9C03000EC7D21 /* background.js in Resources */,
 				CB779EB926C9C03000EC7D21 /* images in Resources */,
+				6EE74C582A2ADC2600F9C38B /* keys.test.js in Resources */,
 				CBDB37E126C9D17B0004CFB5 /* keys.css in Resources */,
 				CB779EBB26C9C03000EC7D21 /* manifest.json in Resources */,
 				CB779EB726C9C03000EC7D21 /* _locales in Resources */,
+				6EE74C542A2AD83300F9C38B /* e2e.test.js in Resources */,
 				CB779EBF26C9C03000EC7D21 /* keys.js in Resources */,
 				CBDB37DB26C9C5F80004CFB5 /* tether.js in Resources */,
 			);
@@ -482,9 +496,11 @@
 				CBDB37DF26C9C6220004CFB5 /* jquery.js in Resources */,
 				CB779EBE26C9C03000EC7D21 /* background.js in Resources */,
 				CB779EBA26C9C03000EC7D21 /* images in Resources */,
+				6EE74C592A2ADC2600F9C38B /* keys.test.js in Resources */,
 				CBDB37E226C9D17B0004CFB5 /* keys.css in Resources */,
 				CB779EBC26C9C03000EC7D21 /* manifest.json in Resources */,
 				CB779EB826C9C03000EC7D21 /* _locales in Resources */,
+				6EE74C552A2AD83300F9C38B /* e2e.test.js in Resources */,
 				CB779EC026C9C03000EC7D21 /* keys.js in Resources */,
 				CBDB37DC26C9C5F80004CFB5 /* tether.js in Resources */,
 			);
