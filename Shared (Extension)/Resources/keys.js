@@ -9,24 +9,67 @@ if (typeof browser === 'undefined') {
 }
 
 // MARK: - Constants
+
+/**
+ * Types of elements which can be handled by Keys
+ * @readonly
+ * @enum {string}
+ */
 const ElementTypes = {
   stringlike: 'stringlike',
   imagelike: 'imagelike',
   fieldlike: 'fieldlike',
 };
+
+/**
+ * An array of easily-accessible keys.
+ *
+ * Order matters for this list & more easily accessibly keys should come first. Only these
+ * keys will be used to generate random floating blurbs.
+ * @type {string[]}
+ */
 const homeRow = ['f', 'd', 'j', 'k', 's', 'l', 'm', 'n', 'c', 'v', 'e', 'r', 't', 'u', 'i', 'o', 'a'];
 const viewPortPadding = 200;
 
 // MARK: - Global Variables
 let keysIsCurrentlyActive = false;
-const model = [/* {key: HO, element: <a>...</a>, type: , responsibleNode: } */];
+
+/**
+ * @typedef ModelObject
+ * @type {object}
+ * @property {string} key - the key assigned to this object, which when typed, clicks element.
+ * @property {HTMLElement} element - the element which clicked when the key is typed.
+ * @property {ElementTypes} type - the identified type of the element.
+ * @property {?Element} responsibleNode - the first element identified which is directly
+ * responsible for the some rendered content in the element.
+ * @property {?HTMLElement} faux - To avoid editing elements directly, Keys duplicates elements,
+ * hides the originals, and only edits the duplicate. faux stores a reference to this duplicate.
+ * @property {?string} original_placeholder - Since Keys edits the placeholder of text fields to
+ * render keys, we need to store a reference to what the placeholder was before we changed it.
+ * @property {?string} original_value - Since Keys uses a placeholder to show blurbs, the field
+ * value must be emptied for the placeholder to show. This property stores a reference to that
+ * value, so that it can be restored on deactivation.
+ */
+
+/**
+ * @type {ModelObject[]}
+ */
+const model = [];
 let scrollPositionWhenActivated = 0;
+/**
+ * @type {HTMLInputElement}
+ */
 let input;
 
 // MARK: - Preferences
 let modifierEnabled = false;
 let blacklist = [];
 let shouldStealFocus = true;
+
+/**
+ * The uppercase character which is pressed to use Keys.
+ * @type {string}
+ */
 let preferredActivationKey = 'G';
 let originalEventUsedMetaKey;
 
@@ -62,7 +105,6 @@ window.addEventListener('load', () => {
 });
 
 // MARK: - Main App
-
 $('html').on('keydown', async (e) => {
   if (
     !keysIsCurrentlyActive
@@ -72,7 +114,7 @@ $('html').on('keydown', async (e) => {
         && e.key.toUpperCase() === preferredActivationKey
   ) {
     keysIsCurrentlyActive = true;
-    scrollPositionWhenActivated = $(this).scrollTop();
+    scrollPositionWhenActivated = document.documentElement.scrollTop;
     e.preventDefault();
     originalEventUsedMetaKey = e.metaKey;
     // priorSiteSpecificModifications()
@@ -109,6 +151,7 @@ $('html').on('keydown', async (e) => {
         }
         return;
       }
+      /** @type {ModelObject} */
       const modelMember = {
         key: keyString, element: target, type: ElementTypes.stringlike, responsibleNode,
       };
@@ -116,6 +159,7 @@ $('html').on('keydown', async (e) => {
     });
     imageLikeTargets.filter((t) => !elementIsHiddenViaStyles(t)).forEach((target) => {
       const keyString = combos.find((c) => isAbsent(c)); // TODO: Optimize
+      /** @type {ModelObject} */
       const modelMember = {
         key: keyString, element: target, type: ElementTypes.imagelike, responsibleNode: target.querySelector('img, svg, i, .Keys-isEssentiallyAnImage') || target,
       };
@@ -124,6 +168,7 @@ $('html').on('keydown', async (e) => {
     fieldLikeTargets.forEach((target) => {
       const keyString = tryPrefixes(target.placeholder, minLengthRequired)
        || combos.find((c) => isAbsent(c));
+      /** @type {ModelObject} */
       const modelMember = { key: keyString, element: target, type: ElementTypes.fieldlike };
       model.push(modelMember);
     });
@@ -220,7 +265,7 @@ const deactivate = () => {
 };
 
 $(window).on('scroll', () => {
-  const currentScrollPosition = $(this).scrollTop();
+  const currentScrollPosition = document.documentElement.scrollTop;
   const scrollAmountSinceActivation = Math.abs(currentScrollPosition - scrollPositionWhenActivated);
 
   if (scrollAmountSinceActivation >= viewPortPadding) {
@@ -240,6 +285,9 @@ $(window).on('keypress', (e) => {
   }
 });
 
+/**
+ * @param {KeyboardEvent} e
+ */
 const deactivateIfBackspaceAndInputIsEmpty = (e) => {
   if (e.key === 'Backspace' && e.target.value === '') {
     deactivate();
@@ -248,6 +296,17 @@ const deactivateIfBackspaceAndInputIsEmpty = (e) => {
 
 // MARK: - Helpers
 
+/**
+ * Uses intersection observers to determine whether an elements position is intersecting
+ * the current viewport.
+ *
+ * Note that the element may be hidden via other means, and this function would still return true.
+ * @see {@link elementIsHiddenViaStyles}
+ * @see {@link textIsHiddenViaStyles}
+ *
+ * @param {Element} element
+ * @returns {Promise<boolean>}
+ */
 const isVisible = (element) => {
   const promise = new Promise((resolve) => {
     const io = new IntersectionObserver((entries) => {
@@ -265,11 +324,27 @@ const isVisible = (element) => {
   return promise;
 };
 
+/**
+ * Uses a heuristic to determine whether the keypress corresponded to the user typing in some
+ * field (and should hence be ignored) or whether it is likely to have corresponded to an
+ * intentional activation of Keys.
+ * @param {JQuery.KeyDownEvent} e
+ * @returns {boolean}
+ */
 const eventOccurredInEditableField = (e) => {
   const { nodeName } = e.target;
   return e.target.isContentEditable || nodeName === 'INPUT' || nodeName === 'TEXTAREA';
 };
 
+/**
+ * Determines whether an undexpected modifier key coincided with the event. This was added since
+ * if the user types Ctrl+G or Alt+G, they're likely not trying to use Keys since we don't support
+ * those modifier Keys. Moreover, even for the "metaKey" a.k.a. the command key, we have the option
+ * for customers to disable it's use via the containing app. If a customer hasn't enabled the option
+ * then her typing Cmd+G is also likely not an intentional activation of Keys.
+ * @param {JQuery.KeyDownEvent} e
+ * @returns {boolean}
+ */
 const eventCoincidesWithUnexpectedModifierKey = (e) => {
   const doesCoincide = e.ctrlKey || e.altKey || e.altGraphKey || (e.metaKey && !modifierEnabled);
   return doesCoincide;
@@ -280,6 +355,15 @@ const currentSiteIsBlacklisted = () => {
   return blacklist.some((blacklistedSiteString) => currentHost.includes(blacklistedSiteString));
 };
 
+/**
+ * Gets the text content immediately contained by an element.
+ *
+ * @example
+ * // returns Hello Wod
+ * e = $.parseHTML("Hello, Wo<b>rl</b>d"); immediateText($(e));
+ * @param {JQuery} a
+ * @returns {string}
+ */
 const immediateText = (a) => a.contents().not(a.children()).text().trim();
 
 const assignTextKey = (e, minLengthRequired) => {
@@ -297,7 +381,6 @@ const assignTextKey = (e, minLengthRequired) => {
 };
 
 const tryPrefixes = (innerText, width, m = model) => {
-  // TODO: I'm feeling lucky bug.
   const words = innerText.split(/[^A-Za-z0-9]/).filter((word) => (word !== ''));
   const firstWords = words.slice(0, 3);
   const prefixes = firstWords
@@ -323,6 +406,12 @@ const getContiguousUniqueSubsequence = (words, width, m = model) => {
   }
 };
 
+/**
+ * Determines whether a particular key exists in `m`.
+ * @param {string} string
+ * @param {ModelObject[]} m
+ * @returns {boolean}
+ */
 const isAbsent = (string, m = model) => {
   if (typeof string !== 'string') {
     throw new TypeError();
@@ -340,6 +429,9 @@ const isAbsent = (string, m = model) => {
   return !existingKeys.includes(string.toLowerCase());
 };
 
+/**
+ * creates the (invisible) input box which users type in to activate a key.
+ */
 const generateInputBox = () => {
   $(':focus').blur();
   if (!document.getElementById('Keys-Input-Box')) {
@@ -394,12 +486,24 @@ const textIsHiddenViaStyles = (e) => {
   return opacityFromColor === '0' || elementIsHiddenViaStyles(e);
 };
 
+/**
+ * takes in an element and wraps whichever text node it has with the most text.
+ * @param {HTMLElement} anchor - the parent element
+ * @returns {HTMLElement} - the text node which was wrapped
+ */
 const nodeWrap = (anchor) => {
-  let textNodes = $(anchor).contents().filter(function () {
-    return (this.nodeType === 3 && this.textContent.trim());
-  });
+  /** @type {Text[]} */
+  let textNodes = $(anchor)
+    .contents()
+    .filter(function () {
+      return (this.nodeType === 3
+            && this.textContent != null
+            && this.textContent.trim() !== '');
+    })
+    .toArray();
 
-  textNodes = textNodes.sort((a, b) => b.textContent.trim().length - a.textContent.trim().length);
+  textNodes = textNodes
+    .sort((a, b) => b.textContent.trim().length - a.textContent.trim().length);
 
   const longestNode = textNodes[0];
 
@@ -408,27 +512,38 @@ const nodeWrap = (anchor) => {
   return wrapped;
 };
 
-// modifications that will occur after keys adds elements to the page.
+// TODO: refactor this to use a dictionary.
 const postSiteSpecificModifications = () => {
   if (window.location.hostname === 'www.youtube.com') {
     $('.faux').removeAttr('is-empty');
   }
 };
 
+/**
+ * A recursive function which generates all combinations of a particulat array of letters of a given
+ * length.
+ * @param {number} length - the length of each combination
+ * @param {string[]} curr - a helper parameter used for recursion
+ * @param {string[]} letters - the letters from which to create each combination.
+ * @returns {string[]} - all `length`-size combinations of `letters`.
+ */
 const getCombinations = (length, curr = [''], letters = homeRow) => {
-  // base case
   if (length === 0) {
     return curr;
   }
-
-  // set up
   const newCurr = curr.flatMap((combo) => letters.flatMap((letter) => combo + letter));
-
-  // iterate
   return getCombinations(length - 1, newCurr, letters);
 };
 
-// TODO: Revisit this and rewrite
+// TODO: refactor `createFloatingText` so it accepts just the size as a parameter & create
+// helper function to determine element size.
+/**
+ * creates the html for the floating blurb which, when typed, clicks an element.
+ * @param {HTMLElement} el - the element this floating text corresponds to; passing this in lets us
+ * size the floating blurb appropiately.
+ * @param {string} key - the blurb which this floating text displays
+ * @returns
+ */
 const createFloatingText = (el, key) => {
   const wrapper = document.createElement('span');
   wrapper.setAttribute('class', 'Keys-Floating-Key');
@@ -441,7 +556,8 @@ const createFloatingText = (el, key) => {
     wrapper.appendChild(a);
   });
 
-  const img = el.querySelector('img, svg, i, .Keys-isEssentiallyAnImage') || el; // When text is treaded like images, there will be no img, svg, or i, so just use el.
+  // When text is treaded like images, there will be no img, svg, or i, so just use el.
+  const img = el.querySelector('img, svg, i, .Keys-isEssentiallyAnImage') || el;
 
   if (img.getBoundingClientRect().width < 30 || img.getBoundingClientRect().height < 30) {
     img.classList.add('Keys-Small-Clickable-Image');
@@ -458,6 +574,12 @@ const createFloatingText = (el, key) => {
   return wrapper;
 };
 
+/**
+ * Use the Tether library to pin a label to an element.
+ * @param {HTMLElement} label
+ * @param {HTMLElement} element
+ * @see {@link https://github.com/shipshapecode/tether}
+ */
 const tether = (label, element) => {
   // eslint-disable-next-line no-new, no-undef
   new Tether({
@@ -465,6 +587,14 @@ const tether = (label, element) => {
   });
 };
 
+/**
+ * Either simulates a click of the element via vanilla JS or uses the background script
+ * to open the element's associated url page in a background tab. This mimics the behavior
+ * users get when they "command click an element".
+ * @param {HTMLElement} element
+ * @param {boolean} shouldOpenInBackgroundTab
+ * @see {@link https://github.com/Appccessibility-Shox/Keys/issues/8}
+ */
 const click = (element, shouldOpenInBackgroundTab) => {
   const url = $(element).closest('[href]').prop('href');
   if (shouldOpenInBackgroundTab && url) {
@@ -474,6 +604,14 @@ const click = (element, shouldOpenInBackgroundTab) => {
   }
 };
 
+/**
+ * inspects the css of an element to see if it is an image or contains an image.
+ *
+ * this function is necessary because not all images are <img> tags. Sometimes divs present as
+ * images merely because they have a 'background-image: url('.../some-image.png')' set.
+ * @param {HTMLElement} element
+ * @returns {boolean}
+ */
 const containsOrIsImage = (element) => {
   let wasFound = false;
 
@@ -495,10 +633,16 @@ const containsOrIsImage = (element) => {
 
 const elementHasBackgroundImage = (el) => window.getComputedStyle(el).getPropertyValue('background-image') !== 'none';
 
+/**
+ * Uses a heuristic to determine whether an element is "text-like".
+ * A "text-like" element is one which should have an in-line key generated.
+ * @param {HTMLElement} t
+ * @returns {boolean}
+ */
 const isTextLike = (t) => {
   // text areas have text nodes in them but they should be treated like inputs.
   const isNotATextArea = t.nodeName !== 'TEXTAREA';
-  const hasText = $(t).text();
+  const hasText = !!$(t).text();
   const hasSubstantiveText = $(t).text().trim() !== '';
 
   return hasText && hasSubstantiveText && isNotATextArea;
@@ -507,6 +651,12 @@ const isTextLike = (t) => {
 if (isTestEnvironment) {
   if (typeof module !== 'undefined') {
     // eslint-disable-next-line object-curly-newline
-    module.exports = { getCombinations, homeRow, isAbsent, getContiguousUniqueSubsequence, tryPrefixes };
+    module.exports = {
+      getCombinations,
+      homeRow,
+      isAbsent,
+      getContiguousUniqueSubsequence,
+      tryPrefixes,
+    };
   }
 }
