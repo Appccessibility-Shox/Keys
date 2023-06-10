@@ -251,6 +251,10 @@ const deactivate = () => {
     }
   });
 
+  Array.from($('.clickableTextWrapped')).forEach((e) => {
+    $(e).contents().unwrap();
+  });
+
   model.length = 0;
   keysIsCurrentlyActive = false;
 
