@@ -91,6 +91,10 @@ span.Keys-Floating-Key .Keys-Character {
     z-index: -100 !important;
 }
 
+span.Keys-Floating-Key {
+    display: inline-block !important;
+}
+
 span.Keys-Floating-Key .Keys-Matching-Character, .Keys-Matching-Character {
     color: var(--systemGreen) !important;
 }
