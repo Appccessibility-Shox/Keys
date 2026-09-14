@@ -29,6 +29,6 @@ Keys is now available on iPad, making it the first and only (to our knowledge) k
 - ["Keys für Safari: Klasse Erweiterung gestattet Tastatur-Navigation" by Uhr von Nicolas](https://www.ifun.de/keys-fuer-safari-klasse-erweiterung-gestattet-tastatur-navigation-149410/)
 - [The MOONGIFT blog](https://www.moongift.jp/2020/02/keys-safariでキーボードブラウジングを可能に/)
 - [Nozz.com blog](https://nozzcom.wordpress.com/2020/09/24/keys4safari/)
-
-## Featured in...
-- [The App Store's "Essential Safari Extensions" list](https://apps.apple.com/ee/mac/room/1570693323) for several years.
+- [The App Store's "Essential Safari Extensions" list](https://apps.apple.com/ee/mac/room/1570693323) for many years.
+- [The App Store's "Standout Safari Extensions" list](https://apps.apple.com/us/mac/story/id1456414021) for many years.
+- [The App Store's "The Best Safari Extensions" list](https://apps.apple.com/tr/mac/story/id1377753262) for many years.
